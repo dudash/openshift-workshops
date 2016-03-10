@@ -8,10 +8,10 @@ category: lab
 ---
 
 ## Welcome to Open Shift
-This lab provides a quick tour of the console to help you get familiar with the user interface along with some key terminology we will use in future lab content.
+This lab provides a quick tour of the console to help you get familiar with the user interface along with some key terminology we will use in subsequent lab content.
 
 ## Primary Navigation
-TBD
+Coming Soon...
 
 ## Key Terms
-TBD
+Coming Soon...
