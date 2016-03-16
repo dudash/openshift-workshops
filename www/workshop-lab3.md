@@ -8,3 +8,6 @@ category: lab
 ---
 
 ## Coming Soon...
+
+
+[1]: http://martinfowler.com/bliki/BlueGreenDeployment.html

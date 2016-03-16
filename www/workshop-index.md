@@ -23,4 +23,5 @@ html_title: Workshops
 
 ### <a id="lab7" class="anchor" href="workshop-lab7.html" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span>Lab 7: Working with Persistent Storage</a>
 
+### <a id="lab7" class="anchor" href="workshop-homework.html" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span>Homework</a>
  
