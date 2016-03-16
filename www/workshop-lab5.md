@@ -1,9 +1,8 @@
 ---
 layout: lab
-labNumber: 5
 title: CI | CD Pipelines
 subtitle: 
-html_title: Lab 5
+html_title: CI/CD
 category: lab
 ---
 

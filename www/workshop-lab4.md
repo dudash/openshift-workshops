@@ -1,9 +1,8 @@
 ---
 layout: lab
-labNumber: 4
 title: Rolling Deployments and Rollbacks
 subtitle: 
-html_title: Lab 4
+html_title: Rollbacks
 category: lab
 ---
 

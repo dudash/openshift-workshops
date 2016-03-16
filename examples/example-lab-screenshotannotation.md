@@ -20,3 +20,4 @@ category: lab
 ## Full Size Render Using Markdown
 ![The browse panel]({{ site.url }}/www/screenshots/lab0-browse.png)
 
+![Terminal]({{ site.url }}/images/terminal.png)

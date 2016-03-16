@@ -1,9 +1,8 @@
 ---
 layout: lab
-labNumber: 7
 title: Working with Persistent Storage
 subtitle: 
-html_title: Lab 7
+html_title: Persistent Storage
 category: lab
 ---
 
