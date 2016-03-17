@@ -3,7 +3,7 @@ layout: lab
 title: A Guided Tour of OpenShift Enterprise
 subtitle: Welcome to OpenShift
 html_title: Welcome to OpenShift
-category: lab, intro
+categories: [lab, intro, welcome]
 ---
 
 ## Welcome to Open Shift!
@@ -16,7 +16,7 @@ We will be using the following terms throughout the workshop labs so here are so
 * Pod - One or more docker containers that run together
 * Service - Provides a common DNS name to access a pod (or replicated set of pods)
 * Deployment - an update to your application triggered by a image change or config change
-* Build - The process of turning your source code into a containerized unit
+* Build - The process of turning your source code into a runnable image
 * BuildConfig - configuration data that determines how to manage your build
 * Route - a labeled and DNS mapped network path to a service from outside OpenShift
 * Master - The foreman of the OpenShift architecture, the master schedules operations, watches for problems, and orchestrates everything
@@ -55,3 +55,6 @@ Don't worry, it's supposed to look empty right now because you currently don't h
 {% highlight csh %}
 $ oc status
 {% endhighlight %}
+
+## Summary
+You should now be ready to get hands-on with our workshop labs

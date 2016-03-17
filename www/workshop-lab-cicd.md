@@ -3,7 +3,7 @@ layout: lab
 title: CI | CD Pipelines
 subtitle: 
 html_title: CI/CD
-category: lab
+categories: [lab, developers]
 ---
 
 ## Coming Soon...

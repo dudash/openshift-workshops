@@ -3,7 +3,7 @@ layout: lab
 title: Rolling Deployments and Rollbacks
 subtitle: 
 html_title: Rollbacks
-category: lab
+categories: [lab, ops, rollback]
 ---
 
 ## Coming Soon...

@@ -3,7 +3,7 @@ layout: lab
 title: Blue | Green Deployment
 subtitle: 
 html_title: Blue/Green
-category: lab
+categories: [lab, ops, blue, green]
 ---
 
 ## Coming Soon...
