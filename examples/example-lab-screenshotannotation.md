@@ -9,15 +9,15 @@ category: lab
 
 
 ## Resized Using HTML
-<img src="{{ site.url }}/www/screenshots/lab0-browse.png" width="250"/>
+<img src="{{ site.baseurl }}/www/screenshots/lab0-browse.png" width="250"/>
 
 
 ## Resize and Annotated
-<img src="{{ site.url }}/www/screenshots/lab0-browse.png" width="250" /><br/>
+<img src="{{ site.baseurl }}/www/screenshots/lab0-browse.png" width="250" /><br/>
 *Image Caption*
 
 
 ## Full Size Render Using Markdown
-![The browse panel]({{ site.url }}/www/screenshots/lab0-browse.png)
+![The browse panel]({{ site.baseurl }}/www/screenshots/lab0-browse.png)
 
-![Terminal]({{ site.url }}/images/terminal.png)
+![Terminal]({{ site.baseurl }}/images/terminal.png)
