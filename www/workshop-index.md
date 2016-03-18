@@ -5,24 +5,24 @@ subtitle: Let's get down to it.
 html_title: Workshops
 ---
 
-### <a class="anchor" href="workshop-prerequisites.html" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span>Install Prerequisites</a>
+### [Install Prerequisites](workshop-prerequisites.html)
 
-### <a class="anchor" href="workshop-lab-welcome.html" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span>Lab: Login and a Tour of OpenShift Enterprise</a>
+### [Lab: Login and a Tour of OpenShift Enterprise](workshop-lab-welcome.html)
 
-### <a class="anchor" href="workshop-lab-byodocker.html" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span>Lab: BYO Docker</a>
+### [Lab: BYO Docker](workshop-lab-byodocker.html)
 
-### <a class="anchor" href="workshop-lab-s2i.html" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span>Lab: Deploying an App with S2I</a>
+### [Lab: Deploying an App with S2I](workshop-lab-s2i.html)
 
-### <a class="anchor" href="workshop-lab-devmanage.html" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span>Lab: Developing and Managing Your Application</a>
+### [Lab: Developing and Managing Your Application](workshop-lab-devmanage.html)
 
-### <a class="anchor" href="workshop-lab-bluegreen.html" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span>Lab: Blue | <font color="green">Green</font> Deployment</a>
+### [Lab: Blue | Green Deployment](workshop-lab-bluegreen.html)
 
-### <a class="anchor" href="workshop-lab-rollbacks.html" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span>Lab: Rolling Deployments and Rollbacks</a>
+### [Lab: Rolling Deployments and Rollbacks](workshop-lab-rollbacks.html)
 
-### <a class="anchor" href="workshop-lab-cicd.html" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span>Lab: CI | CD Pipelines</a>
+### [Lab: CI | CD Pipelines](workshop-lab-cicd.html)
 
-### <a class="anchor" href="workshop-lab-xpaas.html" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span>Lab: xPaaS on OpenShift</a>
+### [Lab: xPaaS on OpenShift](workshop-lab-xpaas.html)
 
-### <a class="anchor" href="workshop-lab-storage.html" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span>Lab: Working with Persistent Storage</a>
+### [Lab: Working with Persistent Storage](workshop-lab-storage.html)
 
-### <a class="anchor" href="workshop-homework.html" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span>Homework</a>
+### [Homework](workshop-homework.html)

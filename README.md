@@ -12,12 +12,12 @@ Do this first:
 > git clone -b gh-pages https://github.com/dudash/openshift-workshops.git
 
 ### How to Test Local on a Mac
-> jekyll serve 
+> jekyll serve --baseurl ''
 
 > open http://127.0.0.1:4000/
 
 ### How to Test Local on Linux
-> jekyll serve 
+> jekyll serve --baseurl ''
 
 In your preferred webbrowser open http://127.0.0.1:4000/
 
