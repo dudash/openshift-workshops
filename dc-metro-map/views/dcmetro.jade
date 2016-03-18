@@ -1,0 +1,71 @@
+extends layout
+block content
+    script(src='https://api.mapbox.com/mapbox.js/plugins/leaflet-markercluster/v0.4.0/leaflet.markercluster.js')
+    link(href='https://api.mapbox.com/mapbox.js/plugins/leaflet-markercluster/v0.4.0/MarkerCluster.css' rel='stylesheet')
+    link(href='https://api.mapbox.com/mapbox.js/plugins/leaflet-markercluster/v0.4.0/MarkerCluster.Default.css' rel='stylesheet')
+    style.
+        #colors {
+            position: absolute;
+            top: 0;
+            right: 0;
+            background: #fff;
+            width: 150px;
+            padding:5px;
+        }
+
+    div(id='map')
+
+    form(id='colors')
+        div.input
+            label(for="checkbox")
+            input(type='checkbox', name='filters' onclick='showStations();' value='red' checked)
+            | Red Line
+        div.input
+            label(for="checkbox")
+            input(type='checkbox', name='filters' onclick='showStations();' value='green' checked)
+            | Green Line
+        div.input
+            label(for="checkbox")
+            input(type='checkbox', name='filters' onclick='showStations();' value='orange' checked)
+            | Orange Line
+        div.input
+            label(for="checkbox")
+            input(type='checkbox', name='filters' onclick='showStations();' value='yellow' checked)
+            | Yellow Line
+        div.input
+            label(for="checkbox")
+            input(type='checkbox', name='filters' onclick='showStations();' value='blue' checked)
+            | Blue Line
+
+    script(type='text/javascript').
+        L.mapbox.accessToken = 'pk.eyJ1IjoiamFzb25yZWRoYXQiLCJhIjoiY2lseHVmZmkwMDVzMTgza3NiazZzZXg4ciJ9.5iDS06m7GN2wuv2hwQePpQ';
+        var map = L.mapbox.map('map')
+            .setView([38.9, -77], 13)
+            .addLayer(L.mapbox.tileLayer('mapbox.streets'));
+        var overlays = L.layerGroup().addTo(map);
+        var layers;
+        L.mapbox.featureLayer()
+            .loadURL('/assets/stations.geojson')
+            .on('ready', function(e) {
+                layers = e.target;
+                showStations();
+        });
+        var filters = document.getElementById('colors').filters;
+        function showStations() {
+            // first collect all of the checked boxes and create an array of strings
+            // like ['green', 'blue']
+            var list = [];
+            for (var i = 0; i < filters.length; i++) {
+                if (filters[i].checked) list.push(filters[i].value);
+            }
+            // then remove any previously-displayed marker groups
+            overlays.clearLayers();
+            // create a new marker group
+            var clusterGroup = new L.MarkerClusterGroup().addTo(overlays);
+            // and add any markers that fit the filtered criteria to that group.
+            layers.eachLayer(function(layer) {
+                if (list.indexOf(layer.feature.properties.line) !== -1) {
+                    clusterGroup.addLayer(layer);
+                }
+            });
+        }
