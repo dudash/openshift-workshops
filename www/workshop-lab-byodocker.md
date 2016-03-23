@@ -66,27 +66,64 @@ Let's look at the image stream.  Hover over "Browse", then click "Image Streams"
 ### Does this guestbook do anything?
 Good catch, your service is running but there is no way for users to access it yet.  We can fix that with the web console or the command line, you decide which you'd rather do from the steps below.
 
-> To expose via the web console, click on "Overview" to get to this view:
+<div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+  <div class="panel panel-default">
+    <div class="panel-heading" role="tab" id="headingOne">
+      <div class="panel-title">
+        <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+          Web Console Steps
+        </a>
+      </div>
+    </div>
+    <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
+      <div class="panel-body">
 
+<blockquote>
+To expose via the web console, click on "Overview" to get to this view:
+</blockquote>
 <img src="{{ site.baseurl }}/www/screenshots/ose-guestbook-noroute.png" width="600"/><br/>
 
-Notice there is no exposed route 
+<p>Notice there is no exposed route </p>
 
-> Click on the "Create Route" link
+<blockquote>
+Click on the "Create Route" link
+</blockquote>
 
 <img src="{{ site.baseurl }}/www/screenshots/ose-guestbook-createroute.png" width="600"/><br/>
 
-This is where you could specify route parameters, but we will just use the defaults.
+<p>This is where you could specify route parameters, but we will just use the defaults.</p>
 
-> Click "Create"
+<blockquote>
+Click "Create"
+</blockquote>
 
-Alternatively, you could've done this via the terminal.
+      </div>
+    </div>
+  </div>
+  <div class="panel panel-default">
+    <div class="panel-heading" role="tab" id="headingTwo">
+      <div class="panel-title">
+        <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+          Alternatively: CLI Steps
+        </a>
+      </div>
+    </div>
+    <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
+      <div class="panel-body">
 
-> <i class="fa fa-terminal"></i> If you didn't use the web console do this:
+<blockquote>
+<i class="fa fa-terminal"></i> In the command line type this:
+</blockquote>
 
 {% highlight csh %}
 $ oc expose service guestbook
 {% endhighlight %}
+
+      </div>
+    </div>
+  </div>
+</div>
+
 
 
 ### Test out the guestbook webapp
@@ -108,4 +145,4 @@ $ oc delete all --all
 
 
 ## Summary
-TBD
+In this lab you've deployed an example docker image, pulled from docker hub, into a pod running in Open Shift.  You exposed a route for clients to access that service via thier web browsers.  And you learned how to get and describe resources using the command line and the web console.  Hopefully, this basic lab also helped to get you familiar with using the CLI and navigating within the web console.

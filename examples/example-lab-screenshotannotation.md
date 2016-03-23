@@ -17,7 +17,9 @@ category: lab
 *Image Caption*
 
 
-## Full Size Render Using Markdown
+## Render Using Markdown
 ![The browse panel]({{ site.baseurl }}/www/screenshots/lab0-browse.png)
+
+![The browse panel]({{ site.baseurl }}/www/screenshots/lab0-browse.png=250x)
 
 ![Terminal]({{ site.baseurl }}/images/terminal.png)

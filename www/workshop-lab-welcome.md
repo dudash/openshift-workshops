@@ -3,18 +3,20 @@ layout: lab
 title: A Guided Tour of OpenShift Enterprise
 subtitle: Welcome to OpenShift
 html_title: Welcome to OpenShift
-categories: [lab, intro, welcome]
+categories: [lab, intro, welcome, developers, ops]
 ---
 
 ## Welcome to Open Shift!
 This lab provides a quick tour of the console to help you get familiar with the user interface along with some key terminology we will use in subsequent lab content.  If you are already familiar with the basics of OpenShift you can skip this lab - after making sure you can login.
 
 ## Key Terms
-We will be using the following terms throughout the workshop labs so here are some basic definitions for them:
+We will be using the following terms throughout the workshop labs so here are some basic definitions you should be familiar with:
 
-* Project - A project is a group of services that are related logically (for this workshop we have setup your account to have access to just a single project)
+* Container - Your software wrapped in a complete filesystem containing everything it needs to run
+* Image - We are talking about Docker images; read-only and used to create containers
 * Pod - One or more docker containers that run together
 * Service - Provides a common DNS name to access a pod (or replicated set of pods)
+* Project - A project is a group of services that are related logically (for this workshop we have setup your account to have access to just a single project)
 * Deployment - an update to your application triggered by a image change or config change
 * Build - The process of turning your source code into a runnable image
 * BuildConfig - configuration data that determines how to manage your build
