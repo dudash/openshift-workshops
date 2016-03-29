@@ -105,8 +105,10 @@ $ oc get builds
 In the output, note the name of your build and use it to see the logs with:
 
 {% highlight csh %}
-$ oc log builds/[BUILD_NAME]
+$ oc logs builds/[BUILD_NAME]
 {% endhighlight %}
+
+The console will print out the full log for your build.  Note, you could pipe this to more or less for easier viewing in the CLI.
 
       </div>
     </div>
@@ -122,7 +124,23 @@ $ oc log builds/[BUILD_NAME]
     <div id="collapseBTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingBTwo">
       <div class="panel-body">
 
-TBD
+<blockquote>
+Hover over Browse and then click on "Builds"
+</blockquote>
+<p><img src="{{ site.baseurl }}/www/screenshots/ose-lab-s2i-builds.png" width="300"/></p>
+
+<blockquote>
+Click on the "dc-metro-map" link
+</blockquote>
+<p><img src="{{ site.baseurl }}/www/screenshots/ose-lab-s2i-metromapbuild.png" width="300"/></p>
+
+<blockquote>
+Click on the "View Log" tab to see the details of your latest build
+</blockquote>
+<p><img src="{{ site.baseurl }}/www/screenshots/ose-lab-s2i-metromapbuilds.png" width="500"/></p>
+
+You should see a log output similar to the one below:
+<p><img src="{{ site.baseurl }}/www/screenshots/ose-lab-s2i-metromapbuildlog.png" width="500"/></p>
 
       </div>
     </div>
@@ -130,9 +148,67 @@ TBD
 </div>
 
 ### See the app in action
-TBD
+Let's see this app in action!
+
+<div class="panel-group" id="accordionC" role="tablist" aria-multiselectable="true">
+  <div class="panel panel-default">
+    <div class="panel-heading" role="tab" id="headingCOne">
+      <div class="panel-title">
+        <a role="button" data-toggle="collapse" data-parent="#accordionC" href="#collapseCOne" aria-expanded="true" aria-controls="collapseCOne">
+          CLI Steps
+        </a>
+      </div>
+    </div>
+    <div id="collapseCOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingCOne">
+      <div class="panel-body">
+<blockquote>
+<i class="fa fa-terminal"></i> Goto the terminal and type the following:
+</blockquote>
+
+{% highlight csh %}
+$ oc get routes
+{% endhighlight %}
+
+<blockquote>
+Copy the HOST/PORT and paste into your favorite webbrowser
+</blockquote>
+
+      </div>
+    </div>
+  </div>
+  <div class="panel panel-default">
+    <div class="panel-heading" role="tab" id="headingCTwo">
+      <div class="panel-title">
+        <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordionC" href="#collapseCTwo" aria-expanded="false" aria-controls="collapseCTwo">
+          Web Console Steps
+        </a>
+      </div>
+    </div>
+    <div id="collapseCTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingCTwo">
+      <div class="panel-body">
+
+<blockquote>
+Click on Overview
+</blockquote>
+<p><img src="{{ site.baseurl }}/www/screenshots/ose-lab-s2i-overview.png" width="100"/></p>
+
+<blockquote>
+Click the URL that is listed in the dc-metro-map service
+</blockquote>
+<p><img src="{{ site.baseurl }}/www/screenshots/ose-lab-s2i-dcmetromapsvc.png" width="500"/></p>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+The app should look like this in your web browser:
+
+<p><img src="{{ site.baseurl }}/www/screenshots/ose-lab-s2i-apprunning.png" width="500"/></p>
+
+Clicking the checkboxes will toggle on/off the individual metro stations on each colored line.  A numbered icon indicates there is more than one metro station in that area and they have been consolidated - click the number or zoom in to see more.
 
 ## Summary
-TBD
+In this lab we deployed a sample application using source to image.  This process built our code and wrapped that in a Docker image.  It then deployed the image into our Open Shift platform in a pod and exposed a route to allow outside web traffic to access our application.  In the next lab we will look at some details of this app's deployment and make some changes to see how Open Shift can help to automate our development processes.
 
 [1]: https://docs.openshift.com/enterprise/latest/dev_guide/new_app.html
