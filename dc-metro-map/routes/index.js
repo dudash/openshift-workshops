@@ -5,8 +5,8 @@ var rest = require('restler');
 //-----------------------------------------------------------------------------
 // CONSTANTS AND HELPERS
 //-----------------------------------------------------------------------------
-var API_KEY_PLACEHOLDER = 'XXXXXXX';  // REMOVE THIS KEY BEFORE COMMIT TO GITHUB
-
+var API_KEY_PLACEHOLDER = process.env.WMATA_API_KEY || '44e1abafef1145eebc44b74164f4125d';
+console.log("using WMATA API Key - " + API_KEY_PLACEHOLDER);
 // var DCBEER = {
 //     type: "FeatureCollection",
 //     features: [{
