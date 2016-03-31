@@ -170,7 +170,7 @@ $ oc get routes
 {% endhighlight %}
 
 <blockquote>
-Copy the HOST/PORT and paste into your favorite webbrowser
+Copy the HOST/PORT and paste into your favorite web browser
 </blockquote>
 
       </div>

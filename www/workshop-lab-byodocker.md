@@ -124,7 +124,7 @@ $ oc expose service guestbook
   </div>
 </div>
 
-
+<i class="fa fa-info-circle"></i> You can also create secured HTTPS routes, but that's an advanced topic for a later lab
 
 ### Test out the guestbook webapp
 Notice that in the web console overview, you now have a URL in the service box.  There is no database setup, but you can see the webapp running by clicking the route you just exposed.

@@ -15,9 +15,11 @@ html_title: Workshops
 
 ### [Lab: Developing and Managing Your Application](workshop-lab-devmanage.html)
 
+### [Lab: Labels and Annotations](workshop-lab-labels.html)
+
 ### [Lab: Blue | Green Deployment](workshop-lab-bluegreen.html)
 
-### [Lab: Rolling Deployments and Rollbacks](workshop-lab-rollbacks.html)
+### [Lab: Rolling Deployments, Webhooks, and Rollbacks](workshop-lab-rollbacks.html)
 
 ### [Lab: CI | CD Pipelines](workshop-lab-cicd.html)
 
