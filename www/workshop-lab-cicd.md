@@ -7,16 +7,16 @@ categories: [lab, developers, ops]
 ---
 
 ## Overview
-TBD
+Coming soon...
 
 ### Webhooks
-TBD
+Coming soon...
 
 ### Using an Existing CI, Jenkins
-TBD
+Coming soon...
 
 ### Notifications - Slack / Hipchat
-TBD
+Coming soon...
 
 ## Summary
-TBD
+Coming soon...

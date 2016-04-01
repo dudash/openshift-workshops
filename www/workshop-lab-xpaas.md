@@ -6,4 +6,8 @@ html_title: xPaaS
 categories: [lab, developers, xpaas, developers]
 ---
 
-## Coming Soon...
+## xPaaS on Open Shift
+Coming soon...
+
+## Summary
+Coming soon...
