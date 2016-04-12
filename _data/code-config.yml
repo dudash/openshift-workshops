@@ -1,0 +1,14 @@
+workshop-language: nodejs
+github: dudash
+examples-branch: master
+examples-contextdir: dc-metro-map
+
+# workshop-language: ruby
+# github: dudash
+# examples-branch: master
+# examples-contextdir: dc-metro-map-ruby
+
+# workshop-language: java
+# github: dudash
+# examples-branch: master
+# examples-contextdir: dc-metro-map-java

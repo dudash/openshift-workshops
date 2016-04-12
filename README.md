@@ -40,6 +40,9 @@ We can still use GitHub Pages to publish the site, but we need to convert the si
 
 When we publish to another host, this shouldn't be an issue.
 
+### Configuring Example Code
+The _data/code-config.yml file should be setup to select the proper github code and examples to populate the labs.  Please add variables there (and use in your lab.md files) as needed to ensure changing the "workshop-language" changes the lab code.
+
 
 [1]: http://jekyllrb.com/
 [2]: https://jekyllrb.com/docs/plugins/

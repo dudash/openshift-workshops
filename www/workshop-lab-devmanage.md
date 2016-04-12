@@ -211,6 +211,12 @@ TBD
 
 ### What about passwords and private API keys?
 TBD - SECRETS
+oc secrets new NAME
+oc get secrets
+oc get bc
+oc edit bc/dc-metro-map -o yaml
+More about secrets https://docs.openshift.com/enterprise/3.1/dev_guide/secrets.html
+
 
 ### Getting into a pod
 We set some environment variables and secrets, let's jump onto our pod to inspect them.  TBD.
