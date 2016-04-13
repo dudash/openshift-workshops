@@ -3,7 +3,7 @@
 ## What is this?
 A simple example of a node.js + mapbox web application configured to run on Red Hat's OpenShift.
 
-![Screenshot](./.screens/2015-03-18_1210.png?raw=true)
+![Screenshot](./.screens/2016-03-30_2135.png?raw=true)
 
 ## How can I run this?
 This app is configured to be deployed and managed via OpenShift.  Which means all you'll need to do is click a few buttons and specify some settings.
