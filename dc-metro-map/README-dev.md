@@ -8,6 +8,9 @@ My developer access token is included in this application - feel free to use it,
 ### WMATA
 The real-time bus locations feature requires an API key.  You should signup to get an API key for [WMATA developers here][1].  Using this key, update the routes/index.js file or use the WMATA_API_KEY environment variable.
 
+WARNING: WMAAT changes their public key from time to time, make sure what you are using is the latest at:
+[https://developer.wmata.com/demokey][3]
+
 You can see the results of a full query in the file exampledata.json
 
 
@@ -16,3 +19,4 @@ Thanks for reading!
 
 [1]: https://developer.wmata.com/developer
 [2]: https://www.mapbox.com/help/rotate-access-token/
+[3]: https://developer.wmata.com/demokey

@@ -5,7 +5,7 @@ var rest = require('restler');
 //-----------------------------------------------------------------------------
 // CONSTANTS AND HELPERS
 //-----------------------------------------------------------------------------
-var API_KEY_PLACEHOLDER = process.env.WMATA_API_KEY || '44e1abafef1145eebc44b74164f4125d';
+var API_KEY_PLACEHOLDER = process.env.WMATA_API_KEY || '6b700f7ea9db408e9745c207da7ca827';
 console.log("using WMATA API Key - " + API_KEY_PLACEHOLDER);
 // var DCBEER = {
 //     type: "FeatureCollection",
