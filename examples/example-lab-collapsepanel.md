@@ -123,3 +123,40 @@ Something else in group C
     </div>
   </div>
 </div>
+
+
+
+<div class="panel-group" id="accordionD" role="tablist" aria-multiselectable="true">
+  <div class="panel panel-default">
+    <div class="panel-heading" role="tab" id="headingDOne">
+      <div class="panel-title">
+        <a role="button" data-toggle="collapse" data-parent="#accordionD" href="#collapseDOne" aria-expanded="true" aria-controls="collapseDOne">
+          CLI Steps
+        </a>
+      </div>
+    </div>
+    <div id="collapseDOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingDOne">
+      <div class="panel-body">
+
+Something in group D
+
+      </div>
+    </div>
+  </div>
+  <div class="panel panel-default">
+    <div class="panel-heading" role="tab" id="headingDTwo">
+      <div class="panel-title">
+        <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordionD" href="#collapseDTwo" aria-expanded="false" aria-controls="collapseDTwo">
+          Web Console Steps
+        </a>
+      </div>
+    </div>
+    <div id="collapseDTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingDTwo">
+      <div class="panel-body">
+
+Something else in group D
+
+      </div>
+    </div>
+  </div>
+</div>

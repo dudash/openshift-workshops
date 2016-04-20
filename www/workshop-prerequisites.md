@@ -6,13 +6,21 @@ html_title: Prerequisites
 categories: [developers, developers]
 ---
 
+### If we provided you a laptop for this workshop
+We already set all this up for you - so you can skip everything below.
+
+
 ### Install the command line tools for your operating system
 The officially supported instructions for installing the oc client via Red Hat are [located here][1].  
 
-TL;DR (using the GitHub released versions):
+TL;DR:
 
-* Download [from here][2] and add to your PATH
-* Or if you're on a Mac use [brew][3]: 'brew install openshift-cli'
+* Download a .tgz [from Red Hat][5] and add to your PATH
+
+For the unsupported community version:
+
+* Download a .tgz [from github][2] and add to your PATH
+* Mac users can [brew][3]: 'brew install openshift-cli'
 
 
 ### Install git 
@@ -23,3 +31,4 @@ We will use a few git commands directly in some of the advanced labs.  Please ma
 [2]: https://github.com/openshift/origin/releases
 [3]: http://brew.sh/
 [4]: http://git-scm.com/downloads
+[5]: https://access.redhat.com/downloads/content/290

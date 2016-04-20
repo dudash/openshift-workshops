@@ -15,21 +15,28 @@ html_title: Workshops
 
 ### [Lab: Developing and Managing Your Application](workshop-lab-devmanage.html)
 
-### [Lab: Labels and Annotations](workshop-lab-labels.html)
-
-### [Lab: Rolling Deployments, Webhooks, and Rollbacks](workshop-lab-rollbacks.html)
+### [Lab: Webhooks and Rollbacks](workshop-lab-rollbacks.html)
 
 ### [Lab: CI | CD Pipelines](workshop-lab-cicd.html)
 
-### [Lab: Blue | Green Deployment](workshop-lab-bluegreen.html)
+### [Lab: Replication and Recovery](workshop-lab-replicationrecovery.html)
 
 <!--
 
+### [Lab: Keep it Secret, Keep it Safe](workshop-secrets.html)
+
+### [Lab: Working with Storage](workshop-lab-storage.html)
+
+### [Lab: Labels and Annotations](workshop-lab-labels.html)
+
+### [Lab: Blue | Green Deployment](workshop-lab-bluegreen.html)
+
 ### [Lab: xPaaS on OpenShift](workshop-lab-xpaas.html)
 
-### [Lab: Working with Persistent Storage](workshop-lab-storage.html)
+### [Lab: Operations](workshop-lab-ops.html)
 
--->
+### [Lab: Operations](workshop-lab-nodeselectors.html)
 
 ### [Homework](workshop-homework.html)
 
+-->
