@@ -6,7 +6,12 @@ var rest = require('restler');
 // CONSTANTS AND HELPERS
 //-----------------------------------------------------------------------------
 var API_KEY_PLACEHOLDER = process.env.WMATA_API_KEY || '6b700f7ea9db408e9745c207da7ca827';
+var BEERME = process.env.BEERME || false;
+var RAINBOW = process.env.RAINBOW || false;
 console.log("using WMATA API Key - " + API_KEY_PLACEHOLDER);
+if (BEERME == 'true') { console.log("Beer Me! "); }
+if (RAINBOW == 'true') { console.log("Rainbows! "); }
+
 // var DCBEER = {
 //     type: "FeatureCollection",
 //     features: [{
@@ -28,7 +33,12 @@ console.log("using WMATA API Key - " + API_KEY_PLACEHOLDER);
 //-----------------------------------------------------------------------------
 function wmataJsonToGeoJson(jsonData) {
   var dataOut = { type: "FeatureCollection", features: [] };
+  var markerSym = "bus";
+  var markerColor = "#000000";
+  if (BEERME == 'true') { markerSym = "beer"; }
+
   jsonData.BusPositions.forEach(function(item, index) {
+    if (RAINBOW == 'true') { markerColor = '#'+(Math.random()*0xFFFFFF<<0).toString(16); }
     dataOut.features.push({type:"Feature",
         geometry: {
             type: "Point",
@@ -38,8 +48,8 @@ function wmataJsonToGeoJson(jsonData) {
             title: "Bus #" + item['VehicleID'],
             description: item['TripHeadsign'],
             'marker-size': "small",
-            "marker-color": "#000000",
-            "marker-symbol": "bus",
+            "marker-color": markerColor,
+            "marker-symbol": markerSym,
         }
     });
   });
@@ -49,7 +59,7 @@ function wmataJsonToGeoJson(jsonData) {
 //-----------------------------------------------------------------------------
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  res.render('dcmetro', { title: 'DC Metro Stations' });
+  res.render('dcmetro', { title: 'DC Metro Stations', BEERME: BEERME });
 });
 
 //-----------------------------------------------------------------------------

@@ -13,6 +13,8 @@ WARNING: WMAAT changes their public key from time to time, make sure what you ar
 
 You can see the results of a full query in the file exampledata.json
 
+### Environment Variables
+You can have some fun by setting a couple different environment variables.  Try BEERME=true and/or RAINBOW=true.
 
 Thanks for reading!
 - Dudash
