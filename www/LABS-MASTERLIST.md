@@ -26,37 +26,37 @@ Covers the Source to Image capability of Open Shift
 Covers basic developer focused tasks to manage an app in your Open Shift development environment
 
 ## workshop-lab-secrets.md
-Covers developer usage of secrets to hide sensitive information and make it available to your containers
+Covers developer usage of secrets to hide sensitive information and make it available to your containers - Coming soon.
 
 ## workshop-lab-rollbacks.md
-Covers how to setup webhooks and perform rollbacks
+Covers how to setup webhooks and perform rollbacks - Coming soon.
 
 ## workshop-lab-cicd.md
-Covers integration with some example CI/CD tools and walks through an example use case
+Covers integration with some example CI/CD tools and walks through an example use case - Coming soon.
 
 ## workshop-lab-replicationrecovery.md
-Covers replication of pods and the recovery features Open Shift provides
+Covers replication of pods and the recovery features Open Shift provides - Coming soon.
 
 ## workshop-lab-labels.md
-Covers the topic of labels within Open Shift and when/how to use them
+Covers the topic of labels within Open Shift and when/how to use them - Coming soon.
 
 ## workshop-lab-storage.md
-Covers hooking up a database in your Open Shift environment 
+Covers hooking up a database in your Open Shift environment  - Coming soon.
 
 ## workshop-lab-bluegreen.md
-Covers the DevOps concept of Blue/Green deployments
+Covers the DevOps concept of Blue/Green deployments - Coming soon.
 
 ## workshop-lab-xpaas.md
-Covers using other JBOSS products within OpenShift 
+Covers using other JBOSS products within OpenShift - Coming soon.
 
 ## workshop-lab-autoscalingapps.md
-Covers how to setup autoscaling in OpenShift
+Covers how to setup autoscaling in OpenShift - Coming soon.
 
 ## workshop-lab-ops.md
-Covers some ops/administrative focused tasks to manage a procuction Open Shift environment
+Covers some ops/administrative focused tasks to manage a procuction Open Shift environment - Coming soon.
 
 ## workshop-lab-nodeselectors.md
-Covers ops/administrative focused node selectors to place pods and define policy
+Covers ops/administrative focused node selectors to place pods and define policy - Coming soon.
 
 ## workshop-lab-homework.md
-Presents some take home exercises for attendees to keep their learning going
+Presents some take home exercises for attendees to keep their learning going - Coming soon.

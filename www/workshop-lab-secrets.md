@@ -17,10 +17,10 @@ More about secrets [https://docs.openshift.com/enterprise/3.1/dev_guide/secrets.
 
 
 ### Secret Keys
-TBD
+TBD github setup
 
 ### File Secret Volumes
-TBD
+TBD mount key files and expose as volumes
 
 ### Summary
 TBD

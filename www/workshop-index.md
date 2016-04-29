@@ -17,13 +17,13 @@ html_title: Workshops
 
 ### [Lab: Webhooks and Rollbacks](workshop-lab-rollbacks.html)
 
-### [Lab: CI | CD Pipelines](workshop-lab-cicd.html)
-
 ### [Lab: Replication and Recovery](workshop-lab-replicationrecovery.html)
 
 <!--
 
 ### [Lab: Keep it Secret, Keep it Safe](workshop-secrets.html)
+
+### [Lab: CI | CD Pipelines](workshop-lab-cicd.html)
 
 ### [Lab: Working with Storage](workshop-lab-storage.html)
 

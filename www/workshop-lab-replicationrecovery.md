@@ -25,9 +25,5 @@ Additionally, Open Shift will pay attention to the health of your application ..
 TBD
 
 
-### (Advanced/Optional) Rolling Deployments
-TBD
-
-
 ## Summary
 TBD
