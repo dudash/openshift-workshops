@@ -1,7 +1,7 @@
 ---
 layout: lab
 title: Developing and Managing Your Application
-subtitle: 
+subtitle: This will come in handy
 html_title: App Development
 categories: [lab, developers]
 ---

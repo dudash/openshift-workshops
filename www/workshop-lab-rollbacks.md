@@ -1,12 +1,12 @@
 ---
 layout: lab
 title: Webhooks and Rollbacks
-subtitle: 
+subtitle: A bit more automation can't hurt
 html_title: Webhooks and Rollbacks
 categories: [lab, developers, ops, rollback]
 ---
 
-### Build Triggers, Webhooks and Rollbacks - Oh My!
+## Build Triggers, Webhooks and Rollbacks - Oh My!
 Once you have an app deployed in Open Shift you can take advantage of some continuous capabilities that help to enable DevOps and automate your management process.  We will cover some of those in this lab: Build triggers, webhooks, and rollbacks.
 
 
@@ -254,6 +254,7 @@ Open Shift has done a graceful removal of the old pod and created a new one.
 
 <i class="fa fa-info-circle"></i> The old pod wasn't killed until the new pod was successfully started and ready to be used.  This is so that Open Shift could continue to route traffic to the old pod until the new one was ready.
 
+<i class="fa fa-info-circle"></i> You can integrate your CI/CD tools to do [rollbacks with the REST API][5].
 
 ## Summary
 In this lab we saw how you can configure a source code repository to trigger builds with webhooks.  This webhook could come from Github, Jenkins, Travis-CI, or any tool capable of sending a URL POST.  Keep in mind that there are other types of build triggers you can setup.  For example: if a new version of the upstream RHEL image changes.  We also inspected our deployment history and did a rollback of our running deployment to one based on an older image.
@@ -263,3 +264,4 @@ In this lab we saw how you can configure a source code repository to trigger bui
 [2]: https://docs.openshift.com/enterprise/3.1/dev_guide/deployments.html#triggers
 [3]: https://github.com/join?source=header-home
 [4]: https://github.com/dudash/openshift-workshops/
+[5]: https://docs.openshift.com/enterprise/latest/rest_api/openshift_v1.html#create-a-deploymentconfigrollback-2

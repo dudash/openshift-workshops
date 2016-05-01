@@ -31,17 +31,17 @@ Covers developer usage of secrets to hide sensitive information and make it avai
 ## workshop-lab-rollbacks.md
 Covers how to setup webhooks and perform rollbacks - Coming soon.
 
-## workshop-lab-cicd.md
-Covers integration with some example CI/CD tools and walks through an example use case - Coming soon.
-
-## workshop-lab-replicationrecovery.md
-Covers replication of pods and the recovery features Open Shift provides - Coming soon.
-
 ## workshop-lab-labels.md
 Covers the topic of labels within Open Shift and when/how to use them - Coming soon.
 
 ## workshop-lab-storage.md
 Covers hooking up a database in your Open Shift environment  - Coming soon.
+
+## workshop-lab-replicationrecovery.md
+Covers replication of pods and the recovery features Open Shift provides - Coming soon.
+
+## workshop-lab-cicd.md
+Covers integration with some example CI/CD tools and walks through an example use case - Coming soon.
 
 ## workshop-lab-bluegreen.md
 Covers the DevOps concept of Blue/Green deployments - Coming soon.

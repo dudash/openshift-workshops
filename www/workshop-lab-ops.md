@@ -15,13 +15,13 @@ This lab walks you through some basic functionality that you might perform when 
 ### Metrics
 As an administrator, you can view a cluster’s metrics from all containers and components in one user interface.  Let's take a look at that:
 
-TBD
+Coming soon...
 
 
 ### Checking on your cluster nodes and the master
 As an administrator you can view the health of the nodes in your cluster and look into events that occured within Open Shift.  Let's take a look at that:
 
-TBD
+Coming soon...
 
 <blockquote>
 <i class="fa fa-terminal"></i> Try the following:
@@ -37,7 +37,7 @@ $ oc get events
 ### Compute Resources
 Each container running on a node consumes compute resources.  When authoring your pod, you can optionally specify how much CPU and memory (RAM) each container needs in order to better schedule pods in the cluster and ensure satisfactory performance.  We do that via a deployment configuration.  Let's see an example of that in action:
 
-TBD more on requests and limits
+Coming soon... more on requests and limits
 
 
 ### Quotas and Resources Limits
@@ -68,14 +68,14 @@ $ oc describe limits
 
 
 ### Inspect your configuration
-TBD
+Coming soon...
 
 * /etc/origin/node/master.yaml
 * /etc/origin/node/node-config.yaml
 
 
 ## Summary
-TBD
+Coming soon...
 
 [1]: https://docs.openshift.com/enterprise/latest/dev_guide/application_health.html
 [2]: https://docs.openshift.com/enterprise/latest/dev_guide/deployments.html

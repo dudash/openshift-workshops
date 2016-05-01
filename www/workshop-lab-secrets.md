@@ -7,7 +7,7 @@ categories: [lab, developers]
 ---
 
 ## Keep it Secret, Keep it Safe
-TBD - SECRETS
+Coming soon...
 
 oc secrets new NAME
 oc get secrets
@@ -17,12 +17,15 @@ More about secrets [https://docs.openshift.com/enterprise/3.1/dev_guide/secrets.
 
 
 ### Secret Keys
+Coming soon...
 TBD github setup
 
 ### File Secret Volumes
+Coming soon...
 TBD mount key files and expose as volumes
 
-### Summary
+## Summary
+Coming soon...
 TBD
 
 [1]: https://docs.openshift.com/enterprise/3.1/dev_guide/secrets.html

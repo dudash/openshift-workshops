@@ -19,6 +19,8 @@ html_title: Workshops
 
 ### [Lab: Replication and Recovery](workshop-lab-replicationrecovery.html)
 
+### [Lab: Labels](workshop-lab-labels.html)
+
 <!--
 
 ### [Lab: Keep it Secret, Keep it Safe](workshop-secrets.html)
@@ -26,8 +28,6 @@ html_title: Workshops
 ### [Lab: CI | CD Pipelines](workshop-lab-cicd.html)
 
 ### [Lab: Working with Storage](workshop-lab-storage.html)
-
-### [Lab: Labels and Annotations](workshop-lab-labels.html)
 
 ### [Lab: Blue | Green Deployment](workshop-lab-bluegreen.html)
 
