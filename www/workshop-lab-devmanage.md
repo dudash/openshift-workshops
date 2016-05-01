@@ -265,7 +265,7 @@ Click the "dc-metro-map" deployment config
 There are a lot of details here, feel free to check them out and ask questions, but we are here to set some new environment variables.  
 
 <blockquote>
-Click the vertically stacked "..." button in the top right (next to the deploy button).
+Click the vertically stacked "..." button in the top right to edit this config (next to the deploy button).
 </blockquote>
 <p><img src="{{ site.baseurl }}/www/screenshots/ose-lab-devman-deployconfigdetails.png" width="500"/></p>
 This opens up an edit window with the yaml data for this deployment config.  Scroll down to the section spec->template->spec->containers and:

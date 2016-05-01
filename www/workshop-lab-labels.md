@@ -98,7 +98,7 @@ Your updated label will show up in the pod's list.
 </div>
 
 ## Summary
-That's it for this lab, now you know that all the objects in Open Shift can be labeled.  This is important because those labels can be used as part of your CI/CD process.  We will see some examples of using labels for Blue/Green deployments and running apps on specific nodes in future labs.  You can read more about labels [here][1] and [here][2].
+That's it for this lab, now you know that all the objects in Open Shift can be labeled.  This is important because those labels can be used as part of your CI/CD process.  Future labs will cover using labels for Blue/Green deployments and running yours apps on specific nodes (e.g. just on SSD nodes or just on east coast nodes).  You can read more about labels [here][1] and [here][2].
 
 [1]: https://docs.openshift.com/enterprise/latest/architecture/core_concepts/pods_and_services.html#labels
 [2]: http://kubernetes.io/docs/user-guide/labels/
