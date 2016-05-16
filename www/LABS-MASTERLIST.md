@@ -38,7 +38,13 @@ Covers the topic of labels within Open Shift and when/how to use them
 Covers developer usage of secrets to hide sensitive information and make it available to your containers - Coming soon.
 
 ## workshop-lab-storage.md
-Covers hooking up a database in your Open Shift environment  - Coming soon.
+Covers hooking up a database in your Open Shift environment - Coming soon.
+
+## workshop-lab-templates.md
+Covers creating and using templates - Coming soon.
+
+## workshop-lab-advanceddev.md
+Covers advanced developer focused tasks (including oc port-forward) - Coming soon.
 
 ## workshop-lab-cicd.md
 Covers integration with some example CI/CD tools and walks through an example use case - Coming soon.
@@ -51,6 +57,9 @@ Covers using other JBOSS products within OpenShift - Coming soon.
 
 ## workshop-lab-autoscalingapps.md
 Covers how to setup autoscaling in OpenShift - Coming soon.
+
+## workshop-lab-customs2i.md
+Covers how to create and install custom S2I builders - Coming soon.
 
 ## workshop-lab-ops.md
 Covers some ops/administrative focused tasks to manage a procuction Open Shift environment - Coming soon.

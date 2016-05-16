@@ -1,31 +1,31 @@
 ---
 layout: lab
 title: Secrets
-subtitle: 
+subtitle: Shhhhh...
 html_title: Secrets
 categories: [lab, developers]
 ---
 
 ## Keep it Secret, Keep it Safe
+Secrets are...  In this lab we will go through a couple common uses of secrets.
+
+
+### Setup a secret access key for enterprise github access
 Coming soon...
 
 oc secrets new NAME
 oc get secrets
 oc get bc
 oc edit bc/dc-metro-map -o yaml
-More about secrets [https://docs.openshift.com/enterprise/3.1/dev_guide/secrets.html][1].
 
 
-### Secret Keys
+### Add private files as secrets and give a pod access to the secret files
 Coming soon...
-TBD github setup
+TBD mount key files and expose as volumes in a deployment config
 
-### File Secret Volumes
-Coming soon...
-TBD mount key files and expose as volumes
 
 ## Summary
 Coming soon...
 TBD
 
-[1]: https://docs.openshift.com/enterprise/3.1/dev_guide/secrets.html
+[1]: https://docs.openshift.com/enterprise/latest/dev_guide/secrets.html

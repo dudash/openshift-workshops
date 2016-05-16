@@ -164,23 +164,23 @@ In addition to the health of your application's pods, Open Shift will watch the 
 </blockquote>
 {% highlight csh %}
 $ oc get pods
-$ oc exec pod/PODNAME -it /bin/bash
+$ oc exec PODNAME -it /bin/bash
 {% endhighlight %}
 
 You are now executing a bash shell running in the container of the pod.  Let's kill our webapp and see what happens.
 <br/><i class="fa fa-info-circle"></i> If we had multiple containers in the pod we could use "-c CONTAINER_NAME" to select the right one
 <br/><br/>
 <blockquote>
-<i class="fa fa-terminal"></i> Choose a running pod and shell into it:
+<i class="fa fa-terminal"></i> Choose a running pod and shell into its container:
 </blockquote>
 {% highlight csh %}
-$ pkill -9 
+$ pkill -9 node
 {% endhighlight %}
 
-This will kick you out of the pod.
+This will kick you out off the container.
 <br/><br/>
 <blockquote>
-<i class="fa fa-terminal"></i> Do it again - shell in and kill node.js
+<i class="fa fa-terminal"></i> Do it again - shell in and execute the same command to kill node
 </blockquote>
 
 <blockquote>
