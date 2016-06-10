@@ -17,7 +17,7 @@ $ oc new-app kubernetes/guestbook
 {% endhighlight %}
 
 
-The output will show:
+The output should show something *similar* to below:
 
 {% highlight csh %}
 --> Found Docker image a49fe18 (17 months old) from Docker Hub for "kubernetes/guestbook"

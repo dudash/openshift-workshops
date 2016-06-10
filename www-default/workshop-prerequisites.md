@@ -6,9 +6,6 @@ html_title: Prerequisites
 categories: [developers, developers]
 ---
 
-### Create a Github account
-Create a FREE github account by going [to this link][6] and following their instructions.
-
 
 ### If we provided you a laptop for this workshop
 We already set all this up for you - so you can skip everything below.
@@ -30,6 +27,8 @@ For the unsupported community version:
 ### Install git 
 We will use a few git commands directly in some of the advanced labs.  Please make sure git is installed on your system.  You can download the [latest version here][4].
 
+### Create a Github account
+Create a FREE github account by going [to this link][6] and following their instructions.
 
 
 [1]: https://docs.openshift.com/enterprise/latest/cli_reference/get_started_cli.html

@@ -1,14 +1,18 @@
 workshop-language: nodejs
+workshop-dir: www-default
 github: dudash
 examples-branch: master
-examples-contextdir: dc-metro-map
+examples-contextdir-dcmetro: dc-metro-map
+examples-contextdir-microservices: microservices
 
 # workshop-language: ruby
 # github: dudash
 # examples-branch: master
-# examples-contextdir: dc-metro-map-ruby
+# examples-contextdir-dcmetro: dc-metro-map-ruby
+# examples-contextdir-microservices: microservices-ruby
 
 # workshop-language: java
 # github: dudash
 # examples-branch: master
-# examples-contextdir: dc-metro-map-java
+# examples-contextdir-dcmetro: dc-metro-map-java
+# examples-contextdir-microservices: microservices-java

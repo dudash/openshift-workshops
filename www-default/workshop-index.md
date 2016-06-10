@@ -21,6 +21,8 @@ html_title: Workshops
 
 ### [Lab: Labels](workshop-lab-labels.html)
 
+### [Fin.](workshop-finally.html)
+
 <!--
 
 ### [Lab: Working with Storage](workshop-lab-storage.html)
