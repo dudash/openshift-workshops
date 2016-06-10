@@ -9,18 +9,10 @@ categories: [lab, developers, ops, rollback]
 ## Build Triggers, Webhooks and Rollbacks - Oh My!
 Once you have an app deployed in Open Shift you can take advantage of some continuous capabilities that help to enable DevOps and automate your management process.  We will cover some of those in this lab: Build triggers, webhooks, and rollbacks.
 
+### Setup
+From the previous lab you should have the web app running in Open Shift.  
 
-### A bit of configuration
-We are going to do some integration and coding with an external git repository.  For this lab we are going to use github, if you don't already have an account, [you can create one here][3].
-
-OK, let's fork the dc-metro-map app from **my** account into **your** github account.  Goto [https://github.com/dudash/openshift-workshops/][4] and look to the top right for the "Fork" button.
-
-<p><img src="{{ site.baseurl }}/www/screenshots/ose-lab-rollbacks-fork.png" width="400"/></p>
-
-> Click the "Fork" button
-
-Github should redirect you to the newly created fork of the source code.
-
+<i class="fa fa-warning"></i> **Only if you don't already have it running already, go back and complete the s2i lab.**
 
 ### Build Trigger / Code Change Webhook
 When using S2I there are a few different things that can be used to [trigger][1] a rebuild of your source code.  The first is a configuration change, the second is an image change, and the last (which we are covering here) is a webhook.  A webhook is basically your git source code repository telling Open Shift that the code we care about has changed.  Let's set that up for our project now to see it in action.
@@ -103,18 +95,18 @@ Copy the Generic webhook to the clipboard
 Hover over "Browse" and then click on "Builds"
 </blockquote>
 This is going to show basic details for all build configurations in this project
-<p><img src="{{ site.baseurl }}/www/screenshots/ose-lab-rollbacks-buildconfigs.png" width="500"/></p>
+<p><img src="{{ site.baseurl }}/{{ site.workshop-dir }}/screenshots/ose-lab-rollbacks-buildconfigs.png" width="500"/></p>
 
 <blockquote>
 Click the "dc-metro-map" build config
 </blockquote>
 You will see the summary of builds using this build config
-<p><img src="{{ site.baseurl }}/www/screenshots/ose-lab-rollbacks-buildconfigsummary.png" width="500"/></p>
+<p><img src="{{ site.baseurl }}/{{ site.workshop-dir }}/screenshots/ose-lab-rollbacks-buildconfigsummary.png" width="500"/></p>
 
 <blockquote>
 Click the "Configuration" tab (next to the active Summary tab)
 </blockquote>
-<p><img src="{{ site.baseurl }}/www/screenshots/ose-lab-devman-deployconfigconfig.png" width="500"/></p>
+<p><img src="{{ site.baseurl }}/{{ site.workshop-dir }}/screenshots/ose-lab-devman-deployconfigconfig.png" width="500"/></p>
 Now you can see the various configuration details including the Github specific and Generic webhook URLs.
 
 <blockquote>
@@ -144,7 +136,7 @@ Copy the Generic webhook to the clipboard
 
 Let's put the webhook URL into the repository. At the main page for this repository (the fork), you should see a tab bar with code, pull requests, pulse, graphs, and settings.
 
-<p><img src="{{ site.baseurl }}/www/screenshots/ose-lab-rollbacks-settings.png" width="400"/></p>
+<p><img src="{{ site.baseurl }}/{{ site.workshop-dir }}/screenshots/ose-lab-rollbacks-settings.png" width="400"/></p>
 
 <blockquote>
 Click the "Settings" tab
@@ -155,7 +147,7 @@ Now you will see a vertical list of settings groups.<br/><br/>
 <blockquote>
 Click the "Webhooks & services" item
 </blockquote>
-<p><img src="{{ site.baseurl }}/www/screenshots/ose-lab-rollbacks-githubwebhooks.png" width="600"/></p>
+<p><img src="{{ site.baseurl }}/{{ site.workshop-dir }}/screenshots/ose-lab-rollbacks-githubwebhooks.png" width="600"/></p>
 
 <blockquote>
 Click the "Add webhook" button
@@ -168,7 +160,7 @@ Disable SSL verification by clicking the button
 </blockquote>
 <i class="fa fa-info-circle"></i> You can learn how to setup SSH in the secrets lab<br/><br/>
 
-<p><img src="{{ site.baseurl }}/www/screenshots/ose-lab-rollbacks-githubwebhooks-add.png" width="600"/></p>
+<p><img src="{{ site.baseurl }}/{{ site.workshop-dir }}/screenshots/ose-lab-rollbacks-githubwebhooks-add.png" width="600"/></p>
 
 <blockquote>
 Click the button to "Add webhook"
@@ -232,12 +224,12 @@ This is going to show basic details for all deployment configurations in this pr
 Click the "dc-metro-map" deployment config
 </blockquote>
 Toward the bottom of the screen you will see a table of deployments using this deployment config
-<p><img src="{{ site.baseurl }}/www/screenshots/ose-lab-rollbacks-deploymentconfigsummary.png" width="600"/></p>
+<p><img src="{{ site.baseurl }}/{{ site.workshop-dir }}/screenshots/ose-lab-rollbacks-deploymentconfigsummary.png" width="600"/></p>
 
 <blockquote>
 In the Deployments table click the #1
 </blockquote>
-<p><img src="{{ site.baseurl }}/www/screenshots/ose-lab-rollbacks-deploymentconfig1.png" width="500"/></p>
+<p><img src="{{ site.baseurl }}/{{ site.workshop-dir }}/screenshots/ose-lab-rollbacks-deploymentconfig1.png" width="500"/></p>
 
 <blockquote>
 Click the "Rollback button", accept defaults, and click "Rollback" again

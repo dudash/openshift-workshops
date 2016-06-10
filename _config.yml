@@ -1,2 +1,3 @@
 baseurl: /openshift-workshops
+workshop-dir: www-offline
 exclude: [README.md, package.json, grunt.js, Gruntfile.js, Gruntfile.coffee, node_modules, LABS-MASTERLIST.md]

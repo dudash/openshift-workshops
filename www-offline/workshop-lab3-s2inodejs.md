@@ -28,8 +28,8 @@ We can do this either via the command line (CLI) or the web console.  You decide
 <i class="fa fa-terminal"></i> Goto the terminal and type the following:
 </blockquote>
 {% highlight csh %}
-$ oc new-app --name=dc-metro-map https://github.com/dudash/openshift-workshops.git --context-dir=dc-metro-map
-$ oc expose service dc-metro-map
+$ oc new-app --name=webapp http://openshift.example.com:3000/demo/openshiftexamples-nodemongo.git#offline
+$ oc expose service webapp
 {% endhighlight %}
 
 <i class="fa fa-info-circle"></i> Open Shift auotmatically detected the source code type and selected the nodejs builder image
@@ -51,25 +51,31 @@ $ oc expose service dc-metro-map
 <blockquote>
 Click "Add to Project"
 </blockquote>
-<p><img src="{{ site.baseurl }}/www/screenshots/ose-lab-s2i-addbutton.png" width="100"/></p>
+<p><img src="{{ site.baseurl }}/{{ site.workshop-dir }}/screenshots/oseoffline-lab-s2i-addbutton.png" width="100"/></p>
 
 <blockquote>
 Click "Browse" and filter for nodejs, then click the nodejs:0.10 builder image
 </blockquote>
-<p><img src="{{ site.baseurl }}/www/screenshots/ose-lab-s2i-filternode.png" width="600"/></p>
+<p><img src="{{ site.baseurl }}/{{ site.workshop-dir }}/screenshots/oseoffline-lab-s2i-filternode.png" width="600"/></p>
 
 <blockquote>
 Fill out the boxes to look as follows:
 </blockquote>
-<p><img src="{{ site.baseurl }}/www/screenshots/ose-lab-s2i-addtoproject.png" width="600"/></p>
+<p><img src="{{ site.baseurl }}/{{ site.workshop-dir }}/screenshots/oseoffline-lab-s2i-addtoproject.png" width="600"/></p>
 <p>
 Notes: You will need to click to expand the "advanced options"<br/>
-The github repository URL is: https://github.com/dudash/openshift-workshops.git<br/>
-The github context-dir is: /dc-metro-map<br/>
+Give it the name: webapp
+The github repository URL is: http://openshift.example.com:3000/demo/openshiftexamples-nodemongo.git<br/>
+The Git Reference needs to be set to: offline<br/>
 </p>
 
 <blockquote>
 Scroll to the bottom and click "Create"
+</blockquote>
+
+Open Shift will display a next steps page with details about what happened and what you can do next.  Read that, then:
+<blockquote>
+Click "Go to overview"
 </blockquote>
 
       </div>
@@ -127,20 +133,19 @@ The console will print out the full log for your build.  Note, you could pipe th
 <blockquote>
 Hover over Browse and then click on "Builds"
 </blockquote>
-<p><img src="{{ site.baseurl }}/www/screenshots/ose-lab-s2i-builds.png" width="300"/></p>
+<p><img src="{{ site.baseurl }}/{{ site.workshop-dir }}/screenshots/oseoffline-lab-s2i-builds.png" width="300"/></p>
 
 <blockquote>
-Click on the "dc-metro-map" link
+Click on the "webapp" link
 </blockquote>
-<p><img src="{{ site.baseurl }}/www/screenshots/ose-lab-s2i-metromapbuild.png" width="300"/></p>
+<p><img src="{{ site.baseurl }}/{{ site.workshop-dir }}/screenshots/oseoffline-lab-s2i-webappbuild.png" width="300"/></p>
 
 <blockquote>
 Click on the "View Log" tab to see the details of your latest build
 </blockquote>
-<p><img src="{{ site.baseurl }}/www/screenshots/ose-lab-s2i-metromapbuilds.png" width="500"/></p>
 
 You should see a log output similar to the one below:
-<p><img src="{{ site.baseurl }}/www/screenshots/ose-lab-s2i-metromapbuildlog.png" width="500"/></p>
+<p><img src="{{ site.baseurl }}/{{ site.workshop-dir }}/screenshots/oseoffline-lab-s2i-webappbuildlog.png" width="500"/></p>
 
       </div>
     </div>
@@ -190,12 +195,12 @@ Copy the HOST/PORT and paste into your favorite web browser
 <blockquote>
 Click on Overview
 </blockquote>
-<p><img src="{{ site.baseurl }}/www/screenshots/ose-lab-s2i-overview.png" width="100"/></p>
+<p><img src="{{ site.baseurl }}/{{ site.workshop-dir }}/screenshots/oseoffline-lab-s2i-overview.png" width="100"/></p>
 
 <blockquote>
-Click the URL that is listed in the dc-metro-map service
+Click the URL that is listed in the service
 </blockquote>
-<p><img src="{{ site.baseurl }}/www/screenshots/ose-lab-s2i-dcmetromapsvc.png" width="500"/></p>
+<p><img src="{{ site.baseurl }}/{{ site.workshop-dir }}/screenshots/oseoffline-lab-s2i-svc.png" width="300"/></p>
 
       </div>
     </div>
@@ -204,9 +209,9 @@ Click the URL that is listed in the dc-metro-map service
 
 The app should look like this in your web browser:
 
-<p><img src="{{ site.baseurl }}/www/screenshots/ose-lab-s2i-apprunning.png" width="500"/></p>
+<p><img src="{{ site.baseurl }}/{{ site.workshop-dir }}/screenshots/oseoffline-lab-s2i-apprunning.png" width="500"/></p>
 
-Clicking the checkboxes will toggle on/off the individual metro stations on each colored line.  A numbered icon indicates there is more than one metro station in that area and they have been consolidated - click the number or zoom in to see more.
+We haven't added a database yet, so the app will display a warning about that, don't worry, we will set that up in the next lab.
 
 ## Summary
 In this lab we deployed a sample application using source to image.  This process built our code and wrapped that in a Docker image.  It then deployed the image into our Open Shift platform in a pod and exposed a route to allow outside web traffic to access our application.  In the next lab we will look at some details of this app's deployment and make some changes to see how Open Shift can help to automate our development processes.

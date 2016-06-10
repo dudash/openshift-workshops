@@ -19,7 +19,7 @@ Shows attendees how to login and provides and overview of the web console and CL
 ## workshop-lab-byodocker.md
 Covers how to deploy exisiting docker images to Open Shift
 
-## workshop-lab-s2i.md
+## workshop-lab-s2inodejs.md
 Covers the Source to Image capability of Open Shift
 
 ## workshop-lab-devmanage.md

@@ -7,19 +7,19 @@ html_title: Workshops
 
 ### [Install Prerequisites](workshop-prerequisites.html)
 
-### [Lab: Login and a Tour of OpenShift Enterprise](workshop-lab-welcome.html)
+### [Lab: Login and a Tour of OpenShift Enterprise](workshop-lab1-welcome.html)
 
-### [Lab: BYO Docker](workshop-lab-byodocker.html)
+### [Lab: BYO Docker](workshop-lab2-byodocker.html)
 
-### [Lab: Deploying an App with S2I](workshop-lab-s2i.html)
+### [Lab: Deploying an App with S2I](workshop-lab3-s2inodejs.html)
 
-### [Lab: Developing and Managing Your Application](workshop-lab-devmanage.html)
+### [Lab: Developing and Managing Your Application](workshop-lab4-devmanage.html)
 
-### [Lab: Webhooks and Rollbacks](workshop-lab-rollbacks.html)
+### [Lab: Webhooks and Rollbacks](workshop-lab5-rollbacks.html)
 
-### [Lab: Replication and Recovery](workshop-lab-replicationrecovery.html)
+### [Lab: Replication and Recovery](workshop-lab6-replicationrecovery.html)
 
-### [Lab: Labels](workshop-lab-labels.html)
+### [Lab: Labels](workshop-lab7-labels.html)
 
 ### [Fin.](workshop-finally.html)
 

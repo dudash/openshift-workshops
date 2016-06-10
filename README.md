@@ -22,6 +22,11 @@ Do this first:
 In your preferred webbrowser open http://127.0.0.1:4000/
 
 ## Releasing
+### Choose your set of labs
+First update the index.html to point to the correct directory for the labs you want
+Second update the _config.yml to set the workshop-dir to that directory as well
+In the future I'd like to set these as environment variables somehow that can be passed in on startup
+
 ### How to Release on the Internet
 For now this is simply: commit your local changes to this branch and 'git push' to github.  In the future when we move away from GitHub pages, this will be slightly more complex.
 

@@ -60,7 +60,7 @@ $ oc describe pods
 ### We can see those details using the web console too
 Let's look at the image stream.  Hover over "Browse", then click "Image Streams", and then click on the guestbook image stream.  You should see something similar to this:
 
-<img src="{{ site.baseurl }}/www/screenshots/ose-guestbook-is.png" width="600"/><br/>
+<img src="{{ site.baseurl }}/{{ site.workshop-dir }}/screenshots/ose-guestbook-is.png" width="600"/><br/>
 
 
 ### Does this guestbook do anything?
@@ -81,7 +81,7 @@ Good catch, your service is running but there is no way for users to access it y
 <blockquote>
 To expose via the web console, click on "Overview" to get to this view:
 </blockquote>
-<img src="{{ site.baseurl }}/www/screenshots/ose-guestbook-noroute.png" width="600"/><br/>
+<img src="{{ site.baseurl }}/{{ site.workshop-dir }}/screenshots/ose-guestbook-noroute.png" width="600"/><br/>
 
 <p>Notice there is no exposed route </p>
 
@@ -89,7 +89,7 @@ To expose via the web console, click on "Overview" to get to this view:
 Click on the "Create Route" link
 </blockquote>
 
-<img src="{{ site.baseurl }}/www/screenshots/ose-guestbook-createroute.png" width="600"/><br/>
+<img src="{{ site.baseurl }}/{{ site.workshop-dir }}/screenshots/ose-guestbook-createroute.png" width="600"/><br/>
 
 <p>This is where you could specify route parameters, but we will just use the defaults.</p>
 
@@ -133,7 +133,7 @@ Notice that in the web console overview, you now have a URL in the service box. 
 
 
 You should see:
-<img src="{{ site.baseurl }}/www/screenshots/ose-guestbook-app.png" width="600"/><br/>
+<img src="{{ site.baseurl }}/{{ site.workshop-dir }}/screenshots/ose-guestbook-app.png" width="600"/><br/>
 
 
 ### Good work, let's clean this up

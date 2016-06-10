@@ -1,5 +1,4 @@
 workshop-language: nodejs
-workshop-dir: www-default
 github: dudash
 examples-branch: master
 examples-contextdir-dcmetro: dc-metro-map
