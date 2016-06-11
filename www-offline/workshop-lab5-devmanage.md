@@ -361,7 +361,7 @@ Let's look for the environment variables we set:
 <blockquote>
 Inside the web page's terminal type: 'env | grep MONGO'
 </blockquote>
-That should return the **BEERME=true** matching the value that we set in the deployment config.
+That should return all the **MONGODB_XXX** variables matching the values that we set in the deployment config (and some additional ones that were set automatically).
 
       </div>
     </div>

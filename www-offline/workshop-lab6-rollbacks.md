@@ -57,18 +57,18 @@ Copy the Generic webhook to the clipboard
 Hover over "Browse" and then click on "Builds"
 </blockquote>
 This is going to show basic details for all build configurations in this project
-<p><img src="{{ site.baseurl }}/{{ site.workshop-dir }}/screenshots/ose-lab-rollbacks-buildconfigs.png" width="500"/></p>
+<p><img src="{{ site.baseurl }}/{{ site.workshop-dir }}/screenshots/oseoffline-lab-rollbacks-buildconfigs.png" width="500"/></p>
 
 <blockquote>
-Click the "dc-metro-map" build config
+Click the "webapp" build config
 </blockquote>
 You will see the summary of builds using this build config
-<p><img src="{{ site.baseurl }}/{{ site.workshop-dir }}/screenshots/ose-lab-rollbacks-buildconfigsummary.png" width="500"/></p>
+<p><img src="{{ site.baseurl }}/{{ site.workshop-dir }}/screenshots/oseoffline-lab-rollbacks-buildconfigsummary.png" width="500"/></p>
 
 <blockquote>
 Click the "Configuration" tab (next to the active Summary tab)
 </blockquote>
-<p><img src="{{ site.baseurl }}/{{ site.workshop-dir }}/screenshots/ose-lab-devman-deployconfigconfig.png" width="500"/></p>
+<p><img src="{{ site.baseurl }}/{{ site.workshop-dir }}/screenshots/oseoffline-lab-devman-deployconfigconfig.png" width="500"/></p>
 Now you can see the various configuration details including the Github specific and Generic webhook URLs.
 
 <blockquote>
@@ -88,20 +88,20 @@ Copy the Generic webhook to the clipboard
   <div class="panel panel-default">
     <div class="panel-heading" role="tab" id="headingCOne">
       <div class="panel-title">
-        <a role="button" data-toggle="collapse" data-parent="#accordionC" href="#collapseCOne" aria-expanded="false" aria-controls="collapseCOne">
-          Github Steps
+        <a role="button" data-toggle="collapse" data-parent="#accordionC" href="#collapseCOne" aria-expanded="true" aria-controls="collapseCOne">
+          Source Control Repo Steps
         </a>
       </div>
     </div>
-    <div id="collapseCOne" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingCOne">
+    <div id="collapseCOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingCOne">
       <div class="panel-body">
 
 Let's put the webhook URL into the repository. At the main page for this repository (the fork), you should see a tab bar with code, issues, commits, releases, wiki, and settings.
 
-<p><img src="{{ site.baseurl }}/{{ site.workshop-dir }}/screenshots/ose-lab-rollbacks-settings.png" width="400"/></p>
+<p><img src="{{ site.baseurl }}/{{ site.workshop-dir }}/screenshots/oseoffline-lab-rollbacks-gogsettings.png" width="400"/></p>
 
 <blockquote>
-Click the "Settings" tab
+Click the "Settings" button
 </blockquote>
 
 Now you will see a vertical list of settings groups.<br/><br/>
@@ -121,12 +121,25 @@ Paste in the URL you copied
 Click the button to "Add webhook"
 </blockquote>
 
+Good work!  Now any "push" to the forked repository will send a webhook that triggers Open Shift to: re-build the code and image using s2i, and then perform a new pod deployment.
+
+Let's test that out.  
+
+<blockquote>
+Select the webhook and click the "Test Delivery" button.
+</blockquote>
+<p><img src="{{ site.baseurl }}/{{ site.workshop-dir }}/screenshots/oseoffline-lab-rollbacks-testdelivery.png" width="400"/></p>
+
+<blockquote>
+Switch back to the Open Shift web console and browse to Builds for the webapp
+</blockquote>
+
+You should see the new build #2 has been triggered.
+
       </div>
     </div>
   </div>
 </div>
-
-Good work!  Now any "push" to the forked repository will send a webhook that triggers Open Shift to: re-build the code and image using s2i, and then perform a new pod deployment.
 
 
 ### Deployment Triggers
@@ -179,18 +192,16 @@ $ oc rollback webapp-2
 <blockquote>
 Hover over "Browse" and then click on "Deployments"
 </blockquote>
-This is going to show basic details for all deployment configurations in this project
 
 <blockquote>
-Click the "dc-metro-map" deployment config
+Click the "webapp" deployment config
 </blockquote>
 Toward the bottom of the screen you will see a table of deployments using this deployment config
-<p><img src="{{ site.baseurl }}/{{ site.workshop-dir }}/screenshots/ose-lab-rollbacks-deploymentconfigsummary.png" width="600"/></p>
 
 <blockquote>
 In the Deployments table click the #1
 </blockquote>
-<p><img src="{{ site.baseurl }}/{{ site.workshop-dir }}/screenshots/ose-lab-rollbacks-deploymentconfig1.png" width="500"/></p>
+<p><img src="{{ site.baseurl }}/{{ site.workshop-dir }}/screenshots/oseoffline-lab-rollbacks-deploymentconfig1.png" width="500"/></p>
 
 <blockquote>
 Click the "Rollback button", accept defaults, and click "Rollback" again
@@ -198,8 +209,12 @@ Click the "Rollback button", accept defaults, and click "Rollback" again
 
 You can go back to the overview page to see your previous deployment spinning down and your new one spinning up.
 
-Open Shift has done a graceful removal of the old pod and created a new one using the previous deployment configuration.  Open the page for the webapp and refresh it.  Notice it is no longer talking to the database.  Let's put it back to a working state again, 
+Open Shift has done a graceful removal of the old pod and created a new one using the previous deployment configuration.  Open the page for the webapp and refresh it.  Notice it is no longer talking to the database.  
+<p><img src="{{ site.baseurl }}/{{ site.workshop-dir }}/screenshots/oseoffline-lab-rollbacks-nodb.png" width="200"/></p>
 
+<br/>
+<br/>
+OK let's put it back to a working state again for the next lab. 
 <blockquote>
 Following steps just like above, Click the "Rollback button", for the previously working deployment (should be #2).
 </blockquote>
