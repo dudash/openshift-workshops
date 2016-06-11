@@ -153,7 +153,7 @@ In the S2I lab we looked at a build log to inspect the process of turning source
 $ oc get pods
 {% endhighlight %}
 
-This is going to show basic details for all pods in this project (including the builders).  Let's look at the log for the pod running our application.  Find the pod that is "Running" you will use it below.
+This is going to show basic details for all pods in this project (including the builders).  Let's look at the log for the pod running our application.  Look for the POD NAME that that is "Running" you will use it below.
 
 <blockquote>
 <i class="fa fa-terminal"></i> Goto the terminal and type the following (replacing the POD ID with your pod's ID):
@@ -164,7 +164,7 @@ $ oc logs [POD NAME]
 
 You will see in the output details of your app starting up and any status messages it has reported since it started.
 
-<br/><br/><i class="fa fa-info-circle"></i> You can see more details about the pod itself with 'oc describe [POD NAME]'
+<br/><br/><i class="fa fa-info-circle"></i> You can see more details about the pod itself with 'oc describe pods/[POD NAME]'
 
       </div>
     </div>

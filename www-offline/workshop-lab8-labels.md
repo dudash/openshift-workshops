@@ -40,7 +40,7 @@ You can see the Labels automatically added contain the app, deployment, and depl
 <i class="fa fa-terminal"></i> Add a label
 </blockquote>
 {% highlight csh %}
-$ oc oc label pod/PODNAME testdate=4.30.2016 testedby=mylastname
+$ oc label pod/PODNAME testdate=4.30.2016 testedby=mylastname
 {% endhighlight %}
 
 <blockquote>
@@ -72,7 +72,7 @@ $ oc describe pod/PODNAME | more
 Hover over "Browse" and then click on "Pods"
 </blockquote>
 This is going to show basic details for all pods in this project (including the builders).
-<p><img src="{{ site.baseurl }}/{{ site.workshop-dir }}/screenshots/oseoffline-lab-devman-allpods.png" width="500"/></p>
+<p><img src="{{ site.baseurl }}/{{ site.workshop-dir }}/screenshots/oseoffline-lab-labels-allpods.png" width="500"/></p>
 Next let's look at the log for the pod running our application.
 
 <blockquote>

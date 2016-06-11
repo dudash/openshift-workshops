@@ -10,7 +10,7 @@ categories: [lab, ops]
 Things will go wrong with your software, or your hardware, or from something out of your control.  But we can plan for that failure, and planning for it let's us minimize the impact.  Open Shift supports this via what we call replication and recovery.
 
 ### Replication
-Let's walk through a simple example of how the replication controller can keep your deployment at a desired state.  Assuming you still have the dc-metro-map project running we can manually scale up our replicas to handle increased user load.
+Let's walk through a simple example of how the replication controller can keep your deployment at a desired state.  Assuming you still have the webapp project running we can manually scale up our replicas to handle increased user load.
 
 <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
   <div class="panel panel-default">
@@ -28,10 +28,8 @@ Let's walk through a simple example of how the replication controller can keep y
 <i class="fa fa-terminal"></i> Goto the terminal and try the following:
 </blockquote>
 {% highlight csh %}
-$ oc scale --replicas=4 dc/dc-metro-map
+$ oc scale --replicas=4 dc/webapp
 {% endhighlight %}
-
-You can see the Labels automatically added contain the app, deployment, and deploymentconfig.  Let's add a new label to this pod.
 
 <blockquote>
 <i class="fa fa-terminal"></i> Check out the new pods:
@@ -79,7 +77,7 @@ Notice that you now have 4 unique pods availble to inspect.  If you want go ahea
 So you've told Open Shift that you'd like to maintain 4 running, load-balanced, instances of our web app.
 
 ### Recovery
-OK, now that we have a slightly more interesting desired replication state, we can test a service outages scenario. In this scenario, the dc-metro-map replication controller will ensure that other pods are created to replace those that become unhealthy.  Let's force inflict an issue and see how Open Shift reponds.
+OK, now that we have a slightly more interesting desired replication state, we can test a service outages scenario. In this scenario, the webapp replication controller will ensure that other pods are created to replace those that become unhealthy.  Let's force inflict an issue and see how Open Shift reponds.
 
 <div class="panel-group" id="accordionB" role="tablist" aria-multiselectable="true">
   <div class="panel panel-default">
@@ -177,7 +175,8 @@ You are now executing a bash shell running in the container of the pod.  Let's k
 $ pkill -9 node
 {% endhighlight %}
 
-This will kick you out off the container.
+This will kick you out off the container with an error like "Error executing command in container"
+
 <br/><br/>
 <blockquote>
 <i class="fa fa-terminal"></i> Do it again - shell in and execute the same command to kill node
@@ -190,7 +189,7 @@ This will kick you out off the container.
 $ oc get pods -w
 {% endhighlight %}
 
-The container died multiple times so quickly that Open Shift is going to put the pod in a CrashBackOff state.  This ensures the system doesn't waste resources trying to restart containers that are continuously crashing.
+If a container dies multiple times quickly, Open Shift is going to put the pod in a CrashBackOff state.  This ensures the system doesn't waste resources trying to restart containers that are continuously crashing.
 
       </div>
     </div>
@@ -217,7 +216,7 @@ Click inside the terminal view and type $ pkill -9 node
 </blockquote>
 <p><img src="{{ site.baseurl }}/{{ site.workshop-dir }}/screenshots/ose-lab-replicationrecovery-terminal.png" width="400"/></p>
 
-This is going to kill the node.js web server and kick you off the container.
+This will kick you out off the container with an error like "error: error executing remote command".
 
 <p><img src="{{ site.baseurl }}/{{ site.workshop-dir }}/screenshots/ose-lab-replicationrecovery-terminalkick.png" width="400"/></p>
 
@@ -231,7 +230,7 @@ Go back to the pods list
 
 <p><img src="{{ site.baseurl }}/{{ site.workshop-dir }}/screenshots/ose-lab-replicationrecovery-backoff.png" width="500"/></p>
 
-The container died multiple times so quickly that Open Shift is going to put the pod in a CrashBackOff state.  This ensures the system doesn't waste resources trying to restart containers that are continuously crashing.
+If a container dies multiple times too quickly, Open Shift is going to put the pod in a CrashBackOff state.  This ensures the system doesn't waste resources trying to restart containers that are continuously crashing.
 
       </div>
     </div>
@@ -241,6 +240,7 @@ The container died multiple times so quickly that Open Shift is going to put the
 
 ### Clean up
 Let's scale back down to 1 replica.  If you are using the web console just click the down arrow from the Overview page.  If you are using the command line use the "oc scale" command.
+
 
 ## Summary
 In this lab we learned about replication controllers and how they can be used to scale your applications and services.  We also tried to break a few things and saw how Open Shift responded to heal the system and keep it running.  This topic can get deeper than we've experimented with here, but getting deeper into application health and recovery is an advanced topic.  If you're interested you can read more about it in the documentation [here][1], [here][2], and [here][3].

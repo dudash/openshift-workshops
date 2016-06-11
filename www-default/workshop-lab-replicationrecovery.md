@@ -31,8 +31,6 @@ Let's walk through a simple example of how the replication controller can keep y
 $ oc scale --replicas=4 dc/dc-metro-map
 {% endhighlight %}
 
-You can see the Labels automatically added contain the app, deployment, and deploymentconfig.  Let's add a new label to this pod.
-
 <blockquote>
 <i class="fa fa-terminal"></i> Check out the new pods:
 </blockquote>
@@ -177,7 +175,8 @@ You are now executing a bash shell running in the container of the pod.  Let's k
 $ pkill -9 node
 {% endhighlight %}
 
-This will kick you out off the container.
+This will kick you out off the container with an error like "Error executing command in container"
+
 <br/><br/>
 <blockquote>
 <i class="fa fa-terminal"></i> Do it again - shell in and execute the same command to kill node
@@ -190,7 +189,7 @@ This will kick you out off the container.
 $ oc get pods -w
 {% endhighlight %}
 
-The container died multiple times so quickly that Open Shift is going to put the pod in a CrashBackOff state.  This ensures the system doesn't waste resources trying to restart containers that are continuously crashing.
+If a container dies multiple times quickly, Open Shift is going to put the pod in a CrashBackOff state.  This ensures the system doesn't waste resources trying to restart containers that are continuously crashing.
 
       </div>
     </div>

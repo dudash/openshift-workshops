@@ -7,7 +7,8 @@ categories: [lab, developers]
 ---
 
 ## Developing and managing an application in Open Shift
-In this lab we will explore some of the common activities undertaken by developers working in Open Shift.  You will become familiar with how to use environment variables, secrets, build configurations, and more.  Let's look at some of the basic things a developer might care about for a deployed app.
+In this lab we will explore some of the common activities undertaken by developers working in Open Shift.  You will become familiar with how to use environment variables, build configurations, and more.  Let's look at some of the basic things a developer might care about for a deployed app.
+
 
 ### See the app in action and inspect some details
 There is no more ambiguity or confusion about where the app came from.  Open Shift provides traceability for your running deployment back to the docker image and the registry it came from, as well as (for images built by openshift) back to the exact source code branch and commit.  Let's take a look at that.
@@ -31,22 +32,22 @@ There is no more ambiguity or confusion about where the app came from.  Open Shi
 $ oc status
 {% endhighlight %}
 
-This is going to show the status of your current project.  In this case it will show the dc-metro-map service (svc) with a nested deployment config (dc) along with some more info that you can ignore for now.  
+This is going to show the status of your current project.  In this case it will show the webapp service (svc) with a nested deployment config (dc) along with some more info that you can ignore for now.  
 
 <br/><br/><i class="fa fa-info-circle"></i>  A deployment in OpenShift is a replication controller based on a user defined template called a deployment configuration <br/><br/>
 
-The dc provides us details we care about to see where our application image comes from, so let's check it out in more detail.
+The dc provides us details we care about, allowing us to see where our application image comes from, so let's check it out in more detail.
 
 <blockquote>
 <i class="fa fa-terminal"></i> Type the following to find out more about our dc:
 </blockquote>
 {% highlight csh %}
-$ oc describe dc/dc-metro-map
+$ oc describe dc/webapp
 {% endhighlight %}
 
 Notice under the template section it lists the containers it wants to deploy along with the path to the container image.
 
-<br/><br/><i class="fa fa-info-circle"></i> There are a few other ways you could get to this information.  If you are feeling adventurous, you might want to describe the replication controller (oc describe rc -l app=dc-metro-map), the image stream (oc describe is -l app=dc-metro-map) or the running pod itself (oc describe pod -l app=dc-metro-map).<br/><br/>
+<br/><br/><i class="fa fa-info-circle"></i> There are a few other ways you could get to this information.  If you are feeling adventurous, you might want to describe the replication controller (oc describe rc -l app=webapp), the image stream (oc describe is -l app=webapp) or the running pod itself (oc describe pod -l app=webapp).<br/><br/>
 
 Because we built this app using S2I, we get to see the details about the build - including the container image that was used for building the source code.  So let's find out where the image came from.  Here are the steps to get more information about the build configuration (bc) and the builds themselves.
 
@@ -54,19 +55,19 @@ Because we built this app using S2I, we get to see the details about the build -
 <i class="fa fa-terminal"></i> Type the following to find out more about our bc:
 </blockquote>
 {% highlight csh %}
-$ oc describe bc/dc-metro-map
+$ oc describe bc/webapp
 {% endhighlight %}
 
-Notice the information about the configuration of how this app gets built.  In particular look at the github URL, the webhooks you can use to automatically trigger a new build, the docker image where the build runs inside of, and the builds that have been completed.  New let's look at one of those builds.
+Notice the information about the configuration of how this app gets built.  In particular look at the following: git URL, the webhooks you can use to automatically trigger a new build, the docker image where the build runs inside of, and the builds that have been completed.  New let's look at one of those builds.
 
 <blockquote>
 <i class="fa fa-terminal"></i> Type the following:
 </blockquote>
 {% highlight csh %}
-$ oc describe build/dc-metro-map-1
+$ oc describe build/webapp-1
 {% endhighlight %}
 
-This shows us even more about the deployed container's build and source code including exact commit GUID for this build.  We can also can see the commit's author, and the commit message.  You can inspect the code by opening a web browser and pointing it to: https://github.com/dudash/openshift-workshops/commit/[COMMIT_GUID]
+This shows us even more about the deployed container's build and source code including exact commit GUID for this build.  We can also can see the commit's author, and the commit message.  You can inspect the code by opening a web browser and pointing it to: http://openshift.example.com:3000/demo/openshiftexamples-nodemongo/commit/GUID (replacing with the actual commit GUID that is listed for you).
 
       </div>
     </div>
@@ -141,7 +142,7 @@ In the S2I lab we looked at a build log to inspect the process of turning source
 $ oc get pods
 {% endhighlight %}
 
-This is going to show basic details for all pods in this project (including the builders).  Let's look at the log for the pod running our application.  Find the pod that is "Running" you will use it below.
+This is going to show basic details for all pods in this project (including the builders).  Let's look at the log for the pod running our application.  Look for the POD NAME that is "Running" you will use it below.
 
 <blockquote>
 <i class="fa fa-terminal"></i> Goto the terminal and type the following (replacing the POD ID with your pod's ID):
@@ -152,7 +153,7 @@ $ oc logs [POD NAME]
 
 You will see in the output details of your app starting up and any status messages it has reported since it started.
 
-<br/><br/><i class="fa fa-info-circle"></i> You can see more details about the pod itself with 'oc describe [POD NAME]'
+<br/><br/><i class="fa fa-info-circle"></i> You can see more details about the pod itself with 'oc describe pods/[POD NAME]'
 
       </div>
     </div>
@@ -208,25 +209,27 @@ Whether it's a database name or a configuration variable, most applications make
     <div id="collapseCOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingCOne">
       <div class="panel-body">
 
-Let's have a little fun.  The app has some easter eggs that get triggered when certain env vars are set to 'true'.
+Up until now the webapp hasn't worked because it couldn't connect to a database, let's fix that.
 <blockquote>
 <i class="fa fa-terminal"></i> Goto the terminal and type the following:
 </blockquote>
 {% highlight csh %}
-$ oc env dc/dc-metro-map -e BEERME=true
+$ oc env dc/mongodb --list | grep MONGODB | oc env dc/webapp --overwrite -e -
 {% endhighlight %}
+
+Quickly followed by:
 
 {% highlight csh %}
 $ oc get pods -w
 {% endhighlight %}
 
-Due to the deployment config strategy being set to "Rolling" and the "ConfigChange" trigger being set, Open Shift auto deployed a new pod as soon as you updated with the env variable.  If you were quick enough you saw this happening with the get pods command
+Due to the deployment config strategy being set to "Rolling" and the "ConfigChange" trigger being set, Open Shift auto deployed a new pod as soon as you updated with the new env variables.  If you were quick enough you saw this happening with the get pods -w command.
 
 <blockquote>
 <i class="fa fa-terminal"></i> Type Ctrl+C to stop watching the pods
 </blockquote>
 
-<i class="fa fa-info-circle"></i> You can set env variables across all deployment configs with 'dc --all' instead of specifying a specifc config
+<i class="fa fa-info-circle"></i> Tip: You can set env variables across all deployment configs with 'dc --all' instead of specifying a specifc config
 
       </div>
     </div>
@@ -272,17 +275,18 @@ If you are quick enough you will see a new pod spin up and an the old pod spin d
   </div>
 </div>
 
-With the new environment variables set the app should look like this in your web browser (with beers instead of busses):
+With the new environment variables set the app can now talk to the database and should look like this in your web browser:
 
-<p><img src="{{ site.baseurl }}/{{ site.workshop-dir }}/screenshots/ose-lab-devman-beerme.png" width="500"/></p>
+<p><img src="{{ site.baseurl }}/{{ site.workshop-dir }}/screenshots/oseoffline-lab-devman-webappanddb.png" width="500"/></p>
 
+If you refresh the webpage a few times you will see it logging IP addresses into the database.
 
 ### What about passwords and private keys?
 Environment variables are great, but sometimes we don't want sensitive data exposed in the environment.  We will get into using **secrets** later when you do the lab: [Keep it Secret, Keep it Safe][2]
 
 
 ### Getting into a pod
-There are situations when you might want to jump into a running pod, and Open Shift lets you do that pretty easily.  We set some environment variables and secrets in this lab, let's jump onto our pod to inspect them.  
+There are situations when you might want to jump into a running pod, and Open Shift lets you do that pretty easily.  We set some environment variables in this lab, let's jump onto our pod to inspect them.  
 
 <div class="panel-group" id="accordionD" role="tablist" aria-multiselectable="true">
   <div class="panel panel-default">
@@ -303,19 +307,19 @@ There are situations when you might want to jump into a running pod, and Open Sh
 $ oc get pods
 {% endhighlight %}
 
-Find the pod name for your Running pod
+Find the pod name for your Running webapp pod, and then:
 
 {% highlight csh %}
 $ oc exec -it [POD NAME] /bin/bash
 {% endhighlight %}
  
-You are now interactively attached to the container in your pod.  Let's look for the environment variables we set:
+You are now interactively attached to the container in your pod.  Let's look for one of the environment variables we set:
 
 {% highlight csh %}
-$ env | grep BEER
+$ env | grep MONGODB
 {% endhighlight %}
 
-That should return the **BEERME=true** matching the value that we set in the deployment config.
+That should return a list of MONGODB variables matching the values that we copied from the mongodb deployment config.
 
 {% highlight csh %}
 $ exit
@@ -360,12 +364,6 @@ That should return the **BEERME=true** matching the value that we set in the dep
   </div>
 </div>
 
-### Good work, let's clean this up
-> <i class="fa fa-terminal"></i> Let's clean up all this to get ready for the next lab:
-
-{% highlight csh %}
-$ oc delete all -l app=dc-metro-map
-{% endhighlight %}
   
 ## Summary
 In this lab you've seen how to trace running software back to its roots, how to see details on the pods running your software, how to update deployment configurations, how to inspect logs files, how to set environment variables consistently across your environment, and how to interactively attach to running containers.  All these things should come in handy for any developer working in an Open Shift platform.
@@ -373,5 +371,6 @@ In this lab you've seen how to trace running software back to its roots, how to 
 To dig deeper in to details behind the steps you performed in this lab, check out the OSE [developer's guide][1].
 
 [1]: https://docs.openshift.com/enterprise/3.1/dev_guide/index.html
-[2]: ./workshop-lab-secrets.html
+[2]: ./workshop-lab9-secrets.html
+[3]: http://openshift.example.com:3000/demo/openshiftexamples-nodemongo/commit/663537a08e343dd3bcefa0f752195cc23783935c
 
