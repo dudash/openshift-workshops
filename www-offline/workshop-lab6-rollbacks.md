@@ -18,12 +18,12 @@ The builder template that was used when the webapp was added to the project crea
   <div class="panel panel-default">
     <div class="panel-heading" role="tab" id="headingOne">
       <div class="panel-title">
-        <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+        <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
           CLI Steps
         </a>
       </div>
     </div>
-    <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
+    <div id="collapseOne" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
       <div class="panel-body">
 
 <blockquote>
@@ -88,12 +88,12 @@ Copy the Generic webhook to the clipboard
   <div class="panel panel-default">
     <div class="panel-heading" role="tab" id="headingCOne">
       <div class="panel-title">
-        <a role="button" data-toggle="collapse" data-parent="#accordionC" href="#collapseCOne" aria-expanded="true" aria-controls="collapseCOne">
+        <a role="button" data-toggle="collapse" data-parent="#accordionC" href="#collapseCOne" aria-expanded="false" aria-controls="collapseCOne">
           Github Steps
         </a>
       </div>
     </div>
-    <div id="collapseCOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingCOne">
+    <div id="collapseCOne" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingCOne">
       <div class="panel-body">
 
 Let's put the webhook URL into the repository. At the main page for this repository (the fork), you should see a tab bar with code, issues, commits, releases, wiki, and settings.
@@ -140,12 +140,12 @@ Well, what if something isn't quite right with the latest version of our app?  L
   <div class="panel panel-default">
     <div class="panel-heading" role="tab" id="headingBOne">
       <div class="panel-title">
-        <a role="button" data-toggle="collapse" data-parent="#accordionB" href="#collapseBOne" aria-expanded="true" aria-controls="collapseBOne">
+        <a role="button" data-toggle="collapse" data-parent="#accordionB" href="#collapseBOne" aria-expanded="false" aria-controls="collapseBOne">
           CLI Steps
         </a>
       </div>
     </div>
-    <div id="collapseBOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingBOne">
+    <div id="collapseBOne" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingBOne">
       <div class="panel-body">
 
 <blockquote>

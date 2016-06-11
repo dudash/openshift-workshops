@@ -16,12 +16,12 @@ Let's walk through a simple example of how the replication controller can keep y
   <div class="panel panel-default">
     <div class="panel-heading" role="tab" id="headingOne">
       <div class="panel-title">
-        <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+        <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
           CLI Steps
         </a>
       </div>
     </div>
-    <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
+    <div id="collapseOne" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
       <div class="panel-body">
 
 <blockquote>
@@ -83,12 +83,12 @@ OK, now that we have a slightly more interesting desired replication state, we c
   <div class="panel panel-default">
     <div class="panel-heading" role="tab" id="headingBOne">
       <div class="panel-title">
-        <a role="button" data-toggle="collapse" data-parent="#accordionB" href="#collapseBOne" aria-expanded="true" aria-controls="collapseBOne">
+        <a role="button" data-toggle="collapse" data-parent="#accordionB" href="#collapseBOne" aria-expanded="false" aria-controls="collapseBOne">
           CLI Steps
         </a>
       </div>
     </div>
-    <div id="collapseBOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingBOne">
+    <div id="collapseBOne" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingBOne">
       <div class="panel-body">
 
 <blockquote>
@@ -149,12 +149,12 @@ In addition to the health of your application's pods, Open Shift will watch the 
   <div class="panel panel-default">
     <div class="panel-heading" role="tab" id="headingCOne">
       <div class="panel-title">
-        <a role="button" data-toggle="collapse" data-parent="#accordionC" href="#collapseCOne" aria-expanded="true" aria-controls="collapseCOne">
+        <a role="button" data-toggle="collapse" data-parent="#accordionC" href="#collapseCOne" aria-expanded="false" aria-controls="collapseCOne">
           CLI Steps
         </a>
       </div>
     </div>
-    <div id="collapseCOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingCOne">
+    <div id="collapseCOne" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingCOne">
       <div class="panel-body">
 
 <blockquote>

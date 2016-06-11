@@ -75,7 +75,7 @@ Good catch, your service is running but there is no way for users to access it y
         </a>
       </div>
     </div>
-    <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
+    <div id="collapseOne" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
       <div class="panel-body">
 
 <blockquote>

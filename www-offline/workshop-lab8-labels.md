@@ -23,7 +23,7 @@ In a previous lab we added our web app using a S2I template.  When we did that, 
         </a>
       </div>
     </div>
-    <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
+    <div id="collapseOne" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
       <div class="panel-body">
 
 <blockquote>

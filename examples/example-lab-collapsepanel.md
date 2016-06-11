@@ -26,7 +26,7 @@ category: lab
         </a>
       </div>
     </div>
-    <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
+    <div id="collapseOne" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
       <div class="panel-body">
 <i class="fa fa-terminal"></i> Goto the terminal and type the following:
 {% highlight csh %}
@@ -61,7 +61,7 @@ $ oc new-app blahblah
         </a>
       </div>
     </div>
-    <div id="collapseBOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingBOne">
+    <div id="collapseBOne" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingBOne">
       <div class="panel-body">
 
 Something in group B
@@ -98,7 +98,7 @@ Something else in group B
         </a>
       </div>
     </div>
-    <div id="collapseCOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingCOne">
+    <div id="collapseCOne" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingCOne">
       <div class="panel-body">
 
 Something in group C
@@ -135,7 +135,7 @@ Something else in group C
         </a>
       </div>
     </div>
-    <div id="collapseDOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingDOne">
+    <div id="collapseDOne" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingDOne">
       <div class="panel-body">
 
 Something in group D

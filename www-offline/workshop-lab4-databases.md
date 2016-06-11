@@ -13,12 +13,12 @@ We can easily add a database pod into OpenShift wrapped in a service for other p
   <div class="panel panel-default">
     <div class="panel-heading" role="tab" id="headingOne">
       <div class="panel-title">
-        <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+        <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
           CLI Steps
         </a>
       </div>
     </div>
-    <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
+    <div id="collapseOne" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
       <div class="panel-body">
 <i class="fa fa-terminal"></i> Goto the terminal and type the following:
 {% highlight csh %}

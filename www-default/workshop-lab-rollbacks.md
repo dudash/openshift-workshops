@@ -71,7 +71,7 @@ The node.js builder template creates a number of resources for you, but what we 
         </a>
       </div>
     </div>
-    <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
+    <div id="collapseOne" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
       <div class="panel-body">
 
 <blockquote>
@@ -139,7 +139,7 @@ Copy the Generic webhook to the clipboard
         </a>
       </div>
     </div>
-    <div id="collapseCOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingCOne">
+    <div id="collapseCOne" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingCOne">
       <div class="panel-body">
 
 Let's put the webhook URL into the repository. At the main page for this repository (the fork), you should see a tab bar with code, pull requests, pulse, graphs, and settings.
@@ -198,7 +198,7 @@ Well, what if something isn't quite right with the latest version of our app?  L
         </a>
       </div>
     </div>
-    <div id="collapseBOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingBOne">
+    <div id="collapseBOne" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingBOne">
       <div class="panel-body">
 
 <blockquote>

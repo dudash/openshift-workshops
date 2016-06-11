@@ -21,7 +21,7 @@ Let's walk through a simple example of how the replication controller can keep y
         </a>
       </div>
     </div>
-    <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
+    <div id="collapseOne" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
       <div class="panel-body">
 
 <blockquote>
@@ -88,7 +88,7 @@ OK, now that we have a slightly more interesting desired replication state, we c
         </a>
       </div>
     </div>
-    <div id="collapseBOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingBOne">
+    <div id="collapseBOne" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingBOne">
       <div class="panel-body">
 
 <blockquote>
@@ -154,7 +154,7 @@ In addition to the health of your application's pods, Open Shift will watch the 
         </a>
       </div>
     </div>
-    <div id="collapseCOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingCOne">
+    <div id="collapseCOne" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingCOne">
       <div class="panel-body">
 
 <blockquote>

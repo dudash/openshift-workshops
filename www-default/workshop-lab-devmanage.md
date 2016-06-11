@@ -34,7 +34,7 @@ There is no more ambiguity or confusion about where the app came from.  Open Shi
         </a>
       </div>
     </div>
-    <div id="collapseAOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingAOne">
+    <div id="collapseAOne" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingAOne">
       <div class="panel-body">
 
 <blockquote>
@@ -143,7 +143,7 @@ In the S2I lab we looked at a build log to inspect the process of turning source
         </a>
       </div>
     </div>
-    <div id="collapseBOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingBOne">
+    <div id="collapseBOne" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingBOne">
       <div class="panel-body">
 
 <blockquote>
@@ -217,7 +217,7 @@ Whether it's a database name or a configuration variable, most applications make
         </a>
       </div>
     </div>
-    <div id="collapseCOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingCOne">
+    <div id="collapseCOne" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingCOne">
       <div class="panel-body">
 
 Let's have a little fun.  The app has some easter eggs that get triggered when certain env vars are set to 'true'.
@@ -305,7 +305,7 @@ There are situations when you might want to jump into a running pod, and Open Sh
         </a>
       </div>
     </div>
-    <div id="collapseDOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingDOne">
+    <div id="collapseDOne" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingDOne">
       <div class="panel-body">
 
 <blockquote>

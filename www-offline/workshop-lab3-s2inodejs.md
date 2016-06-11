@@ -16,12 +16,12 @@ We can do this either via the command line (CLI) or the web console.  You decide
   <div class="panel panel-default">
     <div class="panel-heading" role="tab" id="headingAOne">
       <div class="panel-title">
-        <a role="button" data-toggle="collapse" data-parent="#accordionA" href="#collapseAOne" aria-expanded="true" aria-controls="collapseAOne">
+        <a role="button" data-toggle="collapse" data-parent="#accordionA" href="#collapseAOne" aria-expanded="false" aria-controls="collapseAOne">
           CLI Steps
         </a>
       </div>
     </div>
-    <div id="collapseAOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingAOne">
+    <div id="collapseAOne" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingAOne">
       <div class="panel-body">
 
 <blockquote>
@@ -92,12 +92,12 @@ We can see the details of what the S2I builder did.  This can be helpful to diag
   <div class="panel panel-default">
     <div class="panel-heading" role="tab" id="headingBOne">
       <div class="panel-title">
-        <a role="button" data-toggle="collapse" data-parent="#accordionB" href="#collapseBOne" aria-expanded="true" aria-controls="collapseBOne">
+        <a role="button" data-toggle="collapse" data-parent="#accordionB" href="#collapseBOne" aria-expanded="false" aria-controls="collapseBOne">
           CLI Steps
         </a>
       </div>
     </div>
-    <div id="collapseBOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingBOne">
+    <div id="collapseBOne" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingBOne">
       <div class="panel-body">
 
 <blockquote>
@@ -159,12 +159,12 @@ Let's see this app in action!
   <div class="panel panel-default">
     <div class="panel-heading" role="tab" id="headingCOne">
       <div class="panel-title">
-        <a role="button" data-toggle="collapse" data-parent="#accordionC" href="#collapseCOne" aria-expanded="true" aria-controls="collapseCOne">
+        <a role="button" data-toggle="collapse" data-parent="#accordionC" href="#collapseCOne" aria-expanded="false" aria-controls="collapseCOne">
           CLI Steps
         </a>
       </div>
     </div>
-    <div id="collapseCOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingCOne">
+    <div id="collapseCOne" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingCOne">
       <div class="panel-body">
 <blockquote>
 <i class="fa fa-terminal"></i> Goto the terminal and type the following:
