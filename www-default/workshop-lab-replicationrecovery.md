@@ -60,13 +60,13 @@ Click "Overview"
 <blockquote>
 In the deployment, click the up arrow 3 times.
 </blockquote>
-The deployment should now indicate that you have 4 running pods.  Keep in mind that each pod has it's own container which is an identical deployment of the webapp.  Open Shift is (by default) round robin load-balancing traffic to each pod.
+The deployment should indicate that it is scaling to 4 pods, and eventually you will have 4 running pods.  Keep in mind that each pod has it's own container which is an identical deployment of the webapp.  Open Shift is now (by default) round robin load-balancing traffic to each pod.
 <p><img src="{{ site.baseurl }}/{{ site.workshop-dir }}/screenshots/ose-lab-replicationrecovery-4pods.png" width="500"/></p>
 
 <blockquote>
 Hover over "Browse" and click "Pods"
 </blockquote>
-Notice that you now have 4 unique pods availble to inspect.  If you want go ahead and inspect them you can see that each have their own IP address and logs.
+Notice that you now have 4 unique webapp pods available to inspect.  If you want go ahead and inspect them you can see that each have their own IP address and logs.
 <p><img src="{{ site.baseurl }}/{{ site.workshop-dir }}/screenshots/ose-lab-replicationrecovery-4podslist.png" width="500"/></p>
 
       </div>
