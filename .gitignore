@@ -10,7 +10,6 @@
 .ruby-version
 .sass-cache
 /test/source/file_name.txt
-/vendor
 Gemfile.lock
 _site/
 bbin/
