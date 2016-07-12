@@ -1,3 +1,27 @@
-baseurl: /openshift-workshops
+
+# Site settings
+title: OpenShift Workshops
+email: example@email.com
+description: > # this means to ignore newlines until "baseurl:"
+baseurl: /openshift-workshops # the subpath of your site, e.g. /blog
+url: ""
+twitter_username: twitter
+github_username:  github
 workshop-dir: www-offline
-exclude: [README.md, package.json, grunt.js, Gruntfile.js, Gruntfile.coffee, node_modules, LABS-MASTERLIST.md]
+
+# Build settings
+markdown: kramdown
+
+# Exclude files
+exclude:
+  - README.md
+  - package.json
+  - grunt.js
+  - Gruntfile.js
+  - Gruntfile.coffee
+  - node_modules
+  - LABS-MASTERLIST.md
+
+# Enable emoji
+gems:
+  - jemoji

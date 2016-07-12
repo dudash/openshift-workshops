@@ -3,5 +3,9 @@
 source "https://rubygems.org"
 
 # gem "rails"
-gem 'jekyll', '~> 3.0'
+# gem 'rack'
+# gem 'puma'
+gem 'jekyll'
+gem 'jemoji'
 gem 'json'
+gem 'ffi'
