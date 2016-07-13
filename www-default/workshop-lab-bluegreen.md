@@ -10,14 +10,24 @@ categories: [lab, ops, blue, green]
 When implementing continuous delivery for your software one very useful technique is called Blue/Green deployments.  It addresses the desire to minimize downtime during the switch from test to production.  Essentially, it involves running two production versions of your app and then switching the routing from the last stable version to the new version.  In this lab we will walk through a simple Blue/Green workflow with an simple web application.
 
 ### Let's deploy an application
+To demonstrate Blue/Green deployments, we'll use a simple application that renders a colored box as an example. Using your GitHub account, please fork the following project: https://github.com/VeerMuchandi/bluegreen
+
 You should be comfortable deploying an app at this point, but here are the steps anyway:
 
-Coming soon...
+> <i class="fa fa-terminal"></i> Goto the terminal and type these commands:
+
+{% highlight csh %}
+$ oc new-app --name=blue [your-project-url]
+$ oc expose service blue
+{% endhighlight %}
+
+Note that we exposed this application using a route named "blue". 
 
 <i class="fa fa-info-circle"></i> Labels can be used to group resources so that you can reference them all together in CLI commands like 'oc delete'
 
 
 ### Release a new version of our app and test it in the same environment
+What we'll do next is create a new version of the application called "green". 
 
 
 ### Switch from Blue to Green
