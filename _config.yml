@@ -7,7 +7,6 @@ baseurl: /openshift-workshops # the subpath of your site, e.g. /blog
 url: ""
 twitter_username: twitter
 github_username:  github
-workshop-dir: www-offline
 
 # Build settings
 markdown: kramdown
@@ -15,12 +14,9 @@ markdown: kramdown
 # Exclude files
 exclude:
   - README.md
-  - package.json
-  - grunt.js
-  - Gruntfile.js
-  - Gruntfile.coffee
-  - node_modules
   - vendor
+  - config.ru
+  - Gemfile
 
 # Enable emoji
 gems:
