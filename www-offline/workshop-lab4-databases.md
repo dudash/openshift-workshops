@@ -54,16 +54,16 @@ You should see an output similar to:
     </div>
     <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
       <div class="panel-body">
-        
+
 <blockquote>
 Click "Add to Project"
 </blockquote>
-<p><img src="{{ site.baseurl }}/images/oseoffline-lab-s2i-addbutton.png" width="100"/></p>
+<p><img alt="OpenShift Add to Project" src="{{ site.baseurl }}/images/oseoffline-lab-s2i-addbutton.png" width="100"/></p>
 
 <blockquote>
 Click "Browse" and filter for database, then click the mongodb-ephemeral builder image
 </blockquote>
-<p><img src="{{ site.baseurl }}/images/oseoffline-lab-database-filterdatabase.png" width="600"/></p>
+<p><img alt="OpenShift Add MongoDB" src="{{ site.baseurl }}/images/oseoffline-lab-database-filterdatabase.png" width="600"/></p>
 
 We will accept the default values here.  So just:
 <blockquote>
