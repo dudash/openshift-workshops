@@ -20,7 +20,7 @@ exclude:
   - Gruntfile.js
   - Gruntfile.coffee
   - node_modules
-  - LABS-MASTERLIST.md
+  - vendor
 
 # Enable emoji
 gems:
