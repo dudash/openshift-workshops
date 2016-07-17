@@ -103,7 +103,7 @@ Copy the Generic webhook to the clipboard
 Hover over "Browse" and then click on "Builds"
 </blockquote>
 This is going to show basic details for all build configurations in this project
-<p><img src="{{ site.baseurl }}/images/ose-lab-rollbacks-buildconfigs.png" width="500"/></p>
+<p><img alt="OpenShift Build Configuration" src="{{ site.baseurl }}/images/ose-lab-rollbacks-buildconfigs.png" width="500"/></p>
 
 <blockquote>
 Click the "dc-metro-map" build config
@@ -114,7 +114,7 @@ You will see the summary of builds using this build config
 <blockquote>
 Click the "Configuration" tab (next to the active Summary tab)
 </blockquote>
-<p><img src="{{ site.baseurl }}/images/ose-lab-devman-deployconfigconfig.png" width="500"/></p>
+<p><img alt="OpenShift Deployment Configuration Summary" src="{{ site.baseurl }}/images/ose-lab-devman-deployconfigconfig.png" width="500"/></p>
 Now you can see the various configuration details including the Github specific and Generic webhook URLs.
 
 <blockquote>
