@@ -14,4 +14,4 @@ category: lab
 <i class="fa fa-info-circle"></i> Something here with an info circle
 
 
-See the full list of available font awesome icons in the local file: stylesheets/font-awesome/css/font-awesome.css
+See the full list of available font awesome icons in the local file: css/font-awesome/css/font-awesome.css
