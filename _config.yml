@@ -3,7 +3,9 @@
 title: OpenShift Workshops
 email: example@email.com
 description: > # this means to ignore newlines until "baseurl:"
-baseurl: /openshift-workshops # the subpath of your site, e.g. /blog
+  Create, discover, and download content for your OpenShift instance
+  by Red Hat.
+baseurl: "" # the subpath of your site, e.g. /blog
 url: ""
 twitter_username: twitter
 github_username:  github
