@@ -5,13 +5,13 @@ siteEngine: "jekyll"
 siteLocalDir: ""
 
 # directory to drafts from the root of siteLocalDir
-siteDraftsDir: "_drafts/"
+siteDraftsDir: "www-default"
 
 # directory to posts from the root of siteLocalDir
-sitePostsDir: "_posts/{year}/"
+sitePostsDir: "www-offline"
 
 # directory to images from the root of siteLocalDir
-siteImagesDir: "images/{year}/{month}/"
+siteImagesDir: "images"
 
 # URL to your blog
 siteUrl: ""
@@ -29,7 +29,7 @@ fileExtension: ".md"
 publishRenameBasedOnTitle: false
 
 # filename format of new posts/drafts created
-newPostFileName: "{year}-{month}-{day}-{title}{extension}"
+newPostFileName: "{title}{extension}"
 
 # front matter template
 frontMatter: """
