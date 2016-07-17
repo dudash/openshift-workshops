@@ -10,7 +10,7 @@ categories: [lab, developers]
 In this lab we will explore some of the common activities undertaken by developers working in Open Shift.  You will become familiar with how to use environment variables, secrets, build configurations, and more.  Let's look at some of the basic things a developer might care about for a deployed app.
 
 ### Setup
-From the previous lab you should have the DC Metro Maps web app running in Open Shift.  
+From the previous lab you should have the DC Metro Maps web app running in Open Shift.
 
 <i class="fa fa-warning"></i> **Only if you don't already have it running already, add it with the following steps.**
 
@@ -44,7 +44,7 @@ There is no more ambiguity or confusion about where the app came from.  Open Shi
 $ oc status
 {% endhighlight %}
 
-This is going to show the status of your current project.  In this case it will show the dc-metro-map service (svc) with a nested deployment config (dc) along with some more info that you can ignore for now.  
+This is going to show the status of your current project.  In this case it will show the dc-metro-map service (svc) with a nested deployment config (dc) along with some more info that you can ignore for now.
 
 <br/><br/><i class="fa fa-info-circle"></i>  A deployment in OpenShift is a replication controller based on a user defined template called a deployment configuration <br/><br/>
 
@@ -99,13 +99,13 @@ This shows us even more about the deployed container's build and source code inc
 Click "Overview"
 </blockquote>
 Check out the details within the deployment (next to the Pods circle). Within the deployment for the dc-metro-map is a container summary that shows both the GUID for the image and the GUID for the git branch.
-<p><img src="{{ site.baseurl }}/www-default/screenshots/ose-lab-devman-containertracibility.png" width="500"/></p>
+<p><img src="{{ site.baseurl }}/images/ose-lab-devman-containertracibility.png" width="500"/></p>
 
 <blockquote>
 Click on the link next to "Image:"
 </blockquote>
 Here are the details of the image stream for this deployment.
-<p><img src="{{ site.baseurl }}/www-default/screenshots/ose-lab-devman-dcmteroimagestream.png" width="500"/></p>
+<p><img src="{{ site.baseurl }}/images/ose-lab-devman-dcmteroimagestream.png" width="500"/></p>
 
 <i class="fa fa-info-circle"></i> If you hover over the shortened image GUID or edit the image stream you can see the full GUID.<br/><br/>
 
@@ -117,13 +117,13 @@ Click "Overview" to get back to the deployment summary
 Click "#1" to see the build details
 </blockquote>
 Because we built this app using S2I, we get to see the details about the build - including the container image that was used for building the source code.  Note that you can kick-off a rebuild here if something went wrong with the initial build and you'd like to attempt it again.
-<p><img src="{{ site.baseurl }}/www-default/screenshots/ose-lab-devman-buildsummary.png" width="500"/></p>
+<p><img src="{{ site.baseurl }}/images/ose-lab-devman-buildsummary.png" width="500"/></p>
 
 <blockquote>
 Click "Overview" to get back to the deployment summary again
 </blockquote>
 Notice that next to the build # you can see the comment from the last commit when the build was started.  And you can see the that commit's author.  You can click that commit GUID to be taken to the exact version of the source code that is in this deployed application.
-<p><img src="{{ site.baseurl }}/www-default/screenshots/ose-lab-devman-commitmsg.png" width="400"/></p>
+<p><img src="{{ site.baseurl }}/images/ose-lab-devman-commitmsg.png" width="400"/></p>
 
       </div>
     </div>
@@ -184,19 +184,19 @@ You will see in the output details of your app starting up and any status messag
 Hover over "Browse" and then click on "Pods"
 </blockquote>
 This is going to show basic details for all pods in this project (including the builders).
-<p><img src="{{ site.baseurl }}/www-default/screenshots/ose-lab-devman-allpods.png" width="500"/></p>
+<p><img src="{{ site.baseurl }}/images/ose-lab-devman-allpods.png" width="500"/></p>
 Next let's look at the log for the pod running our application.
 
 <blockquote>
 Click the pod that starts with "dc-metro-map-" and has a status of Running
 </blockquote>
-<p><img src="{{ site.baseurl }}/www-default/screenshots/ose-lab-devman-poddetails.png" width="500"/></p>
+<p><img src="{{ site.baseurl }}/images/ose-lab-devman-poddetails.png" width="500"/></p>
 Here you see the status details of your pod as well as its configuration
 
 <blockquote>
 Click the "Logs" button
 </blockquote>
-<p><img src="{{ site.baseurl }}/www-default/screenshots/ose-lab-devman-podslogs.png" width="500"/></p>
+<p><img src="{{ site.baseurl }}/images/ose-lab-devman-podslogs.png" width="500"/></p>
 Now you can see in the output window the details of your app starting up and any status messages it has reported since it started.
 
       </div>
@@ -262,18 +262,18 @@ This is going to show basic details for all deployment configurations in this pr
 <blockquote>
 Click the "dc-metro-map" deployment config
 </blockquote>
-There are a lot of details here, feel free to check them out and ask questions, but we are here to set some new environment variables.  
+There are a lot of details here, feel free to check them out and ask questions, but we are here to set some new environment variables.
 
 <blockquote>
 Click the vertically stacked "..." button in the top right to edit this config (next to the deploy button).
 </blockquote>
-<p><img src="{{ site.baseurl }}/www-default/screenshots/ose-lab-devman-deployconfigdetails.png" width="500"/></p>
+<p><img src="{{ site.baseurl }}/images/ose-lab-devman-deployconfigdetails.png" width="500"/></p>
 This opens up an edit window with the yaml data for this deployment config.  Scroll down to the section spec->template->spec->containers and:
 
 <blockquote>
 Add an env section to look like the following:
 </blockquote>
-<p><img src="{{ site.baseurl }}/www-default/screenshots/ose-lab-devman-deployconfigsetenv.png" width="500"/></p>
+<p><img src="{{ site.baseurl }}/images/ose-lab-devman-deployconfigsetenv.png" width="500"/></p>
 
 <blockquote>
 Click "Save".  And go back to the summary view by clicking "Overview" on the left menu bar
@@ -286,7 +286,7 @@ If you are quick enough you will see a new pod spin up and an the old pod spin d
 
 With the new environment variables set the app should look like this in your web browser (with beers instead of busses):
 
-<p><img src="{{ site.baseurl }}/www-default/screenshots/ose-lab-devman-beerme.png" width="500"/></p>
+<p><img src="{{ site.baseurl }}/images/ose-lab-devman-beerme.png" width="500"/></p>
 
 
 ### What about passwords and private keys?
@@ -294,7 +294,7 @@ Environment variables are great, but sometimes we don't want sensitive data expo
 
 
 ### Getting into a pod
-There are situations when you might want to jump into a running pod, and Open Shift lets you do that pretty easily.  We set some environment variables and secrets in this lab, let's jump onto our pod to inspect them.  
+There are situations when you might want to jump into a running pod, and Open Shift lets you do that pretty easily.  We set some environment variables and secrets in this lab, let's jump onto our pod to inspect them.
 
 <div class="panel-group" id="accordionD" role="tablist" aria-multiselectable="true">
   <div class="panel panel-default">
@@ -320,7 +320,7 @@ Find the pod name for your Running pod
 {% highlight csh %}
 $ oc exec -it [POD NAME] /bin/bash
 {% endhighlight %}
- 
+
 You are now interactively attached to the container in your pod.  Let's look for the environment variables we set:
 
 {% highlight csh %}
@@ -359,7 +359,7 @@ Click the pod that starts with "dc-metro-map-" and has a status of Running
 Click the "Terminal" button
 </blockquote>
 
-<p><img src="{{ site.baseurl }}/www-default/screenshots/ose-lab-devman-podterminal.png" width="500"/></p>
+<p><img src="{{ site.baseurl }}/images/ose-lab-devman-podterminal.png" width="500"/></p>
 Let's look for the environment variables we set:
 
 <blockquote>
@@ -378,7 +378,7 @@ That should return the **BEERME=true** matching the value that we set in the dep
 {% highlight csh %}
 $ oc delete all -l app=dc-metro-map
 {% endhighlight %}
-  
+
 ## Summary
 In this lab you've seen how to trace running software back to its roots, how to see details on the pods running your software, how to update deployment configurations, how to inspect logs files, how to set environment variables consistently across your environment, and how to interactively attach to running containers.  All these things should come in handy for any developer working in an Open Shift platform.
 
@@ -386,4 +386,3 @@ To dig deeper in to details behind the steps you performed in this lab, check ou
 
 [1]: https://docs.openshift.com/enterprise/3.1/dev_guide/index.html
 [2]: ./workshop-lab-secrets.html
-
