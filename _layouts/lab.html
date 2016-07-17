@@ -1,51 +1,51 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset='utf-8'>
-    <meta http-equiv="X-UA-Compatible" content="chrome=1">
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    <link href='../vendor/stylesheets/architects-daughter.css' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" type="text/css" href="../stylesheets/stylesheet.css" media="screen">
-    <link rel="stylesheet" type="text/css" href="../stylesheets/github-light.css" media="screen">
-    <link rel="stylesheet" type="text/css" href="../stylesheets/syntax-solarl.css" media="screen">
-    <link rel="stylesheet" type="text/css" href="../stylesheets/font-awesome/css/font-awesome.min.css" media="screen">
-    <link rel="stylesheet" type="text/css" href="../vendor/stylesheets/bootstrap-3.3.6.min.css"/>
-    <link rel="stylesheet" type="text/css" href="../stylesheets/print.css" media="print">
+<head>
+  <meta charset='utf-8'>
+  <meta http-equiv="X-UA-Compatible" content="chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <link href='../stylesheets/architects-daughter.css' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" type="text/css" href="../stylesheets/stylesheet.css" media="screen">
+  <link rel="stylesheet" type="text/css" href="../stylesheets/github-light.css" media="screen">
+  <link rel="stylesheet" type="text/css" href="../stylesheets/syntax-solarl.css" media="screen">
+  <link rel="stylesheet" type="text/css" href="../stylesheets/font-awesome/css/font-awesome.min.css" media="screen">
+  <link rel="stylesheet" type="text/css" href="../stylesheets/bootstrap-3.3.6.min.css"/>
+  <link rel="stylesheet" type="text/css" href="../stylesheets/print.css" media="print">
 
-    <script   src="../vendor/javascripts/jquery-2.2.2.min.js" integrity="sha256-36cp2Co+/62rEAAYHLmRCPIych47CvdM+uTBJwSzWjI=" crossorigin="anonymous"></script>
-    <script src="../vendor/javascripts/bootstrap-3.3.6.min.js"></script>
+  <script   src="../javascripts/jquery-2.2.2.min.js" integrity="sha256-36cp2Co+/62rEAAYHLmRCPIych47CvdM+uTBJwSzWjI=" crossorigin="anonymous"></script>
+  <script src="../javascripts/bootstrap-3.3.6.min.js"></script>
 
-    <!--[if lt IE 9]>
-    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-    <![endif]-->
+  <!--[if lt IE 9]>
+  <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
 
-    <title>{{page.html_title}}</title>
-  </head>
+  <title>{{page.html_title}}</title>
+</head>
 
-  <body>
-    <header>
-      <div class="inner">
-        <h1>{{page.title}}</h1>
-        <h2>{{page.subtitle}}</h2>
-        <a href="https://github.com/dudash/openshift-workshops/" class="button"><small>View source on</small> GitHub</a>
-      </div>
-    </header>
-    
-    <a id="index" class="anchor" href="workshop-index.html" aria-hidden="true">
-      <span aria-hidden="true" class="octicon octicon-link"></span>
-      <i class="fa fa-chevron-left"></i>
-      LABS INDEX
-    </a>
-
-    <div id="content-wrapper">
-      <div class="inner clearfix">
-        <section id="main-content">
-
-{{content}}
-
-        </section>
-      </div>
+<body>
+  <header>
+    <div class="inner">
+      <h1>{{page.title}}</h1>
+      <h2>{{page.subtitle}}</h2>
+      <a href="https://github.com/dudash/openshift-workshops/" class="button"><small>View source on</small> GitHub</a>
     </div>
+  </header>
 
-  </body>
+  <a id="index" class="anchor" href="workshop-index.html" aria-hidden="true">
+    <span aria-hidden="true" class="octicon octicon-link"></span>
+    <i class="fa fa-chevron-left"></i>
+    LABS INDEX
+  </a>
+
+  <div id="content-wrapper">
+    <div class="inner clearfix">
+      <section id="main-content">
+
+        {{content}}
+
+      </section>
+    </div>
+  </div>
+
+</body>
 </html>
