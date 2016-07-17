@@ -19,6 +19,16 @@ exclude:
   - vendor
   - config.ru
   - Gemfile
+  - lib
+  - package.json
+  - Gruntfile.js
+  - node_modules
+  - script
+  - fonts
+  - grunt
+  - js
+  - less
+
 
 # Enable emoji
 gems:
