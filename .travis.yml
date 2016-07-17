@@ -1,0 +1,45 @@
+# Tells Travis to use a Ruby build container. It gives your script
+# access to Bundler, RubyGems, and Ruby runtime.
+language: ruby
+
+# RVM is a popular Ruby Version Manager (like rbenv, chruby, etc.).
+# This directive tells Travis the Ruby version to use when running your
+# test script.
+rvm:
+  - 2.1
+
+# The build script file needs to have the exec attribute set or Travis
+# will fail with a permission denied error.
+before_script:
+  - chmod +x ./script/cibuild # or do this locally and commit
+
+# Assume bundler is being used, therefore
+# the `install` step will run `bundle install` by default.
+script: ./script/cibuild
+
+# Branch whitelist, only for GitHub pages.
+# You want to ensure the Travis builds for your site are being run only on the branch
+# or branches which contain your site. One means of ensuring this isolation is including
+# a branch whitelist in your Travis configuration file. By specifying the `gh-pages` branch,
+# you will ensure the associated test script is ONLY executed on site branches. If you use a
+# pull request flow for proposing changes, you may wish to enforce a convention for your
+# builds such that all branches containing edits are prefixed, i.e. like the `/pages-(*)/`
+# regular expression (above).
+branches:
+  only:
+    - gh-pages      # test the gh-pages branch
+    - /pages-(.*)/  # test every branch which starts with "pages-"
+
+# Nokogiri, used to parse HTML files in your compiled site, comes bundled with libraries
+# which it must compile each time it is installed. Luckily, you can dramatically decrease
+# the install time of Nokogiri by setting the env variable `NOKOGIRI_USE_SYSTEM_LIBRARIES`
+# to `true`.
+env:
+  global:
+  - NOKOGIRI_USE_SYSTEM_LIBRARIES=true # speeds up installation of html-proofer
+
+# [NOTE]
+
+# Explicitly tells Travis to run your build on Travis's container-based infrastructure.
+# Running on the container-based infrastructure an often times speed up your build.
+sudo: false # route your build to the container-based infra for a faster build
