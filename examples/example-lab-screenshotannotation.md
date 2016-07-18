@@ -9,11 +9,11 @@ category: lab
 
 
 ## Resized Using HTML
-<img src="{{ site.baseurl }}/images/ose-browse.png" width="250"/>
+<img alt="OpenShift Browse Tab" src="{{ site.baseurl }}/images/ose-browse.png" width="250"/>
 
 
 ## Resize and Annotated
-<img src="{{ site.baseurl }}/images/ose-browse.png" width="250" /><br/>
+<img alt="OpenShift Browse Tab" src="{{ site.baseurl }}/images/ose-browse.png" width="250" /><br/>
 *Image Caption*
 
 

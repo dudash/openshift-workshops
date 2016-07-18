@@ -28,6 +28,7 @@ exclude:
   - grunt
   - js
   - less
+  - examples
 
 
 # Enable emoji
