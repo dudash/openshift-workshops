@@ -53,7 +53,7 @@ Select your operating system:
 
     :warning: Remove the file extension (if any).
 
-  ![SSH Private Key]({{ site.url }}/images/2016/03/ssh-private-key-trim.png)
+  ![SSH Private Key]({{ site.url }}/images/ssh-private-key-trim.png)
 
 # Change the Private Key file permissions.
 
@@ -63,7 +63,7 @@ To do this:
 
     $ chmod 600 generic_naps_private_key
 
-  ![Change File Permissions]({{ site.url }}/images/2016/03/change-file-permissions.png)
+  ![Change File Permissions]({{ site.url }}/images/change-file-permissions.png)
 
 # Connecting to the OpenShift Master Lab Environment
 

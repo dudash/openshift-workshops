@@ -29,11 +29,11 @@ Or, select your operating system:
 
   After downloading the archive, unzip (extract) the `oc` command line tool from the compressed archive into a specified directory.
 
-    ![Windows Unzip]({{ site.url }}/images/2016/02/oc-windows.png)
+    ![Windows Unzip]({{ site.url }}/images/oc-windows.png)
 
-  Open the Command Prompt window by clicking the Start button Picture of the **Start** button ![Windows Start]({{ site.url }}/images/2016/02/windows-start.png), clicking **All Programs**, clicking **Accessories**, and then clicking **Command Prompt**.
+  Open the Command Prompt window by clicking the Start button Picture of the **Start** button ![Windows Start]({{ site.url }}/images/windows-start.png), clicking **All Programs**, clicking **Accessories**, and then clicking **Command Prompt**.
 
-  :page_facing_up: Here's another way to open a Command Prompt window: Click the Start button Picture of the **Start** button ![Windows Start]({{ site.url }}/images/2016/02/windows-start.png). In the **Search** box, type **Command Prompt**, and then, in the list of results, double-click **Command Prompt**.
+  :page_facing_up: Here's another way to open a Command Prompt window: Click the Start button Picture of the **Start** button ![Windows Start]({{ site.url }}/images/windows-start.png). In the **Search** box, type **Command Prompt**, and then, in the list of results, double-click **Command Prompt**.
 
   Then update your PATH (environment variable).
 

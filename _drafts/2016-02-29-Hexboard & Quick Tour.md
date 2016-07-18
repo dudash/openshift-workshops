@@ -117,17 +117,17 @@ Or, install the template directly into your current project (advanced).
 
 :information_source: The master server is the host or hosts that contain the master components, including the API server, controller manager server, and etcd.
 
-  ![OpenShift Master Login]({{ site.url }}/images/2016/02/ose-master-login.png)
+  ![OpenShift Master Login]({{ site.url }}/images/ose-master-login.png)
 
   After you have authenticated to the web console, you will be presented with a list of projects that your user has permission to work with like so.
 
-  ![OpenShift Master Console]({{ site.url }}/images/2016/02/ose-master-console.png)
+  ![OpenShift Master Console]({{ site.url }}/images/ose-master-console.png)
 
 :cool: Each user's OpenShift Enterprise (OSE) 3.1 environment for this lab has the highest level of administrative privileges.
 
   Click on the **Hexboard** project to navigate to the the project overview page which lists all the routes, services, deployments, and pods running for the recently created project.
 
-  ![OpenShift Hexboard Project]({{ site.url }}/images/2016/02/ose-hexboard-project.png)
+  ![OpenShift Hexboard Project]({{ site.url }}/images/ose-hexboard-project.png)
 
   Once you have digested the information on the overview page, mouseover **Browse** tab on the left hand :point_left: side of the screen, and explore the different menus.
 

@@ -10,7 +10,7 @@ A **node** is a worker machine in Kubernetes, previously known as Minion. A node
 
 Other machines run special coordinating software that schedule containers on the nodes. These machines are called masters. Collections of masters and nodes are known as clusters.
 
-![Kubernetes Pod]({{ site.url }}/images/2016/02/kube1-arch.png)
+![Kubernetes Pod]({{ site.url }}/images/kube1-arch.png)
 
 Each node has the services necessary to run pods and is managed by the master components. The services on a node include docker, kubelet and network proxy.
 
@@ -28,7 +28,7 @@ A node usually runs three important processes:
 - **Proxy** - This is a simple network proxy that’s used to separate the IP address of a target container from the name of the service it provides.
 - **cAdvisor** (optional) - [Container Advisor (cAdvisor)](http://bit.ly/1izYGLi) is a special daemon that collects, aggregates, processes, and exports information about running containers. This information includes information about resource isolation, historical usage, and key network statistics.
 
-![Kubernetes Pod]({{ site.url }}/images/2016/02/kube2-arch.png)
+![Kubernetes Pod]({{ site.url }}/images/kube2-arch.png)
 
 These various parts can be distributed across different machines for scale or all run on the same host for simplicity. The key difference between a master and a node comes down to who’s running which set of processes.
 
@@ -36,7 +36,7 @@ These various parts can be distributed across different machines for scale or al
 
 A **pod** is a collection of containers and volumes that are bundled and scheduled together because they share a common resource—usually a filesystem or IP address.
 
-![Kubernetes Pod]({{ site.url }}/images/2016/02/kube-pod.png)
+![Kubernetes Pod]({{ site.url }}/images/kube-pod.png)
 
 In the standard Docker configuration, each container gets its own IP address. Kubernetes simplifies this scheme by assigning a shared IP address to the pod. The containers in the pod all share the same address and communicate with one another via localhost.
 
@@ -56,7 +56,7 @@ across host systems
   - SELinux
 
 
-  ![Linux Containers Architecture]({{ site.url }}/images/2016/02/lxc1-arch.png)
+  ![Linux Containers Architecture]({{ site.url }}/images/lxc1-arch.png)
 
 # Docker
 

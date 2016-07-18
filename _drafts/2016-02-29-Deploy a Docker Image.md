@@ -25,7 +25,7 @@ Let's look at the Pods that were deployed as part of the smoke application in th
 
 You should see output similar to the following:
 
-![OC Get Pods Command]({{ site.url }}/images/2016/02/oc-get-pods.png)
+![OC Get Pods Command]({{ site.url }}/images/oc-get-pods.png)
 
 The above output lists all of the Pods in the current Project, including the Pod name, state, restarts, and uptime for the Pod. Once you have a Pod's name, you can get more information about the Pod's using the oc get command.
 
@@ -37,7 +37,7 @@ To make the output readable, I suggest changing the output type to JSON using th
 
 Which should output something like so (truncated).
 
-![OC Get Pod JSON Command]({{ site.url }}/images/2016/02/oc-get-pod-json.png)
+![OC Get Pod JSON Command]({{ site.url }}/images/oc-get-pod-json.png)
 
 Other commands to explore include:
 
@@ -56,7 +56,7 @@ Again, the first thing we want to do is create a new project called `guestbook`.
 
 Which outputs something similar to the folowing:
 
-![OC New Project Command]({{ site.url }}/images/2016/02/oc-new-project-guestbook.png)
+![OC New Project Command]({{ site.url }}/images/oc-new-project-guestbook.png)
 
 :fast_forward: To see all the projects you have access to, you can simply use `oc get projects`.
 
@@ -66,7 +66,7 @@ Run the Docker image in OpenShift by creating a new application in the `guestboo
 
 The output should be similar to the following screenshot.
 
-![OC New Application Command]({{ site.url }}/images/2016/02/oc-new-app-guestbook.png)
+![OC New Application Command]({{ site.url }}/images/oc-new-app-guestbook.png)
 
 Pretty easy, huh?
 
@@ -87,25 +87,25 @@ You can check on the status of the image download and deployment by:
           Username: student
           Password: redhat
 
-    ![OpenShift Master Login]({{ site.url }}/images/2016/02/ose-master-login.png)
+    ![OpenShift Master Login]({{ site.url }}/images/ose-master-login.png)
 
     :information_source: The master server manages nodes in its Kubernetes cluster and schedules pods to run on nodes.
 
     After you have authenticated to the web console, you will be presented with a list of projects that your user has permission to work with, like so.
 
-    ![OpenShift Master Console]({{ site.url }}/images/2016/02/ose-master-console.png)
+    ![OpenShift Master Console]({{ site.url }}/images/ose-master-console.png)
 
   2. Select the `guestbook` project.
 
-      ![OpenShift Guestbook Project]({{ site.url }}/images/2016/02/ose-master-console-guestbook.png)
+      ![OpenShift Guestbook Project]({{ site.url }}/images/ose-master-console-guestbook.png)
 
   3. Mouseover **Browse**, and then select **Pods**.
 
-      ![OpenShift Select Guestbook Project Pods]({{ site.url }}/images/2016/02/ose-guestbook-project-pods.png)
+      ![OpenShift Select Guestbook Project Pods]({{ site.url }}/images/ose-guestbook-project-pods.png)
 
   4. Inspect the `guestbook` project's pods status.
 
-      ![OpenShift Select Guestbook Project Pods]({{ site.url }}/images/2016/02/ose-guestbook-project-pods-status.png)
+      ![OpenShift Select Guestbook Project Pods]({{ site.url }}/images/ose-guestbook-project-pods-status.png)
 
 :eyes: Under status you might see *Pending* rather than *Running*.
 

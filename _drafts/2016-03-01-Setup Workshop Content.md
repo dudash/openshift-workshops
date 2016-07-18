@@ -144,7 +144,7 @@ To have a remote server handle the deploy for you every time you push changes us
 
 2. Open a browser and navigate to http://127.0.0.1:4000/ to see the static website content locally.
 
-        ![OpenShift Workshop Home Page]({{ site.url }}/images/2016/02/ose-workshop-home.png)
+        ![OpenShift Workshop Home Page]({{ site.url }}/images/ose-workshop-home.png)
 
 3. If you configured the Git post-recieve webhook, then execute the following:
 
