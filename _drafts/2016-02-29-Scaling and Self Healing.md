@@ -34,29 +34,29 @@ Now that we know what a ReplicatonController and DeploymentConfig are, we can st
 
     $ oc get rc
 
-![OC Get RC]({{ site.url }}/images/2016/02/oc-get-rc.png)
+![OC Get RC]({{ site.url }}/images/oc-get-rc.png)
 
 Get more detail about the RCs, by issuing the following commands:
 
     # Hexboard RC
     $ oc get rc hexboard-1 -o json
 
-![OC Get RC Hexboard]({{ site.url }}/images/2016/02/oc-get-rc-json-hexboard.png)
+![OC Get RC Hexboard]({{ site.url }}/images/oc-get-rc-json-hexboard.png)
 
     # Sketchpod RC
     $ oc get rc sketchpod-1 -o json
 
-![OC Get RC Sketchpod]({{ site.url }}/images/2016/02/oc-get-rc-json-sketchpod.png)
+![OC Get RC Sketchpod]({{ site.url }}/images/oc-get-rc-json-sketchpod.png)
 
 For example, if you just want to see how many replicas are defined for the `hexboard` image, you can enter in the following command:
 
     $ oc get rc hexboard-1 -o json | grep -B1 -E "replicas" | grep -v Docker
 
-![OC RC Hexboard Grep Docker]({{ site.url }}/images/2016/02/oc-get-rc-hexboard-grep-docker.png)
+![OC RC Hexboard Grep Docker]({{ site.url }}/images/oc-get-rc-hexboard-grep-docker.png)
 
     $ oc get rc sketchpod-1 -o json | grep -B1 -E "replicas" | grep -v Docker
 
-![OC RC Sketchpod Grep Docker]({{ site.url }}/images/2016/02/oc-get-rc-sketchpod-grep-docker.png)
+![OC RC Sketchpod Grep Docker]({{ site.url }}/images/oc-get-rc-sketchpod-grep-docker.png)
 
 :information_source: The above command uses the `grep` utility which may not be available on your operating system.
 
@@ -70,11 +70,11 @@ Let's scale our `sketchpod` application up to three instances. We can do this wi
 
 $ oc scale --replicas=3 rc hexboard-1
 
-![OC Scale Hexboard]({{ site.url }}/images/2016/02/oc-scale-hexboard.png)
+![OC Scale Hexboard]({{ site.url }}/images/oc-scale-hexboard.png)
 
     $ oc scale --replicas=3 rc sketchpod-1
 
-![OC Scale Sketchpod]({{ site.url }}/images/2016/02/oc-scale-sketchpod.png)
+![OC Scale Sketchpod]({{ site.url }}/images/oc-scale-sketchpod.png)
 
 :information_source: You could also do this by clicking the "up" arrow next to the Pod in the OpenShift web console.
 
@@ -82,29 +82,29 @@ To verify that we changed the number of replicas by modifying the RC object, iss
 
     $ oc get rc
 
-![OC Get RC Post Scale]({{ site.url }}/images/2016/02/oc-get-rc-post-scale.png)
+![OC Get RC Post Scale]({{ site.url }}/images/oc-get-rc-post-scale.png)
 
 You can see that we now have 3 replicas. Let's verify that with the oc get pods command:
 
     $ oc get pods
 
-![OC Get Pods Post Scale]({{ site.url }}/images/2016/02/oc-get-pods-post-scale.png)
+![OC Get Pods Post Scale]({{ site.url }}/images/oc-get-pods-post-scale.png)
 
 And lastly, let's verify that the Service that we learned about in the previous lab accurately reflects three endpoints:
 
     $ oc describe service hexboard
 
-![OC Describe Service Hexboard]({{ site.url }}/images/2016/02/oc-describe-service-hexboard.png)
+![OC Describe Service Hexboard]({{ site.url }}/images/oc-describe-service-hexboard.png)
 
     $ oc describe service sketchpod
 
-![OC Describe Service Sketchpod]({{ site.url }}/images/2016/02/oc-describe-service-sketchpod.png)
+![OC Describe Service Sketchpod]({{ site.url }}/images/oc-describe-service-sketchpod.png)
 
 That's how simple it is to scale up Pods in a Service. Application scaling can happen extremely quickly because OpenShift is just launching new instances of an existing Docker image that is already cached on the node.
 
 Verify that all three pods are running as expected via the Web Console:
 
-![Heboard Project Scaling]({{ site.url }}/images/2016/02/ose-hexboard-project-scaling.png)
+![Heboard Project Scaling]({{ site.url }}/images/ose-hexboard-project-scaling.png)
 
 # Self Healing
 

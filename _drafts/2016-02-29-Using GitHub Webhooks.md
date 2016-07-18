@@ -25,7 +25,7 @@ In the OpenShift web console, navigate to your `mlbparks` Project, and then mous
 
 On this screen you will see the option to copy the GitHub webhook URL as shown in the following image:
 
-![OpenShift Webhook]({{ site.url }}/images/2016/02/webhook1.png)
+![OpenShift Webhook]({{ site.url }}/images/webhook1.png)
 
 Once you have the URL copied to your clipboard, navigate to the code repository that you forked on GitHub. Remember, it probably looks like:
 
@@ -33,15 +33,15 @@ Once you have the URL copied to your clipboard, navigate to the code repository 
 
 Click the Settings link on the right hand side of the screen as shown in the following image:
 
-![OpenShift Webhook]({{ site.url }}/images/2016/02/webhook2.png)
+![OpenShift Webhook]({{ site.url }}/images/webhook2.png)
 
 Click the Webhooks & Services link:
 
-![OpenShift Webhook]({{ site.url }}/images/2016/02/webhook3.png)
+![OpenShift Webhook]({{ site.url }}/images/webhook3.png)
 
 And finally, click on Add webhook. On this screen, enter the URL you copied to your clipboard from the OpenShift web console in the Payload URL box and ensure that you disable SSL verification and save your changes:
 
-![OpenShift Webhook]({{ site.url }}/images/2016/02/webhook4.png)
+![OpenShift Webhook]({{ site.url }}/images/webhook4.png)
 
 Boom! From now on, every time you commit new source code to your GitHub repository, a new build and deploy will occur inside of OpenShift. Let's try this out.
 
@@ -49,7 +49,7 @@ Navigate to the /src/main/webapp directory in your GitHub project and then click
 
 Once you have the file on the screen, click the edit button in the top right hand corner as shown here:
 
-![OpenShift Webhook]({{ site.url }}/images/2016/02/webhook5.png)
+![OpenShift Webhook]({{ site.url }}/images/webhook5.png)
 
 Change the following HTML header (line number 34):
 
@@ -75,4 +75,4 @@ You should see that a new build is running:
 
 Once the build and deploy has finished, verify your new Docker image was automatically deployed by viewing the application in your browser:
 
-![MLB Parks]({{ site.url }}/images/2016/02/mlbparks.png)
+![MLB Parks]({{ site.url }}/images/mlbparks.png)

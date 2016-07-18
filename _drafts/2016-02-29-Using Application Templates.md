@@ -23,11 +23,11 @@ In order for the magic to happen, first create a new project and add the templat
 
     $ oc new-project mlbparks-template
 
-![OC New Project MLB Parks Template]({{ site.url }}/images/2016/02/oc-new-project-mlbparks-template.png)
+![OC New Project MLB Parks Template]({{ site.url }}/images/oc-new-project-mlbparks-template.png)
 
     $ oc create -f https://raw.githubusercontent.com/gshipley/openshift3mlbparks/master/mlbparks-template.json
 
-![OC Create MLB Parks Template]({{ site.url }}/images/2016/02/oc-create-mlbparks-template.png)
+![OC Create MLB Parks Template]({{ site.url }}/images/oc-create-mlbparks-template.png)
 
 Now we have access to the application template in our project. As a side note, administrators have the capability to add templates to the general openshift project which will in turn provide an application template to any user on the system.
 
@@ -35,7 +35,7 @@ Now we have access to the application template in our project. As a side note, a
 
     $ oc new-app mlbparks
 
-![OC New Application MLB Parks Template]({{ site.url }}/images/2016/02/oc-new-app-mlbparks-template.png )
+![OC New Application MLB Parks Template]({{ site.url }}/images/oc-new-app-mlbparks-template.png )
 
 OpenShift will automatically start a build for you. When it is complete, visit your app. Does it work? Think about how this could be used in your environment. For example, a template could define a large set of resources that make up a "reference application", complete with several app servers, databases, and more. You could deploy the entire set of resources with one command, and then hack on them to develop new features, microservices, fix bugs, and more.
 

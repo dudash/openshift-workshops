@@ -43,7 +43,7 @@ Now that we understand the basics of what a Service is, let's take a look at the
 
     $ oc get services
 
-![OC Get Services Command]({{ site.url }}/images/2016/02/oc-get-services.png)
+![OC Get Services Command]({{ site.url }}/images/oc-get-services.png)
 
 In the above output, we can see that we have a Service named `guestbook` with an IP/Port combination of 172.30.208.199/3000. Your IP address may be different, as each Service receives a unique IP address upon creation. Service IPs never change for the life of the Service.
 
@@ -51,17 +51,17 @@ You can also get more detailed information about a Service by using the followin
 
     $ oc get service guestbook -o json
 
-![OC Get Service JSON Command]({{ site.url }}/images/2016/02/oc-get-service-json.png)
+![OC Get Service JSON Command]({{ site.url }}/images/oc-get-service-json.png)
 
 :eyes: Take note of the selector stanza...
 
-![OC Get Service JSON Selector Stanza]({{ site.url }}/images/2016/02/selector-stanza.png)
+![OC Get Service JSON Selector Stanza]({{ site.url }}/images/selector-stanza.png)
 
 It is also of interest to view the JSON of the Pod to understand how OpenShift wires components together. For example, run the following command to get the name of your `guestbook` Pod:
 
     $ oc get pods
 
-![OC Get Pods Command]({{ site.url }}/images/2016/02/oc-get-pods-guestbook.png)
+![OC Get Pods Command]({{ site.url }}/images/oc-get-pods-guestbook.png)
 
 Now you can view the detailed data for your Pod with the following command:
 
@@ -69,7 +69,7 @@ Now you can view the detailed data for your Pod with the following command:
 
 Under the `metadata` section you should see the following:
 
-![OC Get Pod JSON Command]({{ site.url }}/images/2016/02/oc-get-pod-json-guestbook.png)
+![OC Get Pod JSON Command]({{ site.url }}/images/oc-get-pod-json-guestbook.png)
 
 The service selector stanza refers to `app=guestbook` and `deploymentconfig=guestbook` and the pod has multiple labels with the same key/value pairs.
 
@@ -77,7 +77,7 @@ Meaning, labels are just key/value pairs. Any Pod in this Project that has a lab
 
     $ oc describe service guestbook
 
-![OC Describe Service Command]({{ site.url }}/images/2016/02/oc-describe-service-guestbook.png)
+![OC Describe Service Command]({{ site.url }}/images/oc-describe-service-guestbook.png)
 
 You may be wondering why only one end point is listed. That is because there is only one `guestbook` pod running. Soon, we will learn how to scale an application, at which point you will be able to see multiple endpoints associated with the `guestbook` service.
 
@@ -93,7 +93,7 @@ The OpenShift *router* uses the HTTP header of the incoming request to determine
 
 The following is an example of this architectural flow using an HAProxy router:
 
-![OpenShift HAProxy Router]({{ site.url }}/images/2016/02/ose-haproxy-router.png)
+![OpenShift HAProxy Router]({{ site.url }}/images/ose-haproxy-router.png)
 
 #### Creating a Route
 
@@ -104,30 +104,30 @@ Now we need to get the Service name to expose:
     $ oc get routes
       <no output>
 
-![OC Get Routes Command]({{ site.url }}/images/2016/02/oc-get-routes.png)
+![OC Get Routes Command]({{ site.url }}/images/oc-get-routes.png)
 
 Now we need to get the Service name to expose:
 
     $ oc get services
 
-![OC Get Services Guestbook Command]({{ site.url }}/images/2016/02/oc-get-services-guestbook.png)
+![OC Get Services Guestbook Command]({{ site.url }}/images/oc-get-services-guestbook.png)
 
 Once we know the Service name, creating a Route is a simple one-command task:
 
     $ oc expose service guestbook
 
-![OC Expose Service Guestbook Command]({{ site.url }}/images/2016/02/oc-expose-service-guestbook.png)
+![OC Expose Service Guestbook Command]({{ site.url }}/images/oc-expose-service-guestbook.png)
 
 Verify the Route was created with the following command:
 
     $ oc get routes
 
-![OC Get Routes Command]({{ site.url }}/images/2016/02/oc-get-routes-guestbook.png)
+![OC Get Routes Command]({{ site.url }}/images/oc-get-routes-guestbook.png)
 
 You can also verify the Route by looking at the project in the OpenShift web console:
 
-![OpenShift Guestbook Route]({{ site.url }}/images/2016/02/ose-guestbook-project-route.png)
+![OpenShift Guestbook Route]({{ site.url }}/images/ose-guestbook-project-route.png)
 
 :snowboarder: Pretty nifty, huh? This `guestbook` application is now available at the above URL:
 
-![OpenShift Guestbook Application]({{ site.url }}/images/2016/02/ose-guestbook-project-app.png)
+![OpenShift Guestbook Application]({{ site.url }}/images/ose-guestbook-project-app.png)
