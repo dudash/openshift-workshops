@@ -4,4 +4,4 @@ set -e # halt script on error
 bundle exec npm install
 bundle exec grunt dist
 bundle exec jekyll build
-bundle exec htmlproofer ./_site
+bundle exec htmlproofer --url-ignore "http://openshift.example.com:3000/demo/openshiftexamples-nodemongo" ./_site
