@@ -38,7 +38,43 @@ $ oc new-app --name=green [your-project-repo-url]
 ### Switch from Blue to Green
 Now that we are satisfied with our change we can do the Blue/Green switch.  With OpenShift services and routes, this is super simple.  Follow the steps below to make the switch:
 
-Coming soon...
+<div class="panel-group" id="accordionA" role="tablist" aria-multiselectable="true">
+  <div class="panel panel-default">
+    <div class="panel-heading" role="tab" id="headingAOne">
+      <div class="panel-title">
+        <a role="button" data-toggle="collapse" data-parent="#accordionA" href="#collapseAOne" aria-expanded="true" aria-controls="collapseAOne">
+          CLI Steps
+        </a>
+      </div>
+    </div>
+    <div id="collapseAOne" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingAOne">
+      <div class="panel-body">
+      
+<blockquote>
+<i class="fa fa-terminal"></i> Goto the terminal and type the following:
+</blockquote>
+{% highlight csh %}
+$ oc TBD...
+{% endhighlight %}
+
+      </div>
+    </div>
+  </div>
+  <div class="panel panel-default">
+    <div class="panel-heading" role="tab" id="headingATwo">
+      <div class="panel-title">
+        <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordionA" href="#collapseATwo" aria-expanded="false" aria-controls="collapseATwo">
+          Web Console Steps
+        </a>
+      </div>
+    </div>
+    <div id="collapseATwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingATwo">
+      <div class="panel-body">
+      
+      </div>
+    </div>
+  </div>
+</div>
 
 ### Good work, let's clean this up
 > <i class="fa fa-terminal"></i> Let's clean up all this to get ready for the next lab:
