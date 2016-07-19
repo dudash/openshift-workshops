@@ -23,6 +23,8 @@ html_title: Workshops
 
 ### [Lab: Labels](workshop-lab-labels.html)
 
+### [Lab: Blue | Green Deployment](workshop-lab-bluegreen.html)
+
 ### [Fin.](workshop-finally.html)
 
 <!--
