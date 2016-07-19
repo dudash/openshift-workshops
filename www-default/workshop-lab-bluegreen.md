@@ -21,12 +21,12 @@ $ oc new-app --name=green [your-project-repo-url]
 $ oc expose service green
 {% endhighlight %}
 
-Note that we exposed this application using a route named "blue". Navigate to your application and validate it deployed correctly.
+Note that we exposed this application using a route named "green". Navigate to your application and validate it deployed correctly.
 
 ### Release a new version of our app and test it in the same environment
-What we'll do next is create a new version of the application called "green". The quickest way to make a change to the code is directly in the GitHub web interface. In GitHub, edit the image.php file in the root directory of your repo. Switch the commented out line to change the color of the rendered box (lines 9-10). Commit your changes.
+What we'll do next is create a new version of the application called "blue". The quickest way to make a change to the code is directly in the GitHub web interface. In GitHub, edit the image.php file in the root directory of your repo. Switch the commented out line to change the color of the rendered box (lines 9-10). Commit your changes.
 
-Use the same commands to deploy this new version of the app, but this time name it "green". No need to expose a new route -- we'll instead switch the "green" route to point to the "blue" service once we've verified it.
+Use the same commands to deploy this new version of the app, but this time name the service "blue". No need to expose a new route -- we'll instead switch the "green" route to point to the "blue" service once we've verified it.
 
 > <i class="fa fa-terminal"></i> Goto the terminal and type these commands:
 
