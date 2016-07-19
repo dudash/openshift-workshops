@@ -54,8 +54,10 @@ Now that we are satisfied with our change we can do the Blue/Green switch.  With
 <i class="fa fa-terminal"></i> Goto the terminal and type the following:
 </blockquote>
 {% highlight csh %}
-$ oc TBD...
+$ oc edit route blue
 {% endhighlight %}
+
+This will bring up the Route configuration yaml. Edit the element spec.to.name and change it's value from "blue" to "green".
 
       </div>
     </div>
