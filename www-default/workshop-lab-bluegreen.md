@@ -94,16 +94,16 @@ Edit the YAML element spec: to: name: and change the value from "green" to "blue
   </div>
 </div>
 
-### Good work, let's clean this up
+<!--### Good work, let's clean this up
 > <i class="fa fa-terminal"></i> Let's clean up all this to get ready for the next lab:
 
 {% highlight csh %}
 $ oc delete all -l subproject=dc-busses
 {% endhighlight %}
-
+-->
 
 ## Summary
-Coming soon...
+Pretty easy, right?
 
 If you want to read more about Blue/Green check out [this post][2] with a longer description as well as links to additional resources.
 
