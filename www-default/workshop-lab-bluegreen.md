@@ -24,7 +24,11 @@ $ oc expose service green
 Note that we exposed this application using a route named "green". Navigate to your application and validate it deployed correctly.
 
 ### Release a new version of our app and test it in the same environment
-What we'll do next is create a new version of the application called "blue". The quickest way to make a change to the code is directly in the GitHub web interface. In GitHub, edit the image.php file in the root directory of your repo. Switch the commented out line to change the color of the rendered box (lines 9-10). Commit your changes.
+What we'll do next is create a new version of the application called "blue". The quickest way to make a change to the code is directly in the GitHub web interface. In GitHub, edit the image.php file in the root directory of your repo. 
+
+<p><img src="{{ site.baseurl }}/www-default/screenshots/ose-lab-bluegreen-editgithub.png" width="500"/></p>
+
+Switch the commented out line to change the color of the rendered box (lines 9-10). Commit your changes.
 
 Use the same commands to deploy this new version of the app, but this time name the service "blue". No need to expose a new route -- we'll instead switch the "green" route to point to the "blue" service once we've verified it.
 
