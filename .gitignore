@@ -20,4 +20,3 @@ site/_site/
 test/dest
 tmp/*
 node_modules
-dist
