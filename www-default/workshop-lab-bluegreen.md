@@ -17,8 +17,8 @@ You should be comfortable deploying an app at this point, but here are the steps
 > <i class="fa fa-terminal"></i> Goto the terminal and type these commands:
 
 {% highlight csh %}
-$ oc new-app --name=blue [your-project-repo-url]
-$ oc expose service blue
+$ oc new-app --name=green [your-project-repo-url]
+$ oc expose service green
 {% endhighlight %}
 
 Note that we exposed this application using a route named "blue". Navigate to your application and validate it deployed correctly.
@@ -26,12 +26,12 @@ Note that we exposed this application using a route named "blue". Navigate to yo
 ### Release a new version of our app and test it in the same environment
 What we'll do next is create a new version of the application called "green". The quickest way to make a change to the code is directly in the GitHub web interface. In GitHub, edit the image.php file in the root directory of your repo. Switch the commented out line to change the color of the rendered box (lines 9-10). Commit your changes.
 
-Use the same commands to deploy this new version of the app, but this time name it "green". No need to expose a new route -- we'll instead switch the "blue" route to point to the "green" service once we've verified it.
+Use the same commands to deploy this new version of the app, but this time name it "green". No need to expose a new route -- we'll instead switch the "green" route to point to the "blue" service once we've verified it.
 
 > <i class="fa fa-terminal"></i> Goto the terminal and type these commands:
 
 {% highlight csh %}
-$ oc new-app --name=green [your-project-repo-url]
+$ oc new-app --name=blue [your-project-repo-url]
 {% endhighlight %}
 
 
@@ -54,10 +54,10 @@ Now that we are satisfied with our change we can do the Blue/Green switch.  With
 <i class="fa fa-terminal"></i> Goto the terminal and type the following:
 </blockquote>
 {% highlight csh %}
-$ oc edit route blue
+$ oc edit route green
 {% endhighlight %}
 
-This will bring up the Route configuration yaml. Edit the element spec.to.name and change it's value from "blue" to "green".
+This will bring up the Route configuration yaml. Edit the element spec: to: name and change it's value from "green" to "blue".
 
       </div>
     </div>
@@ -72,6 +72,18 @@ This will bring up the Route configuration yaml. Edit the element spec.to.name a
     </div>
     <div id="collapseATwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingATwo">
       <div class="panel-body">
+
+Navigate to the Routes view from the left-hand menu:
+<p><img src="{{ site.baseurl }}/www-default/screenshots/ose-lab-bluegreen-navtoroutes.png" width="500"/></p>
+
+In your Routes overview, click on the "green" route:
+<p><img src="{{ site.baseurl }}/www-default/screenshots/ose-lab-bluegreen-routesoverview.png" width="500"/></p>
+
+In the Route detail page, click on Actions > Edit YAML:
+<p><img src="{{ site.baseurl }}/www-default/screenshots/ose-lab-bluegreen-routedetail.png" width="500"/></p>
+
+Edit the YAML element spec: to: name: and change the value from "green" to "blue":
+<p><img src="{{ site.baseurl }}/www-default/screenshots/ose-lab-bluegreen-edityaml.png" width="500"/></p>
       
       </div>
     </div>
