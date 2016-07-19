@@ -18,10 +18,10 @@ TL;DR:
 
 * Download a .tgz [from Red Hat][5] and add to your PATH
 
-For the unsupported community version:
+<!--For the unsupported community version:
 
 * Download a .tgz [from github][2] and add to your PATH
-* Mac users can [brew][3]: 'brew install openshift-cli'
+* Mac users can [brew][3]: 'brew install openshift-cli'-->
 
 
 ### Install git 
