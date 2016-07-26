@@ -50,7 +50,7 @@ Covers advanced developer focused tasks (including oc port-forward) - Coming soo
 Covers integration with some example CI/CD tools and walks through an example use case - Coming soon.
 
 ## workshop-lab-bluegreen.md
-Covers the DevOps concept of Blue/Green deployments - Coming soon.
+Covers the DevOps concept of Blue/Green deployments.
 
 ## workshop-lab-xpaas.md
 Covers using other JBOSS products within OpenShift - Coming soon.

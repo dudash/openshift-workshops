@@ -28,14 +28,11 @@ html_title: Workshops
 ### [Fin.](workshop-finally.html)
 
 <!--
-
-### [Lab: Working with Storage](workshop-lab-storage.html)
+### [Lab: CI | CD Pipelines](workshop-lab-cicd.html)
 
 ### [Lab: Keep it Secret, Keep it Safe](workshop-secrets.html)
 
-### [Lab: CI | CD Pipelines](workshop-lab-cicd.html)
-
-### [Lab: Blue | Green Deployment](workshop-lab-bluegreen.html)
+### [Lab: Working with Storage](workshop-lab-storage.html)
 
 ### [Lab: xPaaS on OpenShift](workshop-lab-xpaas.html)
 

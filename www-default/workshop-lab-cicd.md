@@ -7,16 +7,48 @@ categories: [lab, developers, ops]
 ---
 
 ## Overview
-Coming soon...
+In modern software projects many teams utilize the concept of continuous integration and continuous delivery (CI/CD).  By setting up a tool chain that continuously builds, tests, and stages software releases a team can ensure that their product can be reliably released at any time.  Open Shift can be an enabler in the creation and managecment of this tool chain.  In this lab we will walk through creating a simple example of a CI/CD [pipeline][1] utlizing Jenkins, all running on top of Open Shift!
 
-### Webhooks
-Coming soon...
+### Start by installing Jenkins
+First we will start by installing Jenkins to run in a pod within your workshop project.  Because this is just a workshop we use the ephemeral template to create our Jenkins sever (for a enterprise system you would probably want to use the persistent template).  Follow the steps below:
 
-### Using an Existing CI, Jenkins
-Coming soon...  Example S2I with promoting an image through Dev->UAT->Prod
+TBD...
 
-### Notifications - Slack / Hipchat
-Coming soon...
+### The OpenShift pipeline plugin
+Now let's make sure we have the OpenShift Pipeline [plugin][2] properly installed within Jenkins.  It will be used to define our application lifecycle and to let our Jenkins jobs perform commands on our OpenShift cluster.
+
+TBD...
+
+You can read more about the plugin [here][3].
+
+
+### Our sample web app and its automated tests
+In this example pipeline we will be building, testing, and staging a Node.js webapp.  We wrote all the code for you already, so don't worry you won't be coding in this lab.  You will just use the code and unit tests to see how CI/CD pipelines work.  And keep in mind that these principles are relevant whether your programming in Node.js, Ruby on Rails, Java, PHP or any one of today's popular programming languages.
+
+TBD more...
+
+
+### Setting up our OpenShift environment to match our lifecycle stages
+
+TBD create Jenkins jobs (just copy a file?)
+TBD create OSE projects or just do in a single project?
+TBD setup roles?  oadm.
+
+TBD other...
+
+
+### Watch me release!
+So now that you've done all that setup work, forget about it.  What?!  Yeah, all that configuration work only need to be done once.  Now that the pipeline is defined everything happens automatically on every git commit.  Let's see it in action:
+
+TBD...
+
 
 ## Summary
-Coming soon...
+Coming soon...  Read more about usage of [Jenkins on Open Shift here][4].  Read more about the concepts behind [pipelines in Jenkins here][1].
+
+
+[1]: https://jenkins.io/doc/pipeline/
+[2]: https://wiki.jenkins-ci.org/display/JENKINS/OpenShift+Pipeline+Plugin
+[3]: https://github.com/openshift/jenkins-plugin/
+[4]: https://docs.openshift.com/enterprise/latest/using_images/other_images/jenkins.html
+
