@@ -25,22 +25,25 @@ You can read more about the plugin [here][3].
 ### Our sample web app and its automated tests
 In this example pipeline we will be building, testing, and staging a Node.js webapp.  We wrote all the code for you already, so don't worry you won't be coding in this lab.  You will just use the code and unit tests to see how CI/CD pipelines work.  And keep in mind that these principles are relevant whether your programming in Node.js, Ruby on Rails, Java, PHP or any one of today's popular programming languages.
 
-TBD more...
+TBD fork the demo app in their github
 
 
 ### Setting up our OpenShift environment to match our lifecycle stages
 
 TBD create Jenkins jobs (just copy a file?)
-TBD create OSE projects or just do in a single project?
-TBD setup roles?  oadm.
+TBD setup Jekins jobs to use their github fork
 
-TBD other...
+TBD do we create OSE projects or just do in a single project due to users maybe not having project creation permissions?
+
+TBD connect the pipeline for dev->test->prod
 
 
 ### Watch me release!
 So now that you've done all that setup work, forget about it.  What?!  Yeah, all that configuration work only need to be done once.  Now that the pipeline is defined everything happens automatically on every git commit.  Let's see it in action:
 
-TBD...
+TBD make a code change and commit it on an even minute boundary
+
+TBD commit on an odd minute boundary
 
 
 ## Summary
@@ -51,4 +54,6 @@ Coming soon...  Read more about usage of [Jenkins on Open Shift here][4].  Read 
 [2]: https://wiki.jenkins-ci.org/display/JENKINS/OpenShift+Pipeline+Plugin
 [3]: https://github.com/openshift/jenkins-plugin/
 [4]: https://docs.openshift.com/enterprise/latest/using_images/other_images/jenkins.html
+[5]: https://en.wikipedia.org/wiki/Continuous_delivery
+[6]: https://github.com/openshift/origin/blob/master/examples/jenkins/README.md
 
