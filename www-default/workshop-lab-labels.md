@@ -72,19 +72,19 @@ $ oc describe pod/PODNAME | more
 Hover over "Browse" and then click on "Pods"
 </blockquote>
 This is going to show basic details for all pods in this project (including the builders).
-<p><img alt="OpenShift Display All Pods" src="{{ site.baseurl }}/images/ose-lab-devman-allpods.png" width="500"/></p>
+<p><img alt="OpenShift Display All Pods" src="{{ site.baseurl }}/www-default/screenshots/ose-lab-devman-allpods.png" width="500"/></p>
 Next let's look at the log for the pod running our application.
 
 <blockquote>
 Click the pod for the dc metro map webapp (it shoud have a status of Running)
 </blockquote>
-<p><img alt="OpenShift DC Metro Application Pod Details" src="{{ site.baseurl }}/images/ose-lab-labels-poddetails.png" width="500"/></p>
+<p><img alt="OpenShift DC Metro Application Pod Details" src="{{ site.baseurl }}/www-default/screenshots/ose-lab-labels-poddetails.png" width="500"/></p>
 Here, at the top, you can see the labels on this pod
 
 <blockquote>
 Click vertically stacked "..." button, then click "Edit" the pod
 </blockquote>
-<p><img alt="OpenShift DC Metro Application Pod Edit" src="{{ site.baseurl }}/images/ose-lab-labels-podedit.png" width="500"/></p>
+<p><img alt="OpenShift DC Metro Application Pod Edit" src="{{ site.baseurl }}/www-default/screenshots/ose-lab-labels-podedit.png" width="500"/></p>
 You will see all the labels under the metadata->labels section.
 
 <blockquote>

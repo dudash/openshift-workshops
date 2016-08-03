@@ -51,17 +51,17 @@ $ oc expose service dc-metro-map
 <blockquote>
 Click "Add to Project"
 </blockquote>
-<p><img alt="OpenShift Add to Project" src="{{ site.baseurl }}/images/ose-lab-s2i-addbutton.png" width="100"/></p>
+<p><img alt="OpenShift Add to Project" src="{{ site.baseurl }}/www-default/screenshots/ose-lab-s2i-addbutton.png" width="100"/></p>
 
 <blockquote>
 Click "Browse" and filter for nodejs, then click the nodejs:0.10 builder image
 </blockquote>
-<p><img alt="OpenShift Add Node.js" src="{{ site.baseurl }}/images/ose-lab-s2i-filternode.png" width="600"/></p>
+<p><img alt="OpenShift Add Node.js" src="{{ site.baseurl }}/www-default/screenshots/ose-lab-s2i-filternode.png" width="600"/></p>
 
 <blockquote>
 Fill out the boxes to look as follows:
 </blockquote>
-<p><img alt="OpenShift Add to Project" src="{{ site.baseurl }}/images/ose-lab-s2i-addtoproject.png" width="600"/></p>
+<p><img alt="OpenShift Add to Project" src="{{ site.baseurl }}/www-default/screenshots/ose-lab-s2i-addtoproject.png" width="600"/></p>
 <p>
 Notes: You will need to click to expand the "advanced options"<br/>
 The github repository URL is: https://github.com/dudash/openshift-workshops.git<br/>
@@ -127,20 +127,20 @@ The console will print out the full log for your build.  Note, you could pipe th
 <blockquote>
 Hover over Browse and then click on "Builds"
 </blockquote>
-<p><img alt="OpenShift Builds Overview" src="{{ site.baseurl }}/images/ose-lab-s2i-builds.png" width="300"/></p>
+<p><img alt="OpenShift Builds Overview" src="{{ site.baseurl }}/www-default/screenshots/ose-lab-s2i-builds.png" width="300"/></p>
 
 <blockquote>
 Click on the "dc-metro-map" link
 </blockquote>
-<p><img alt="OpenShift DC Metro Map Application" src="{{ site.baseurl }}/images/ose-lab-s2i-metromapbuild.png" width="300"/></p>
+<p><img alt="OpenShift DC Metro Map Application" src="{{ site.baseurl }}/www-default/screenshots/ose-lab-s2i-metromapbuild.png" width="300"/></p>
 
 <blockquote>
 Click on the "View Log" tab to see the details of your latest build
 </blockquote>
-<p><img alt="OpenShift DC Metro Map Application Log View" src="{{ site.baseurl }}/images/ose-lab-s2i-metromapbuilds.png" width="500"/></p>
+<p><img alt="OpenShift DC Metro Map Application Log View" src="{{ site.baseurl }}/www-default/screenshots/ose-lab-s2i-metromapbuilds.png" width="500"/></p>
 
 You should see a log output similar to the one below:
-<p><img alt="OpenShift DC Metro Map Application Build Log" src="{{ site.baseurl }}/images/ose-lab-s2i-metromapbuildlog.png" width="500"/></p>
+<p><img alt="OpenShift DC Metro Map Application Build Log" src="{{ site.baseurl }}/www-default/screenshots/ose-lab-s2i-metromapbuildlog.png" width="500"/></p>
 
       </div>
     </div>
@@ -190,12 +190,12 @@ Copy the HOST/PORT and paste into your favorite web browser
 <blockquote>
 Click on Overview
 </blockquote>
-<p><img alt="OpenShift DC Metro Map Application Overview" src="{{ site.baseurl }}/images/ose-lab-s2i-overview.png" width="100"/></p>
+<p><img alt="OpenShift DC Metro Map Application Overview" src="{{ site.baseurl }}/www-default/screenshots/ose-lab-s2i-overview.png" width="100"/></p>
 
 <blockquote>
 Click the URL that is listed in the dc-metro-map service
 </blockquote>
-<p><img alt="OpenShift DC Metro Map Application Service" src="{{ site.baseurl }}/images/ose-lab-s2i-dcmetromapsvc.png" width="500"/></p>
+<p><img alt="OpenShift DC Metro Map Application Service" src="{{ site.baseurl }}/www-default/screenshots/ose-lab-s2i-dcmetromapsvc.png" width="500"/></p>
 
       </div>
     </div>
@@ -204,7 +204,7 @@ Click the URL that is listed in the dc-metro-map service
 
 The app should look like this in your web browser:
 
-<p><img alt="OpenShift DC Metro Map Application" src="{{ site.baseurl }}/images/ose-lab-s2i-apprunning.png" width="500"/></p>
+<p><img alt="OpenShift DC Metro Map Application" src="{{ site.baseurl }}/www-default/screenshots/ose-lab-s2i-apprunning.png" width="500"/></p>
 
 Clicking the checkboxes will toggle on/off the individual metro stations on each colored line.  A numbered icon indicates there is more than one metro station in that area and they have been consolidated - click the number or zoom in to see more.
 

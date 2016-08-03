@@ -57,18 +57,18 @@ Copy the Generic webhook to the clipboard
 Hover over "Browse" and then click on "Builds"
 </blockquote>
 This is going to show basic details for all build configurations in this project
-<p><img alt="OpenShift Build Configuration" src="{{ site.baseurl }}/images/oseoffline-lab-rollbacks-buildconfigs.png" width="500"/></p>
+<p><img alt="OpenShift Build Configuration" src="{{ site.baseurl }}/www-offline/screenshots/oseoffline-lab-rollbacks-buildconfigs.png" width="500"/></p>
 
 <blockquote>
 Click the "webapp" build config
 </blockquote>
 You will see the summary of builds using this build config
-<p><img alt="OpenShift Build Configuration Summary" src="{{ site.baseurl }}/images/oseoffline-lab-rollbacks-buildconfigsummary.png" width="500"/></p>
+<p><img alt="OpenShift Build Configuration Summary" src="{{ site.baseurl }}/www-offline/screenshots/oseoffline-lab-rollbacks-buildconfigsummary.png" width="500"/></p>
 
 <blockquote>
 Click the "Configuration" tab (next to the active Summary tab)
 </blockquote>
-<p><img alt="OpenShift GitHub Repository and Webhook URLs" src="{{ site.baseurl }}/images/oseoffline-lab-devman-deployconfigconfig.png" width="500"/></p>
+<p><img alt="OpenShift GitHub Repository and Webhook URLs" src="{{ site.baseurl }}/www-offline/screenshots/oseoffline-lab-devman-deployconfigconfig.png" width="500"/></p>
 Now you can see the various configuration details including the Github specific and Generic webhook URLs.
 
 <blockquote>
@@ -98,7 +98,7 @@ Copy the Generic webhook to the clipboard
 
 Let's put the webhook URL into the repository. At the main page for this repository (the fork), you should see a tab bar with code, issues, commits, releases, wiki, and settings.
 
-<p><img alt="OpenShift Gogs - Go Git Service - Settings" src="{{ site.baseurl }}/images/oseoffline-lab-rollbacks-gogsettings.png" width="400"/></p>
+<p><img alt="OpenShift Gogs - Go Git Service - Settings" src="{{ site.baseurl }}/www-offline/screenshots/oseoffline-lab-rollbacks-gogsettings.png" width="400"/></p>
 
 <blockquote>
 Click the "Settings" button
@@ -128,7 +128,7 @@ Let's test that out.
 <blockquote>
 Select the webhook and click the "Test Delivery" button.
 </blockquote>
-<p><img alt="OpenShift Rollback Test Delivery" src="{{ site.baseurl }}/images/oseoffline-lab-rollbacks-testdelivery.png" width="400"/></p>
+<p><img alt="OpenShift Rollback Test Delivery" src="{{ site.baseurl }}/www-offline/screenshots/oseoffline-lab-rollbacks-testdelivery.png" width="400"/></p>
 
 <blockquote>
 Switch back to the Open Shift web console and browse to Builds for the webapp
@@ -201,7 +201,7 @@ Toward the bottom of the screen you will see a table of deployments using this d
 <blockquote>
 In the Deployments table click the #1
 </blockquote>
-<p><img alt="OpenShift Deployment Configuration #1" src="{{ site.baseurl }}/images/oseoffline-lab-rollbacks-deploymentconfig1.png" width="500"/></p>
+<p><img alt="OpenShift Deployment Configuration #1" src="{{ site.baseurl }}/www-offline/screenshots/oseoffline-lab-rollbacks-deploymentconfig1.png" width="500"/></p>
 
 <blockquote>
 Click the "Rollback button", accept defaults, and click "Rollback" again
@@ -210,7 +210,7 @@ Click the "Rollback button", accept defaults, and click "Rollback" again
 You can go back to the overview page to see your previous deployment spinning down and your new one spinning up.
 
 Open Shift has done a graceful removal of the old pod and created a new one using the previous deployment configuration.  Open the page for the webapp and refresh it.  Notice it is no longer talking to the database.
-<p><img alt="OpenShift No Database Error Message" src="{{ site.baseurl }}/images/oseoffline-lab-rollbacks-nodb.png" width="200"/></p>
+<p><img alt="OpenShift No Database Error Message" src="{{ site.baseurl }}/www-offline/screenshots/oseoffline-lab-rollbacks-nodb.png" width="200"/></p>
 
 <br/>
 <br/>
