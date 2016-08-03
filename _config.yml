@@ -9,7 +9,7 @@ baseurl: "/openshift-workshops" # the subpath of your site, e.g. /blog
 url: ""
 workshop-dir: www-offline
 twitter_username: twitter
-github_username:  github
+github_username:  ecwpz91
 
 # Build settings
 markdown: kramdown
