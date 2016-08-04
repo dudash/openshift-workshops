@@ -3,7 +3,7 @@ layout: lab
 title: Deploying Java Code on JBoss
 subtitle:
 html_title: JBoss
-categories: [lab, ops, app, jboss, xpaas]
+categories: [lab, developers, xpaas, developers, jboss]
 ---
 
 ## Background: Source-to-Image (S2I)
@@ -40,7 +40,7 @@ remember about S2I is that it's magic.
 For a current list of supported runtimes, you can check out the [OpenShift
 Technologies](https://enterprise.openshift.com/features/#technologies) page.
 
-## Creating a JBoss EAP application
+### Creating a JBoss EAP application
 
 The sample application that we will be deploying as part of this exercise is
 called `mlbparks`.  This application is a Java EE-based application that
@@ -62,7 +62,7 @@ You should see the following output:
 Now using project "mlbparks" on server "[URI]".
 {% endhighlight %}
 
-## Fork application code on GitHub
+### Fork application code on GitHub
 
 OpenShift can work with Git repositories on GitHub. You can even register
 webhooks to initiate OpenShift builds triggered by any update to the application
@@ -82,7 +82,7 @@ application.
 you don't have a GitHub account, please raise your hand and let your instructor
 know.  They can walk you through the process.
 
-## Combine the code with the Docker image on OpenShift
+### Combine the code with the Docker image on OpenShift
 
 While the `new-app` command makes it very easy to get OpenShift to build code
 from a GitHub repository into a Docker image, we can also use the web console to

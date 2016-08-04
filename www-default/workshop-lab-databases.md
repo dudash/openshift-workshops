@@ -63,7 +63,7 @@ You can leave the rest of the values as their defaults, and then click
 *"Create"*. Then click *Continue to overview*. The MongoDB instance should
 quickly be deployed.
 
-## Wiring the JBoss EAP pod(s) to communicate with our MongoDB database
+### Wiring the JBoss EAP pod(s) to communicate with our MongoDB database
 
 When we initially created our JBoss EAP application, we provided no environment
 variables. The application is looking for a database, but can't find one, and it
@@ -111,7 +111,7 @@ env": [
 ],
 {% endhighlight %}
 
-## OpenShift magic
+### OpenShift magic
 
 As soon as we set the environment variables on the *DeploymentConfiguration*, some
 magic happened. OpenShift decided that this was a significant enough change to
@@ -160,7 +160,7 @@ You can learn more about environment variables in the [environment
 variables](https://docs.openshift.com/enterprise/3.1/dev_guide/environment_variables.html)
 section of the Developer Guide.
 
-## Using the Mongo command line shell in the container
+### Using the Mongo command line shell in the container
 
 To interact with our database we will use the `oc exec` command, which allows us
 to run arbitrary commands in our *Pods*. If you are familiar with `docker exec`,
@@ -201,7 +201,7 @@ You can also view the json documents with the following command:
 
 {% endhighlight %}
 
-## OpenShift's web console terminal
+### OpenShift's web console terminal
 
 If you go back to the web console in your `userXX-mlbparks` *Project* and then
 mouse-over *"Browse"* and then select *Pods*, you'll be taken to the list of
