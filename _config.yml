@@ -1,14 +1,15 @@
 
 # Site settings
 title: OpenShift Workshops
-email: example@email.com
+maintainer: Michael Surbey
+email: msurbey@redhat.com
 description: > # this means to ignore newlines until "baseurl:"
-  Create, discover, and download content for your OpenShift instance
+  Create, discover, and access content for your OpenShift instance
   by Red Hat.
 baseurl: "/openshift-workshops" # the subpath of your site, e.g. /blog
-url: "https://ecwpz91.github.io" # the base hostname & protocol for your site
-workshop-dir: www-offline
-twitter_username: twitter
+url: "" # the base hostname & protocol for your site
+# workshop-dir: www-offline
+twitter_username: ecwpz91
 github_username:  ecwpz91
 
 # Build settings
