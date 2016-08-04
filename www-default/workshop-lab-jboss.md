@@ -15,12 +15,14 @@ Docker images using source code from an existing repository.
 [Source-to-Image (S2I)](https://github.com/openshift/source-to-image) is another
 open source project sponsored by Red Hat. Its goal:
 
-    Source-to-image (S2I) is a tool for building reproducible Docker images. S2I
-    produces ready-to-run images by injecting source code into a Docker image and
-    assembling a new Docker image which incorporates the builder image and built
-    source. The result is then ready to use with docker run. S2I supports
-    incremental builds which re-use previously downloaded dependencies, previously
-    built artifacts, etc.
+{% highlight csh %}
+Source-to-image (S2I) is a tool for building reproducible Docker images. S2I
+produces ready-to-run images by injecting source code into a Docker image and
+assembling a new Docker image which incorporates the builder image and built
+source. The result is then ready to use with docker run. S2I supports
+incremental builds which re-use previously downloaded dependencies, previously
+built artifacts, etc.
+{% endhighlight %}
 
 OpenShift is S2I-enabled and can use S2I as one of its build mechanisms (in
 addition to building Docker images from Dockerfiles, and "custom" builds).
