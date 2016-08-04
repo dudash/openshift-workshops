@@ -27,7 +27,9 @@ html_title: Workshops
 
 ### [Lab: Blue-green Deployment](workshop-lab-bluegreen.html)
 
-### [Lab: xPaaS: JBoss EAP](workshop-lab-jboss.html)
+### [Lab: xPaaS (JBoss EAP)](workshop-lab-jboss.html)
+
+### [Lab: Adding a Database](workshop-lab-databases.html)
 
 ### [Lab: Application Templates](workshop-lab-templates.html)
 

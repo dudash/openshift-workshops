@@ -1,4 +1,10 @@
-#** Lab 8: Adding a Database**
+---
+layout: lab
+title: Adding a Database (MongoDB)
+subtitle:
+html_title: Database
+categories: [lab, ops, database, app, mongodb]
+---
 
 Most useful applications are "stateful" or "dynamic" in some way, and this is
 usually achieved with a database or other data storage. In this next lab we are
@@ -14,7 +20,8 @@ disappears the data does as well. In a real application you would use
 OpenShift's persistent storage mechanism with the database *Pods* to give them a
 persistent place to store their data.
 
-###** Environment Variables **
+## Environment Variables
+
 As you saw in the last lab, the web console makes it pretty easy to deploy
 application components as well. When we deploy the database, we need to pass in
 some environment variables to be used inside the container. These environment
@@ -56,7 +63,7 @@ You can leave the rest of the values as their defaults, and then click
 *"Create"*. Then click *Continue to overview*. The MongoDB instance should
 quickly be deployed.
 
-###**Wiring the JBoss EAP pod(s) to communicate with our MongoDB database**
+## Wiring the JBoss EAP pod(s) to communicate with our MongoDB database
 
 When we initially created our JBoss EAP application, we provided no environment
 variables. The application is looking for a database, but can't find one, and it
@@ -69,48 +76,61 @@ need to modify the *DeploymentConfiguration*.
 
 First, find the name of the DC:
 
-	$ oc get dc
+{% highlight csh %}
+$ oc get dc
+{% endhighlight %}
 
 Then, use the `oc env` command to set environment variables directly on the DC:
 
-	$ oc env dc openshift3mlbparks -e MONGODB_USER=mlbparks -e MONGODB_PASSWORD=mlbparks -e MONGODB_DATABASE=mlbparks
+{% highlight csh %}
+$ oc env dc openshift3mlbparks -e MONGODB_USER=mlbparks -e MONGODB_PASSWORD=mlbparks -e MONGODB_DATABASE=mlbparks
+{% endhighlight %}
 
 After you have modified the *DeploymentConfig* object, you can verify the environment variables have been added by viewing the JSON document of the configuration:
 
-	$ oc get dc openshift3mlbparks -o json
+{% highlight csh %}
+$ oc get dc openshift3mlbparks -o json
+{% endhighlight %}
 
 You should see the following section:
 
-	env": [
-		{
-			"name": "MONGODB_USER",
-			"value": "mlbparks"
-		},
-		{
-			"name": "MONGODB_PASSWORD",
-			"value": "mlbparks"
-		},
-		{
-			"name": "MONGODB_DATABASE",
-			"value": "mlbparks"
-		}
-	],
+{% highlight csh %}
+env": [
+	{
+		"name": "MONGODB_USER",
+		"value": "mlbparks"
+	},
+	{
+		"name": "MONGODB_PASSWORD",
+		"value": "mlbparks"
+	},
+	{
+		"name": "MONGODB_DATABASE",
+		"value": "mlbparks"
+	}
+],
+{% endhighlight %}
 
-###** OpenShift Magic **
+## OpenShift magic
+
 As soon as we set the environment variables on the *DeploymentConfiguration*, some
 magic happened. OpenShift decided that this was a significant enough change to
 warrant updating the internal version number of the *DeploymentConfiguration*. You
 can verify this by looking at the output of `oc get dc`:
 
-    ...
-    openshift3mlbparks   ConfigChange, ImageChange   2
+{% highlight csh %}
+...
+openshift3mlbparks   ConfigChange, ImageChange   2
+{% endhighlight %}
 
 Something that increments the version of a *DeploymentConfiguration*, by default,
 causes a new deployment. You can verify this by looking at the output of `oc get
 rc`:
 
-    openshift3mlbparks-1   openshift3mlbparks ... 0
-    openshift3mlbparks-2   openshift3mlbparks ... 1
+{% highlight csh %}
+openshift3mlbparks-1   openshift3mlbparks ... 0
+openshift3mlbparks-2   openshift3mlbparks ... 1
+{% endhighlight %}
 
 We see that the replica count for the "-1" deployment is 0. The replica count
 for the "-2" deployment is 1. This means that OpenShift has gracefully torn down
@@ -118,7 +138,9 @@ our "old" application and stood up a "new" instance.
 
 If you refresh your application:
 
-    http://openshift3mlbparks-userXX-mlbparks.cloudapps.CITYNAME.openshift3roadshow.com/
+{% highlight csh %}
+http://openshift3mlbparks-userXX-mlbparks.cloudapps.URI.com/
+{% endhighlight %}
 
 You'll notice that the ballparks suddenly are showing up. That's really cool!
 
@@ -138,7 +160,7 @@ You can learn more about environment variables in the [environment
 variables](https://docs.openshift.com/enterprise/3.1/dev_guide/environment_variables.html)
 section of the Developer Guide.
 
-###**Using the Mongo command line shell in the container **
+## Using the Mongo command line shell in the container
 
 To interact with our database we will use the `oc exec` command, which allows us
 to run arbitrary commands in our *Pods*. If you are familiar with `docker exec`,
@@ -148,13 +170,17 @@ exists in the MongoDB Docker image, and then invoke the `mongo` command while
 passing in the credentials needed to authenticate to the database. First, find
 the name of your MongoDB Pod:
 
-    $ oc get pods
-    NAME                         READY     STATUS      RESTARTS   AGE
-    mongodb-1-dkzsp              1/1       Running     0          10m
-    openshift3mlbparks-1-build   0/1       Completed   0          29m
-    openshift3mlbparks-2-mxs0r   1/1       Running     0          7m
+{% highlight csh %}
+$ oc get pods
+NAME                         READY     STATUS      RESTARTS   AGE
+mongodb-1-dkzsp              1/1       Running     0          10m
+openshift3mlbparks-1-build   0/1       Completed   0          29m
+openshift3mlbparks-2-mxs0r   1/1       Running     0          7m
+{% endhighlight %}
 
-    $ oc exec -ti mongodb-1-dkzsp -- bash -c 'mongo -u mlbparks -p mlbparks mlbparks'
+{% highlight csh %}
+$ oc exec -ti mongodb-1-dkzsp -- bash -c 'mongo -u mlbparks -p mlbparks mlbparks'
+{% endhighlight %}
 
 **Note:** If you used different credentials when you created your MongoDB Pod,
 ensure that you substitute them for the values above.
@@ -163,13 +189,19 @@ ensure that you substitute them for the values above.
 
 Once you are connected to the database, run the following command to count the number of MLB teams added to the database:
 
-	> db.teams.count();
+{% highlight csh %}
+> db.teams.count();
+
+{% endhighlight %}
 
 You can also view the json documents with the following command:
 
-	> db.teams.find();
+{% highlight csh %}
+> db.teams.find();
 
-###**OpenShift's Web Console Terminal**
+{% endhighlight %}
+
+## OpenShift's web console terminal
 
 If you go back to the web console in your `userXX-mlbparks` *Project* and then
 mouse-over *"Browse"* and then select *Pods*, you'll be taken to the list of
@@ -180,7 +212,9 @@ any of the *Pods* in your *Project*.
 
 In the terminal for your Mongo *Pod*, run the same `mongo` command from before:
 
-    mongo -u mlbparks -p mlbparks mlbparks
+{% highlight csh %}
+mongo -u mlbparks -p mlbparks mlbparks
+{% endhighlight %}
 
 Then you can issue the same `db.teams.count();` command from before, without
 having to use the CLI! This is seriously cool.
@@ -189,5 +223,3 @@ having to use the CLI! This is seriously cool.
 information.
 
 **Note:** You currently can't copy/paste into the terminal.
-
-**End of Lab 8**
