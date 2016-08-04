@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
 set -e # halt script on error
 
-bundle exec jekyll build
+bundle exec jekyll build -d _site/openshift-workshops
 bundle exec htmlproofer --url-ignore "http://openshift.example.com:3000/demo/openshiftexamples-nodemongo" ./_site

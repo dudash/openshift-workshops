@@ -12,9 +12,7 @@ We already set all this up for you - so you can skip everything below.
 
 
 ### Install the command line tools for your operating system
-The officially supported instructions for installing the oc client via Red Hat are [located here][1].  
-
-TL;DR:
+The officially supported instructions for installing the oc client via Red Hat are [located here][1]. 
 
 * Download a .tgz [from Red Hat][5] and add to your PATH
 
@@ -24,7 +22,7 @@ For the unsupported community version:
 * Mac users can [brew][3]: 'brew install openshift-cli'
 
 
-### Install git 
+### Install git
 We will use a few git commands directly in some of the advanced labs.  Please make sure git is installed on your system.  You can download the [latest version here][4].
 
 ### Create a Github account

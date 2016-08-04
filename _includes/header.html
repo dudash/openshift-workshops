@@ -1,9 +1,15 @@
 <header>
     <div class="inner">
-        <h1>Openshift Workshops</h1>
-        <h2>Don&#39;t just read about what OpenShift 3 can do - try it for yourself with these workshops</h2>
+        {% if page.title %}
+            <h1>{{page.title}}</h1>
+        {% endif %}
+        {% if page.subtitle %}
+            <h2>{{page.subtitle}}</h2>
+        {% endif %}
+        {% if site.github_username %}
         <a href="https://github.com/{{ site.github_username }}/openshift-workshops" class="button">
             <small>View project on</small> GitHub
         </a>
+        {% endif %}
     </div>
 </header>
