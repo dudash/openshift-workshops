@@ -1,3 +1,39 @@
-baseurl: /openshift-workshops
-workshop-dir: www-offline
-exclude: [README.md, package.json, grunt.js, Gruntfile.js, Gruntfile.coffee, node_modules, LABS-MASTERLIST.md]
+
+# Site settings
+title: OpenShift Workshops
+maintainer: Michael Surbey
+vocation: Cloud Solutions Architect
+email: msurbey@redhat.com
+description: > # this means to ignore newlines until "baseurl:"
+  Create, discover, and access content for your OpenShift instance
+  by Red Hat.
+baseurl: "/openshift-workshops" # the subpath of your site, e.g. /blog
+url: "" # the base hostname & protocol for your site
+# workshop-dir: www-offline
+twitter_username: ecwpz91
+github_username:  ecwpz91
+
+# Build settings
+markdown: kramdown
+
+# Exclude files
+exclude:
+  - README.md
+  - vendor
+  - config.ru
+  - Gemfile
+  - lib
+  - package.json
+  - Gruntfile.js
+  - node_modules
+  - script
+  - fonts
+  - grunt
+  - js
+  - less
+  - examples
+
+
+# Enable emoji
+gems:
+  - jemoji

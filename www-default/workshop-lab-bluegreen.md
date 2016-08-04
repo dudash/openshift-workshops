@@ -1,7 +1,7 @@
 ---
 layout: lab
-title: Blue | Green Deployment
-subtitle: 
+title: Blue-green Deployment
+subtitle:
 html_title: Blue/Green
 categories: [lab, ops, blue, green]
 ---
@@ -24,9 +24,9 @@ $ oc expose service green
 Note that we exposed this application using a route named "green". Navigate to your application and validate it deployed correctly.
 
 ### Release a new version of our app and test it in the same environment
-What we'll do next is create a new version of the application called "blue". The quickest way to make a change to the code is directly in the GitHub web interface. In GitHub, edit the image.php file in the root directory of your repo. 
+What we'll do next is create a new version of the application called "blue". The quickest way to make a change to the code is directly in the GitHub web interface. In GitHub, edit the image.php file in the root directory of your repo.
 
-<p><img src="{{ site.baseurl }}/www-default/screenshots/ose-lab-bluegreen-editgithub.png" width="500"/></p>
+<p><img alt="OpenShift GitHub Code Edit" src="{{ site.baseurl }}/www-default/screenshots/ose-lab-bluegreen-editgithub.png" width="500"/></p>
 
 Switch the commented out line to change the color of the rendered box (lines 9-10). Commit your changes.
 
@@ -53,7 +53,7 @@ Now that we are satisfied with our change we can do the Blue/Green switch.  With
     </div>
     <div id="collapseAOne" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingAOne">
       <div class="panel-body">
-      
+
 <blockquote>
 <i class="fa fa-terminal"></i> Goto the terminal and type the following:
 </blockquote>
@@ -78,17 +78,17 @@ This will bring up the Route configuration yaml. Edit the element spec: to: name
       <div class="panel-body">
 
 Navigate to the Routes view from the left-hand menu:
-<p><img src="{{ site.baseurl }}/www-default/screenshots/ose-lab-bluegreen-navtoroutes.png" width="500"/></p>
+<p><img alt="OpenShift Navigate to Routes View" src="{{ site.baseurl }}/www-default/screenshots/ose-lab-bluegreen-navtoroutes.png" width="500"/></p>
 
 In your Routes overview, click on the "green" route:
-<p><img src="{{ site.baseurl }}/www-default/screenshots/ose-lab-bluegreen-routesoverview.png" width="500"/></p>
+<p><img alt="OpenShift Routes Overview" src="{{ site.baseurl }}/www-default/screenshots/ose-lab-bluegreen-routesoverview.png" width="500"/></p>
 
 In the Route detail page, click on Actions > Edit YAML:
-<p><img src="{{ site.baseurl }}/www-default/screenshots/ose-lab-bluegreen-routedetail.png" width="500"/></p>
+<p><img alt="OpenShift Route Detail Page" src="{{ site.baseurl }}/www-default/screenshots/ose-lab-bluegreen-routedetail.png" width="500"/></p>
 
 Edit the YAML element spec: to: name: and change the value from "green" to "blue":
-<p><img src="{{ site.baseurl }}/www-default/screenshots/ose-lab-bluegreen-edityaml.png" width="500"/></p>
-      
+<p><img alt="OpenShift Edit YAML" src="{{ site.baseurl }}/www-default/screenshots/ose-lab-bluegreen-edityaml.png" width="500"/></p>
+
       </div>
     </div>
   </div>

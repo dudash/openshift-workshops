@@ -52,23 +52,23 @@ Copy the Generic webhook to the clipboard
     </div>
     <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
       <div class="panel-body">
-        
+
 <blockquote>
 Hover over "Browse" and then click on "Builds"
 </blockquote>
 This is going to show basic details for all build configurations in this project
-<p><img src="{{ site.baseurl }}/{{ site.workshop-dir }}/screenshots/oseoffline-lab-rollbacks-buildconfigs.png" width="500"/></p>
+<p><img alt="OpenShift Build Configuration" src="{{ site.baseurl }}/www-offline/screenshots/oseoffline-lab-rollbacks-buildconfigs.png" width="500"/></p>
 
 <blockquote>
 Click the "webapp" build config
 </blockquote>
 You will see the summary of builds using this build config
-<p><img src="{{ site.baseurl }}/{{ site.workshop-dir }}/screenshots/oseoffline-lab-rollbacks-buildconfigsummary.png" width="500"/></p>
+<p><img alt="OpenShift Build Configuration Summary" src="{{ site.baseurl }}/www-offline/screenshots/oseoffline-lab-rollbacks-buildconfigsummary.png" width="500"/></p>
 
 <blockquote>
 Click the "Configuration" tab (next to the active Summary tab)
 </blockquote>
-<p><img src="{{ site.baseurl }}/{{ site.workshop-dir }}/screenshots/oseoffline-lab-devman-deployconfigconfig.png" width="500"/></p>
+<p><img alt="OpenShift GitHub Repository and Webhook URLs" src="{{ site.baseurl }}/www-offline/screenshots/oseoffline-lab-devman-deployconfigconfig.png" width="500"/></p>
 Now you can see the various configuration details including the Github specific and Generic webhook URLs.
 
 <blockquote>
@@ -98,7 +98,7 @@ Copy the Generic webhook to the clipboard
 
 Let's put the webhook URL into the repository. At the main page for this repository (the fork), you should see a tab bar with code, issues, commits, releases, wiki, and settings.
 
-<p><img src="{{ site.baseurl }}/{{ site.workshop-dir }}/screenshots/oseoffline-lab-rollbacks-gogsettings.png" width="400"/></p>
+<p><img alt="OpenShift Gogs - Go Git Service - Settings" src="{{ site.baseurl }}/www-offline/screenshots/oseoffline-lab-rollbacks-gogsettings.png" width="400"/></p>
 
 <blockquote>
 Click the "Settings" button
@@ -123,12 +123,12 @@ Click the button to "Add webhook"
 
 Good work!  Now any "push" to the forked repository will send a webhook that triggers Open Shift to: re-build the code and image using s2i, and then perform a new pod deployment.
 
-Let's test that out.  
+Let's test that out.
 
 <blockquote>
 Select the webhook and click the "Test Delivery" button.
 </blockquote>
-<p><img src="{{ site.baseurl }}/{{ site.workshop-dir }}/screenshots/oseoffline-lab-rollbacks-testdelivery.png" width="400"/></p>
+<p><img alt="OpenShift Rollback Test Delivery" src="{{ site.baseurl }}/www-offline/screenshots/oseoffline-lab-rollbacks-testdelivery.png" width="400"/></p>
 
 <blockquote>
 Switch back to the Open Shift web console and browse to Builds for the webapp
@@ -201,7 +201,7 @@ Toward the bottom of the screen you will see a table of deployments using this d
 <blockquote>
 In the Deployments table click the #1
 </blockquote>
-<p><img src="{{ site.baseurl }}/{{ site.workshop-dir }}/screenshots/oseoffline-lab-rollbacks-deploymentconfig1.png" width="500"/></p>
+<p><img alt="OpenShift Deployment Configuration #1" src="{{ site.baseurl }}/www-offline/screenshots/oseoffline-lab-rollbacks-deploymentconfig1.png" width="500"/></p>
 
 <blockquote>
 Click the "Rollback button", accept defaults, and click "Rollback" again
@@ -209,12 +209,12 @@ Click the "Rollback button", accept defaults, and click "Rollback" again
 
 You can go back to the overview page to see your previous deployment spinning down and your new one spinning up.
 
-Open Shift has done a graceful removal of the old pod and created a new one using the previous deployment configuration.  Open the page for the webapp and refresh it.  Notice it is no longer talking to the database.  
-<p><img src="{{ site.baseurl }}/{{ site.workshop-dir }}/screenshots/oseoffline-lab-rollbacks-nodb.png" width="200"/></p>
+Open Shift has done a graceful removal of the old pod and created a new one using the previous deployment configuration.  Open the page for the webapp and refresh it.  Notice it is no longer talking to the database.
+<p><img alt="OpenShift No Database Error Message" src="{{ site.baseurl }}/www-offline/screenshots/oseoffline-lab-rollbacks-nodb.png" width="200"/></p>
 
 <br/>
 <br/>
-OK let's put it back to a working state again for the next lab. 
+OK let's put it back to a working state again for the next lab.
 <blockquote>
 Following steps just like above, Click the "Rollback button", for the previously working deployment (should be #2).
 </blockquote>

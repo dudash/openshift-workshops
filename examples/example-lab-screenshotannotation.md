@@ -9,13 +9,13 @@ category: lab
 
 
 ## Resized Using HTML
-<img src="{{ site.baseurl }}/{{ site.workshop-dir }}/screenshots/ose-browse.png" width="250"/>
+<img alt="OpenShift Browse Tab" src="{{ site.baseurl }}/www-default/screenshots/ose-browse.png" width="250"/>
 
 
 ## Resize and Annotated
-<img src="{{ site.baseurl }}/{{ site.workshop-dir }}/screenshots/ose-browse.png" width="250" /><br/>
+<img alt="OpenShift Browse Tab" src="{{ site.baseurl }}/www-default/screenshots/ose-browse.png" width="250" /><br/>
 *Image Caption*
 
 
 ## Render Using Markdown
-![The browse panel]({{ site.baseurl }}/{{ site.workshop-dir }}/screenshots/ose-browse.png)
+![The browse panel]({{ site.baseurl }}/www-default/screenshots/ose-browse.png)

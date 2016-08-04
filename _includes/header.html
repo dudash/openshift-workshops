@@ -1,0 +1,15 @@
+<header>
+    <div class="inner">
+        {% if page.title %}
+            <h1>{{page.title}}</h1>
+        {% endif %}
+        {% if page.subtitle %}
+            <h2>{{page.subtitle}}</h2>
+        {% endif %}
+        {% if site.github_username %}
+        <a href="https://github.com/{{ site.github_username }}/openshift-workshops" class="button">
+            <small>View project on</small> GitHub
+        </a>
+        {% endif %}
+    </div>
+</header>

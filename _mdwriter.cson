@@ -1,0 +1,85 @@
+# static engine of your blog ("general", "jekyll", "hexo", "html", "octopress")
+siteEngine: "jekyll"
+
+# absolute path to the root directory of your blog
+siteLocalDir: ""
+
+# directory to drafts from the root of siteLocalDir
+siteDraftsDir: "www-default"
+
+# directory to posts from the root of siteLocalDir
+sitePostsDir: "www-offline"
+
+# directory to images from the root of siteLocalDir
+siteImagesDir: "images"
+
+# URL to your blog
+siteUrl: ""
+
+# URLs to tags/posts/categories JSON file
+# Wiki: https://github.com/zhuochun/md-writer/wiki/Settings-for-Front-Matters
+# urlForTags: ""
+# urlForPosts: ""
+# urlForCategories: ""
+
+# file extension of posts/drafts
+fileExtension: ".md"
+
+# whether rename filename based on title in front matter when publishing
+publishRenameBasedOnTitle: false
+
+# filename format of new posts/drafts created
+newPostFileName: "{title}{extension}"
+
+# front matter template
+frontMatter: """
+---
+layout: <layout>
+title: "<title>"
+date: "<date>"
+---
+
+# Objectives
+After completing this lab, you should:
+
+-
+
+"""
+
+# absolute path to a .cson file that stores links added for automatic linking
+# siteLinkPath: "path/to/links.cson"
+
+# reference tag insert position ("paragraph" or "article")
+# referenceInsertPosition: "paragraph"
+
+# reference tag indent space (0 or 2)
+# referenceIndentLength: 2
+
+# image tag template
+imageTag: "![<alt>](<src>)"
+
+# text/line styles
+# for `regexBefore`, `regexAfter`, DO NOT use capture group, it could break things!
+# use non-capturing group `(?:)` instead.
+textStyles:
+  code: before: "`", after: "`"
+  bold: before: "**", after: "**"
+  italic: before: "_", after: "_"
+  keystroke: before: "<kbd>", after: "</kbd>"
+  strikethrough: before: "~~", after: "~~"
+  codeblock:
+    before: "```\n"
+    after: "\n```"
+    regexBefore: "```(?:[\\w- ]+)?\\n"
+    regexAfter: "\\n```"
+lineStyles:
+  h1: before: "# "
+  h2: before: "## "
+  h3: before: "### "
+  h4: before: "#### "
+  h5: before: "##### "
+  ul: before: "- ", regexBefore: "(?:-|\\*|\\d+\\.)\\s"
+  ol: before: "0. ", regexBefore: "(?:-|\\*|\\d+\\.)\\s"
+  task: before: "- [ ] ", regexBefore: "(?:- \\[ ]|- \\[x]|- \\[X]|-|\\*)\\s"
+  taskdone: before: "- [x] ", regexBefore: "(?:- \\[ ]|- \\[x]|- \\[X]|-|\\*)\\s"
+  blockquote: before: "> "

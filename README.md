@@ -7,7 +7,7 @@ This is a [jekyll][1] based website.  It lives along side the code base in a bra
 ## Getting Setup
 Do this first:
 
-> gem instal jekyll
+> gem install jekyll
 
 > git clone -b gh-pages https://github.com/dudash/openshift-workshops.git
 
@@ -31,7 +31,7 @@ In the future I'd like to set these as environment variables somehow that can be
 For now this is simply: commit your local changes to this branch and 'git push' to github.  In the future when we move away from GitHub pages, this will be slightly more complex.
 
 ### How to Release to a Bootable USB Based Workshop
-The steps are: 
+The steps are:
 * Buid the site with 'jekyll build'
 * Copy the generated _site folder onto your USB media
 * Make a desktop shortcut on the USB OS Desktop to the location where you copied the _site folder

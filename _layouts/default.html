@@ -1,1 +1,26 @@
-{{content}}
+<!DOCTYPE html>
+<html>
+
+  {% include head.html %}
+
+  <body>
+
+    {% include header.html %}
+
+    <div id="content-wrapper">
+        <div class="inner clearfix">
+
+        {{ content }}
+
+        <aside id="sidebar">
+          {% include side-github.html username=site.github_username %}
+        </aside>
+
+      </div>
+    </div>
+
+    {% include footer.html %}
+
+  </body>
+
+</html>

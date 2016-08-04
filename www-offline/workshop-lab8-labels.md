@@ -7,7 +7,7 @@ categories: [lab, labels, selectors, annotations, ops]
 ---
 
 ## Labels
-This is a pretty simple lab, we are going to explore labels.  You can use labels to organize, group, or select API objects. 
+This is a pretty simple lab, we are going to explore labels.  You can use labels to organize, group, or select API objects.
 
 For example, pods are "tagged" with labels, and then services use label selectors to identify the pods they proxy to. This makes it possible for services to reference groups of pods, even treating pods with potentially different Docker containers as related entities.
 
@@ -72,19 +72,19 @@ $ oc describe pod/PODNAME | more
 Hover over "Browse" and then click on "Pods"
 </blockquote>
 This is going to show basic details for all pods in this project (including the builders).
-<p><img src="{{ site.baseurl }}/{{ site.workshop-dir }}/screenshots/oseoffline-lab-labels-allpods.png" width="500"/></p>
+<p><img alt="Open Shift All Pods" src="{{ site.baseurl }}/www-offline/screenshots/oseoffline-lab-labels-allpods.png" width="500"/></p>
 Next let's look at the log for the pod running our application.
 
 <blockquote>
 Click the pod for the webapp (it shoud have a status of Running)
 </blockquote>
-<p><img src="{{ site.baseurl }}/{{ site.workshop-dir }}/screenshots/oseoffline-lab-labels-poddetails.png" width="500"/></p>
+<p><img alt="OpenShift Pod Details" src="{{ site.baseurl }}/www-offline/screenshots/oseoffline-lab-labels-poddetails.png" width="500"/></p>
 Here, at the top, you can see the labels on this pod
 
 <blockquote>
 Click vertically stacked "..." button, then click "Edit" the pod
 </blockquote>
-<p><img src="{{ site.baseurl }}/{{ site.workshop-dir }}/screenshots/oseoffline-lab-labels-podedit.png" width="500"/></p>
+<p><img alt="OpenShift Pod Edit" src="{{ site.baseurl }}/www-offline/screenshots/oseoffline-lab-labels-podedit.png" width="500"/></p>
 You will see all the labels under the metadata->labels section.
 
 <blockquote>

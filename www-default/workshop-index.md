@@ -11,6 +11,8 @@ html_title: Workshops
 
 ### [Lab: Login and a Tour of OpenShift Enterprise](workshop-lab-welcome.html)
 
+### [Lab: Smoke Test (Hexboard)](workshop-lab-hexboard.html)
+
 ### [Lab: BYO Docker](workshop-lab-byodocker.html)
 
 ### [Lab: Deploying an App with S2I](workshop-lab-s2i.html)
@@ -23,7 +25,13 @@ html_title: Workshops
 
 ### [Lab: Labels](workshop-lab-labels.html)
 
-### [Lab: Blue | Green Deployment](workshop-lab-bluegreen.html)
+### [Lab: Blue-green Deployment](workshop-lab-bluegreen.html)
+
+### [Lab: xPaaS (JBoss EAP)](workshop-lab-jboss.html)
+
+### [Lab: Adding a Database](workshop-lab-databases.html)
+
+### [Lab: Application Templates](workshop-lab-templates.html)
 
 ### [Fin.](workshop-finally.html)
 

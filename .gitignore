@@ -19,3 +19,4 @@ pkg/
 site/_site/
 test/dest
 tmp/*
+node_modules

@@ -1,0 +1,32 @@
+{
+  "name": "bootstrap",
+  "private": true,
+  "version": "0.1.0",
+  "dependencies": {},
+  "devDependencies": {
+    "btoa": "~1.1.2",
+    "glob": "~6.0.1",
+    "grunt-contrib-clean": "~0.5.0",
+    "grunt-newer": "~0.5.4",
+    "grunt-rev": "~0.1.0",
+    "load-grunt-tasks": "~0.2.0",
+    "time-grunt": "~0.2.1",
+    "grunt-contrib-connect": "^0.7.1",
+    "grunt-contrib-copy": "~0.8.0",
+    "grunt-contrib-watch": "^0.6.1",
+    "grunt-autoprefixer": "~3.0.3",
+    "grunt-csscomb": "~3.1.0",
+    "grunt-contrib-cssmin": "~0.14.0",
+    "grunt-contrib-less": "~1.1.0",
+    "grunt-contrib-concat": "~0.5.1",
+    "grunt-contrib-uglify": "~0.9.2",
+    "markdown-it": "^5.0.0",
+    "npm-shrinkwrap": "^200.4.0",
+    "grunt": "~0.4.5"
+  },
+  "engines": {
+    "node": ">=0.8.0"
+  },
+  "scripts": {},
+  "license": "mit"
+}
