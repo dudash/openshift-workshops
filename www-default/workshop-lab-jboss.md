@@ -1,8 +1,14 @@
-#** Lab 7: Deploying Java Code on JBoss**
+---
+layout: lab
+title: Deploying Java Code on JBoss
+subtitle:
+html_title: JBoss
+categories: [lab, ops, app, jboss, xpaas]
+---
 
-###** Background: Source-to-Image (S2I) **
+## Background: Source-to-Image (S2I)
 
-In lab three we learned how to deploy a pre-existing Docker image from a Docker
+In lab four we learned how to deploy a pre-existing Docker image from a Docker
 registry. Now we will expand on that a bit by learning how OpenShift builds a
 Docker images using source code from an existing repository.
 
@@ -32,7 +38,7 @@ remember about S2I is that it's magic.
 For a current list of supported runtimes, you can check out the [OpenShift
 Technologies](https://enterprise.openshift.com/features/#technologies) page.
 
-####**Exercise 4: Creating a JBoss EAP application**
+## Creating a JBoss EAP application
 
 The sample application that we will be deploying as part of this exercise is
 called `mlbparks`.  This application is a Java EE-based application that
@@ -40,19 +46,21 @@ performs 2D geo-spatial queries against a MongoDB database to locate and map all
 Major League Baseball stadiums in the United States. That was just a fancy way
 of saying that we are going to deploy a map of baseball stadiums.
 
-#####** Create Project **
-
 The first thing you need to do is create a new project called `userXX-mlbparks`:
 
 **Note:** Remember to replace userXX-mlbparks with your correct user number.
 
-    $ oc new-project userXX-mlbparks
+{% highlight csh %}
+$ oc new-project userXX-mlbparks
+{% endhighlight %}
 
 You should see the following output:
 
-	Now using project "mlbparks" on server "https://openshift-master.CITYNAME.openshift3roadshow.com:8443".
+{% highlight csh %}
+Now using project "mlbparks" on server "[URI]".
+{% endhighlight %}
 
-#####** Fork application code on GitHub **
+## Fork application code on GitHub
 
 OpenShift can work with Git repositories on GitHub. You can even register
 webhooks to initiate OpenShift builds triggered by any update to the application
@@ -72,7 +80,7 @@ application.
 you don't have a GitHub account, please raise your hand and let your instructor
 know.  They can walk you through the process.
 
-#####** Combine the code with the Docker image on OpenShift **
+## Combine the code with the Docker image on OpenShift
 
 While the `new-app` command makes it very easy to get OpenShift to build code
 from a GitHub repository into a Docker image, we can also use the web console to
@@ -92,7 +100,9 @@ After you click *"Add to Project"*, on the next screen you will need to enter a
 name and a Git repository URL. For the name, enter `openshift3mlbparks`, and for
 the Git repository URL, enter:
 
-	https://github.com/YOURUSER/openshift3mlbparks.git
+{% highlight csh %}
+https://github.com/YOURUSER/openshift3mlbparks.git
+{% endhighlight %}
 
 **Note:** Ensure that you use your repository URL if you want to see S2I and
 webhooks in action later.
@@ -106,8 +116,10 @@ will be discussed in a later lab.
 You can then hit the button labeled *"Create"*. Then click *Continue to
 overview*. You will see this in the web console:
 
-    Build openshift3mlbparks #1 is running. A new deployment will be created
-    automatically once the build completes. View Log
+{% highlight csh %}
+Build openshift3mlbparks #1 is running. A new deployment will be created
+automatically once the build completes. View Log
+{% endhighlight %}
 
 Go ahead and click *"View Log"*. This is a new Java-based project that uses
 Maven as the build and dependency system.  For this reason, the initial build
@@ -116,16 +128,22 @@ the application. You can see all of this happening in real time!
 
 From the command line, you can also see the *Builds*:
 
-    $ oc get builds
+{% highlight csh %}
+$ oc get builds
+{% endhighlight %}
 
 You'll see output like:
 
-    NAME                   TYPE      FROM         STATUS     STARTED              DURATION
-    openshift3mlbparks-1   Source    Git@master   Running    3 minutes ago        1m2s
+{% highlight csh %}
+NAME     TYPE      FROM         STATUS     STARTED              DURATION
+openshift3mlbparks-1   Source    Git@master   Running    3 minutes ago        1m2s
+{% endhighlight %}
 
 You can also view the build logs with the following command:
 
-	$ oc build-logs openshift3mlbparks-1
+{% highlight csh %}
+$ oc build-logs openshift3mlbparks-1
+{% endhighlight %}
 
 After the build has completed and successfully:
 
@@ -139,24 +157,26 @@ After the build has completed and successfully:
 In the end, when issuing the `oc get pods` command, you will see that the build Pod
 has finished (exited) and that an application *Pod* is in a ready and running state:
 
-    NAME                         READY     STATUS      RESTARTS   AGE
-    openshift3mlbparks-1-build   0/1       Completed   0          4m
-    openshift3mlbparks-1-7e3ij   1/1       Running     0          2m
+{% highlight csh %}
+NAME                         READY     STATUS      RESTARTS   AGE
+openshift3mlbparks-1-build   0/1       Completed   0          4m
+openshift3mlbparks-1-7e3ij   1/1       Running     0          2m
+{% endhighlight %}
 
 If you look again at the web console, you will notice that, when you create the
 application this way, OpenShift also creates a *Route* for you. You can see the
 URL in the web console, or via the command line:
 
-	$ oc get routes
+{% highlight csh %}
+$ oc get routes
+{% endhighlight %}
 
 Where you should see something like the following:
 
-    NAME                 HOST/PORT                                                                    PATH      SERVICE              LABELS                   INSECURE POLICY   TLS TERMINATION
-    openshift3mlbparks   openshift3mlbparks-userXX-mlbparks.cloudapps.CITYNAME.openshift3roadshow.com           openshift3mlbparks   app=openshift3mlbparks
-
-In the above example, the URL is:
-
-	openshift3mlbparks-userXX-mlbparks.cloudapps.CITYNAME.openshift3roadshow.com
+{% highlight csh %}
+NAME   HOST/PORT     PATH      SERVICE     LABELS      INSECURE POLICY
+openshift3mlbparks   [URI]           openshift3mlbparks   app=openshift3mlbparks
+{% endhighlight %}
 
 Verify your application is working by viewing the URL in a web browser.  You should see the following:
 
@@ -167,5 +187,3 @@ Wait a second!  Why are the baseball stadiums not showing up?  Well, that is
 because we haven't actually added a database to the application yet.  We will do
 that in the next lab. Congratulations on deploying your first application
 using S2I on the OpenShift 3 Platform!
-
-**End of Lab 7**

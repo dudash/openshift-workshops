@@ -1,6 +1,6 @@
 ---
 layout: lab
-title: Blue | Green Deployment
+title: Blue-green Deployment
 subtitle:
 html_title: Blue/Green
 categories: [lab, ops, blue, green]
