@@ -2,6 +2,7 @@
 # Site settings
 title: OpenShift Workshops
 maintainer: Michael Surbey
+vocation: Cloud Solutions Architect
 email: msurbey@redhat.com
 description: > # this means to ignore newlines until "baseurl:"
   Create, discover, and access content for your OpenShift instance
