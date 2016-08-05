@@ -13,11 +13,25 @@ In modern software projects many teams utilize the concept of continuous integra
 First we will start by installing Jenkins to run in a pod within your workshop project.  Because this is just a workshop we use the ephemeral template to create our Jenkins sever (for a enterprise system you would probably want to use the persistent template).  Follow the steps below:
 
 TBD...
+Rough steps:
+1) Goto into jenkins project
+2) Click add to project, select jenkins-ephemeral, click create
+3) click "continue to overview", wait for it to start
+4) click the service link to open jenkins, login as admin/password
+
+
+
 
 ### The OpenShift pipeline plugin
 Now let's make sure we have the OpenShift Pipeline [plugin][2] properly installed within Jenkins.  It will be used to define our application lifecycle and to let our Jenkins jobs perform commands on our OpenShift cluster.
 
 TBD...
+// might not need these steps
+*) click "Manage Jenkins"
+*) click on "Manage Plugins" 
+*) click on "Available" tab
+*) filter on openshift
+*) install openshift pipline jenkins
 
 You can read more about the plugin [here][3].
 
@@ -26,20 +40,40 @@ You can read more about the plugin [here][3].
 In this example pipeline we will be building, testing, and staging a Node.js webapp.  We wrote all the code for you already, so don't worry you won't be coding in this lab.  You will just use the code and unit tests to see how CI/CD pipelines work.  And keep in mind that these principles are relevant whether your programming in Node.js, Ruby on Rails, Java, PHP or any one of today's popular programming languages.
 
 TBD fork the demo app in their github
+TBD create an app in OpenShift to config an image stream
 
 
 ### Setting up our OpenShift environment to match our lifecycle stages
 
-TBD create Jenkins jobs (just copy a file?)
-TBD setup Jekins jobs to use their github fork
+#### TBD setup Jekins jobs to use their openshift image stream (which is off github fork)
+* click "New Item"
+* call it yourname-ci-devel, select freestyle, click OK
+* under source code management select the OpenShift Image Streams
+  **  Setup the name of the ImageStream to monitor	
+  ** The specific image tag in the ImageStream to monitor	
+  ** URL of the OpenShift api endpoint	
+  ** The name of the project the ImageStream is stored in	
+  ** The authorization token for interacting with OpenShift
 
-TBD do we create OSE projects or just do in a single project due to users maybe not having project creation permissions?
+* Click "Poll SCM", set a schedule of: XXX
 
-TBD connect the pipeline for dev->test->prod
 
+#### Connecting the pipeline for dev->test
+TBD unit tests and tagging
+* Click add build step and choose "Execute shell"
+* TBD add unit test step here
+* Click add build step and choose "Tag OpenShift Image"
+  ** enter in all the info, tag as "readyfortest"
+* In the "Post-build actions" subsection click "Add post-build action" and select "Build other projects"
+*  type in yourname-ci-deploytotest
+* Click Save, don't worry about the erorr here, we are about to build that Jenkins job.
+* Click "Back to dashboard"
+* click "New Item"
+* call it yourname-ci-deploytotest, select freestyle, click OK
+* TBD add build step to pull tagged image "readyfortest"
 
 ### Watch me release!
-So now that you've done all that setup work, forget about it.  What?!  Yeah, all that configuration work only need to be done once.  Now that the pipeline is defined everything happens automatically on every git commit.  Let's see it in action:
+So now that you've done all that setup work, forget about it.  What?!  Yeah, all that configuration work only needed to be done once.  Now that the pipeline is defined everything happens automatically on every git commit.  Let's see it in action:
 
 TBD make a code change and commit it on an even minute boundary
 
