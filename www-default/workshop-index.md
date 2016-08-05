@@ -5,6 +5,8 @@ subtitle: Let's get down to it.
 html_title: Workshops
 ---
 
+Welcome to the workshop!  Please go through the list of labs below at your own pace.  This particular workshop will have you deploying with native Docker images as well as using OpenShift to create Docker images for a Node.js metro map website.  You will also be leveraging the power of OpenShift to build, deploy, scale, and automate.
+
 <i class="fa fa-info-circle"></i> Note: in most of the labs you will have the choice of using the Command Line Interface (CLI) or the Web Console.  While in the lab page, just expand the box for your preference.
 
 ### [Install Prerequisites](workshop-prerequisites.html)
