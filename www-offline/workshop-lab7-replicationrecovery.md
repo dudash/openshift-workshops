@@ -61,13 +61,13 @@ Click "Overview"
 In the webapp deployment, click the up arrow 3 times.
 </blockquote>
 The deployment should indicate that it is scaling to 4 pods, and eventually you will have 4 running pods.  Keep in mind that each pod has it's own container which is an identical deployment of the webapp.  Open Shift is now (by default) round robin load-balancing traffic to each pod.
-<p><img src="{{ site.baseurl }}/{{ site.workshop-dir }}/screenshots/oseoffline-lab-replicationrecovery-4pods.png" width="500"/></p>
+<p><img src="{{ site.baseurl }}/www-offline/screenshots/oseoffline-lab-replicationrecovery-4pods.png" width="500"/></p>
 
 <blockquote>
 Hover over "Browse" and click "Pods"
 </blockquote>
 Notice that you now have 4 unique webapp pods available to inspect.  If you want go ahead and inspect them you can see that each have their own IP address and logs.
-<p><img src="{{ site.baseurl }}/{{ site.workshop-dir }}/screenshots/oseoffline-lab-replicationrecovery-4podslist.png" width="500"/></p>
+<p><img src="{{ site.baseurl }}/www-offline/screenshots/oseoffline-lab-replicationrecovery-4podslist.png" width="500"/></p>
 
       </div>
     </div>
@@ -126,11 +126,11 @@ Click one of the running webapp pods (not a build pod)
 <blockquote>
 Click the vertically stacked "..." button in the top right and then delete
 </blockquote>
-<p><img src="{{ site.baseurl }}/{{ site.workshop-dir }}/screenshots/oseoffline-lab-replicationrecovery-deletepod.png" width="400"/></p>
+<p><img src="{{ site.baseurl }}/www-offline/screenshots/oseoffline-lab-replicationrecovery-deletepod.png" width="400"/></p>
 
 It happens quickly, but if you look quickly you'll see the pod you deleted disappear and then a new pod being created to take it's place.  You can browse the pods list again to see the old pod is gone and a new pod has an age of "a few seconds".
 
-<p><img src="{{ site.baseurl }}/{{ site.workshop-dir }}/screenshots/oseoffline-lab-replicationrecovery-podrecovery.png" width="600"/></p>
+<p><img src="{{ site.baseurl }}/www-offline/screenshots/oseoffline-lab-replicationrecovery-podrecovery.png" width="600"/></p>
 
       </div>
     </div>
@@ -210,11 +210,11 @@ In the tab bar for this pod, click on "Terminal"
 <blockquote>
 Click inside the terminal view and type $ pkill -9 node
 </blockquote>
-<p><img src="{{ site.baseurl }}/{{ site.workshop-dir }}/screenshots/oseoffline-lab-replicationrecovery-terminal.png" width="400"/></p>
+<p><img src="{{ site.baseurl }}/www-offline/screenshots/oseoffline-lab-replicationrecovery-terminal.png" width="400"/></p>
 
 This will kick you out off the container with an error like "error: error executing remote command".
 
-<p><img src="{{ site.baseurl }}/{{ site.workshop-dir }}/screenshots/oseoffline-lab-replicationrecovery-terminalkick.png" width="400"/></p>
+<p><img src="{{ site.baseurl }}/www-offline/screenshots/oseoffline-lab-replicationrecovery-terminalkick.png" width="400"/></p>
 
 <blockquote>
 Click the refresh button (on the terminal) and do that a couple more times
@@ -224,7 +224,7 @@ Click the refresh button (on the terminal) and do that a couple more times
 Go back to the pods list
 </blockquote>
 
-<p><img src="{{ site.baseurl }}/{{ site.workshop-dir }}/screenshots/oseoffline-lab-replicationrecovery-backoff.png" width="500"/></p>
+<p><img src="{{ site.baseurl }}/www-offline/screenshots/oseoffline-lab-replicationrecovery-backoff.png" width="500"/></p>
 
 If a container dies multiple times too quickly, Open Shift is going to put the pod in a CrashBackOff state.  This ensures the system doesn't waste resources trying to restart containers that are continuously crashing.
 

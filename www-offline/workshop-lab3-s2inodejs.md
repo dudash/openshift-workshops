@@ -51,17 +51,17 @@ $ oc expose service webapp
 <blockquote>
 Click "Add to Project"
 </blockquote>
-<p><img src="{{ site.baseurl }}/{{ site.workshop-dir }}/screenshots/oseoffline-lab-s2i-addbutton.png" width="100"/></p>
+<p><img src="{{ site.baseurl }}/www-offline/screenshots/oseoffline-lab-s2i-addbutton.png" width="100"/></p>
 
 <blockquote>
 Click "Browse" and filter for nodejs, then click the nodejs:0.10 builder image
 </blockquote>
-<p><img src="{{ site.baseurl }}/{{ site.workshop-dir }}/screenshots/oseoffline-lab-s2i-filternode.png" width="600"/></p>
+<p><img src="{{ site.baseurl }}/www-offline/screenshots/oseoffline-lab-s2i-filternode.png" width="600"/></p>
 
 <blockquote>
 Fill out the boxes to look as follows:
 </blockquote>
-<p><img src="{{ site.baseurl }}/{{ site.workshop-dir }}/screenshots/oseoffline-lab-s2i-addtoproject.png" width="600"/></p>
+<p><img src="{{ site.baseurl }}/www-offline/screenshots/oseoffline-lab-s2i-addtoproject.png" width="600"/></p>
 <p>
 Notes: You will need to click to expand the "advanced options"<br/>
 Give it the name: webapp
@@ -133,19 +133,19 @@ The console will print out the full log for your build.  Note, you could pipe th
 <blockquote>
 Hover over Browse and then click on "Builds"
 </blockquote>
-<p><img src="{{ site.baseurl }}/{{ site.workshop-dir }}/screenshots/oseoffline-lab-s2i-builds.png" width="300"/></p>
+<p><img src="{{ site.baseurl }}/www-offline/screenshots/oseoffline-lab-s2i-builds.png" width="300"/></p>
 
 <blockquote>
 Click on the "webapp" link
 </blockquote>
-<p><img src="{{ site.baseurl }}/{{ site.workshop-dir }}/screenshots/oseoffline-lab-s2i-webappbuild.png" width="300"/></p>
+<p><img src="{{ site.baseurl }}/www-offline/screenshots/oseoffline-lab-s2i-webappbuild.png" width="300"/></p>
 
 <blockquote>
 Click on the "View Log" tab to see the details of your latest build
 </blockquote>
 
 You should see a log output similar to the one below:
-<p><img src="{{ site.baseurl }}/{{ site.workshop-dir }}/screenshots/oseoffline-lab-s2i-webappbuildlog.png" width="500"/></p>
+<p><img src="{{ site.baseurl }}/www-offline/screenshots/oseoffline-lab-s2i-webappbuildlog.png" width="500"/></p>
 
       </div>
     </div>
@@ -195,12 +195,12 @@ Copy the HOST/PORT and paste into your favorite web browser
 <blockquote>
 Click on Overview
 </blockquote>
-<p><img src="{{ site.baseurl }}/{{ site.workshop-dir }}/screenshots/oseoffline-lab-s2i-overview.png" width="100"/></p>
+<p><img src="{{ site.baseurl }}/www-offline/screenshots/oseoffline-lab-s2i-overview.png" width="100"/></p>
 
 <blockquote>
 Click the URL that is listed in the service
 </blockquote>
-<p><img src="{{ site.baseurl }}/{{ site.workshop-dir }}/screenshots/oseoffline-lab-s2i-svc.png" width="300"/></p>
+<p><img src="{{ site.baseurl }}/www-offline/screenshots/oseoffline-lab-s2i-svc.png" width="300"/></p>
 
       </div>
     </div>
@@ -209,7 +209,7 @@ Click the URL that is listed in the service
 
 The app should look like this in your web browser:
 
-<p><img src="{{ site.baseurl }}/{{ site.workshop-dir }}/screenshots/oseoffline-lab-s2i-apprunning.png" width="500"/></p>
+<p><img src="{{ site.baseurl }}/www-offline/screenshots/oseoffline-lab-s2i-apprunning.png" width="500"/></p>
 
 We haven't added a database yet, so the app will display a warning about that, don't worry, we will set that up in the next lab.
 
