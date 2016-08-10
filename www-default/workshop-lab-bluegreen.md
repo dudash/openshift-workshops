@@ -17,7 +17,7 @@ You should be comfortable deploying an app at this point, but here are the steps
 > <i class="fa fa-terminal"></i> Goto the terminal and type these commands:
 
 {% highlight csh %}
-$ oc new-app --name=green [your-project-repo-url]
+$ oc new-app --name=green [your-project-repo-url] --context-dir=dc-metro-map
 $ oc expose service green
 {% endhighlight %}
 
@@ -35,7 +35,7 @@ Use the same commands to deploy this new version of the app, but this time name 
 > <i class="fa fa-terminal"></i> Goto the terminal and type these commands:
 
 {% highlight csh %}
-$ oc new-app --name=blue [your-project-repo-url]
+$ oc new-app --name=blue [your-project-repo-url] --context-dir=dc-metro-map
 {% endhighlight %}
 
 
