@@ -40,7 +40,7 @@ You can see the Labels automatically added contain the app, deployment, and depl
 <i class="fa fa-terminal"></i> Add a label
 </blockquote>
 {% highlight csh %}
-$ oc oc label pod/PODNAME testdate=4.30.2016 testedby=mylastname
+$ oc label pod/PODNAME testdate=4.30.2016 testedby=mylastname
 {% endhighlight %}
 
 <blockquote>
