@@ -16,6 +16,12 @@ You can see the results of a full query in the file exampledata.json
 ### Environment Variables
 You can have some fun by setting a couple different environment variables.  Try BEERME=true and/or RAINBOW=true.
 
+### Usage
+      npm install; npm start
+
+### Run nodeunit tests
+      grunt nodeunit
+
 Thanks for reading!
 - Dudash
 
