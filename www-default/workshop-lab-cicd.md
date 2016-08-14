@@ -12,12 +12,17 @@ In modern software projects many teams utilize the concept of continuous integra
 ### Start by installing Jenkins
 First we will start by installing Jenkins to run in a pod within your workshop project.  Because this is just a workshop we use the ephemeral template to create our Jenkins sever (for a enterprise system you would probably want to use the persistent template).  Follow the steps below:
 
-TBD...
-Rough steps:
-1) Goto into jenkins project
-2) Click add to project, select jenkins-ephemeral, click create
-3) click "continue to overview", wait for it to start
-4) click the service link to open jenkins, login as admin/password
+  * Go into Jenkins project
+  * Click "Add to Project", select jenkins-ephemeral, click "Create"
+	<img src="{{ site.baseurl }}/www-default/screenshots/ose-lab-cicd-jenkins-ephemeral.png" width="500"/>
+
+  * Accept all defaults
+  
+  * click "continue to overview", wait for it to start
+  	<img src="{{ site.baseurl }}/www-default/screenshots/ose-lab-cicd-jenkins-start.png" width="500"/>
+  
+  * click the service link to open jenkins, login as admin/password
+  	<img src="{{ site.baseurl }}/www-default/screenshots/ose-lab-cicd-jenkins-login.png" width="500"/>
 
 
 
@@ -25,13 +30,19 @@ Rough steps:
 ### The OpenShift pipeline plugin
 Now let's make sure we have the OpenShift Pipeline [plugin][2] properly installed within Jenkins.  It will be used to define our application lifecycle and to let our Jenkins jobs perform commands on our OpenShift cluster.
 
-TBD...
-// might not need these steps
-*) click "Manage Jenkins"
-*) click on "Manage Plugins" 
-*) click on "Available" tab
-*) filter on openshift
-*) install openshift pipline jenkins
+  * click "Manage Jenkins"
+  <p><img src="{{ site.baseurl }}/www-default/screenshots/ose-lab-cicd-manage-jenkins.png" width="100" height="100"/></p>
+  
+  * click on "Manage Plugins" 
+  <p><img src="{{ site.baseurl }}/www-default/screenshots/ose-lab-cicd-manage-plugins.png" width="500" /></p>
+  
+  * click on "Available" tab
+  
+  * filter on "openshift"
+  
+  
+  * install "Openshift Pipeline Jenkins Plugin"
+  <img src="{{ site.baseurl }}/www-default/screenshots/ose-lab-cicd-jenkins-plugin.png" width="700" />
 
 You can read more about the plugin [here][3].
 
@@ -39,8 +50,10 @@ You can read more about the plugin [here][3].
 ### Our sample web app and its automated tests
 In this example pipeline we will be building, testing, and staging a Node.js webapp.  We wrote all the code for you already, so don't worry you won't be coding in this lab.  You will just use the code and unit tests to see how CI/CD pipelines work.  And keep in mind that these principles are relevant whether your programming in Node.js, Ruby on Rails, Java, PHP or any one of today's popular programming languages.
 
-TBD fork the demo app in their github
-TBD create an app in OpenShift to config an image stream
+  * Fork the project into your own GitHub account
+  <p><img src="{{ site.baseurl }}/www-default/screenshots/ose-lab-cicd-fork.png" width="700" /></p>
+
+  * Create a new app in your the Jenkins project using the URL to your forked project. You can follow the steps [here](workshop-lab-s2i.html)
 
 
 ### Setting up our OpenShift environment to match our lifecycle stages
