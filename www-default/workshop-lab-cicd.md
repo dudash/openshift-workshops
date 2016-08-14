@@ -132,7 +132,7 @@ In this example pipeline we will be building, testing, and staging a Node.js web
 <p><img src="{{ site.baseurl }}/www-default/screenshots/ose-lab-cicd-ose-imagestream.png" width="500" /></p>
 
 <blockquote>Click "Poll SCM", set a schedule of: * * * * *</blockquote>
-
+<p><img src="{{ site.baseurl }}/www-default/screenshots/ose-lab-cicd-poll-scm.png" width="500" /></p>
 <p>
 <b>Notes:</b> You will not need the URL of the OpenShift api endpoint or the Authorization Token<br/>
 to get this to work
@@ -143,19 +143,35 @@ to get this to work
 </div>
 
 #### Connecting the pipeline for dev->test
-TBD unit tests and tagging
-* Click add build step and choose "Execute shell"
+<div class="panel-group" id="accordionD" role="tablist" aria-multiselectable="true">
+  <div class="panel panel-default">
+    <div class="panel-heading" role="tab" id="headingDOne">
+      <div class="panel-title">
+        <a role="button" data-toggle="collapse" data-parent="#accordionD" href="#collapseDOne" aria-expanded="true" aria-controls="collapseDOne">
+          Steps to Connect Pipeline
+        </a>
+      </div>
+    </div>
+    <div id="collapseDOne" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingDOne">
+      <div class="panel-body">
+<blockquote>Click add build step and choose "Execute shell"</blockquote>
+<p><img src="{{ site.baseurl }}/www-default/screenshots/ose-lab-cicd-add-exec.png" width="200" /></p>
 * TBD add unit test step here
-* Click add build step and choose "Tag OpenShift Image"
-  ** enter in all the info, tag as "readyfortest"
-* In the "Post-build actions" subsection click "Add post-build action" and select "Build other projects"
-*  type in yourname-ci-deploytotest
-* Click Save, don't worry about the erorr here, we are about to build that Jenkins job.
-* Click "Back to dashboard"
-* click "New Item"
-* call it yourname-ci-deploytotest, select freestyle, click OK
-* TBD add build step to pull tagged image "readyfortest"
+ <blockquote>Click add build step and choose "Tag OpenShift Image". Enter in all the info, tag as "readyfortest"</blockquote>
 
+  <p><img src="{{ site.baseurl }}/www-default/screenshots/ose-lab-cicd-new-tag.png" width="700" /></p>
+<blockquote>In the "Post-build actions" subsection click "Add post-build action" and select "Build other projects". Type in "yourname-ci-deploytotest"</blockquote>
+<p><img src="{{ site.baseurl }}/www-default/screenshots/ose-lab-cicd-build-other-project.png" width="500" /></p>
+<blockquote>Click "Save", don't worry about the error here, we are about to build that Jenkins job.</blockquote>
+<blockquote>Click "Back to dashboard"</blockquote>
+<blockquote>Click "New Item"</blockquote>
+<blockquote>Call it "yourname-ci-deploytotest", select "freestyle", click "OK"</blockquote>
+<p><img src="{{ site.baseurl }}/www-default/screenshots/ose-lab-cicd-deploy-to-test.png" width="500" /></p>
+* TBD add build step to pull tagged image "readyfortest"
+      </div>
+    </div>
+  </div>
+</div>
 ### Watch me release!
 So now that you've done all that setup work, forget about it.  What?!  Yeah, all that configuration work only needed to be done once.  Now that the pipeline is defined everything happens automatically on every git commit.  Let's see it in action:
 
