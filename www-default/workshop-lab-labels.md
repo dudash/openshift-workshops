@@ -9,7 +9,7 @@ categories: [lab, labels, selectors, annotations, ops]
 ## Labels
 This is a pretty simple lab, we are going to explore labels.  You can use labels to organize, group, or select API objects. 
 
-For example, pods are "tagged" with labels, and then services use label selectors to identify the pods they proxy to. This makes it possible for services to reference groups of pods, even treating pods with potentially different Docker containers as related entities.
+For example, pods are "tagged" with labels, and then services use label selectors to identify the pods they proxy to. This makes it possible for services to reference groups of pods, even treating pods with potentially different docker containers as related entities.
 
 ### Labels a on pod
 In a previous lab we added our web app using a S2I template.  When we did that, Open Shift labeled our objects for us.  Let's look at the labels on our running pod.

@@ -13,7 +13,7 @@ This lab provides a quick tour of the console to help you get familiar with the 
 We will be using the following terms throughout the workshop labs so here are some basic definitions you should be familiar with.  And you'll learn more terms along the way, but these are the basics to get you started.
 
 * Container - Your software wrapped in a complete filesystem containing everything it needs to run
-* Image - We are talking about Docker images; read-only and used to create containers
+* Image - We are talking about docker images; read-only and used to create containers
 * Pod - One or more docker containers that run together
 * Service - Provides a common DNS name to access a pod (or replicated set of pods)
 * Project - A project is a group of services that are related logically (for this workshop we have setup your account to have access to just a single project)
@@ -38,7 +38,7 @@ Once logged in you should see your available projects - which, for this workshop
 ### So this is what an empty project looks like
 > Click on one of the projects from the project list
 
-Don't worry, it's supposed to look empty right now because you currently don't have anything in your project.  We'll fix that in the next lab.
+Don't worry, it's supposed to look empty right now because you currently don't have anything in your project (and might not even have any projects at all).  We'll fix that in the next lab.
 
 ### Let's try the command line
 > <i class="fa fa-terminal"></i> Open a terminal and login using the same URI/user/password with following command:
@@ -54,13 +54,21 @@ $ oc get projects
 {% endhighlight %}
 
 ### It looks empty via the command line too
-> <i class="fa fa-terminal"></i> Type the following command to use the demo project (replace 'demo' with the project you want to use if there isn't a demo project):
+Depending on what environment you are running this workshop in, you may have a demo project already created that you could use.  But in case you don't, let's see how we can create one.
+
+> <i class="fa fa-terminal"></i> Type the following command to create the demo project (replace 'YOURNAME' with your name or student ID):
 
 {% highlight csh %}
-$ oc project demo
+$ oc new-project demo-YOURNAME
 {% endhighlight %}
 
-> <i class="fa fa-terminal"></i> Type the following command to show services, deployment configs, build configurations, and active deployments:
+> <i class="fa fa-terminal"></i> Type the following command to use the demo project (replace 'YOURNAME' with your name or student ID):
+
+{% highlight csh %}
+$ oc project demo-YOURNAME
+{% endhighlight %}
+
+> <i class="fa fa-terminal"></i> Type the following command to show services, deployment configs, build configurations, and active deployments (this will come in handy later):
 
 {% highlight csh %}
 $ oc status
