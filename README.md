@@ -46,7 +46,7 @@ We can still use GitHub Pages to publish the site, but we need to convert the si
 When we publish to another host, this shouldn't be an issue.
 
 ### Configuring Example Code
-The _data/code-config.yml file should be setup to select the proper github code and examples to populate the labs.  Please add variables there (and use in your lab.md files) as needed to ensure changing the "workshop-language" changes the lab code.
+The _data/code-config.yml file should be setup to select the proper github code and examples to populate the labs.  Please add variables there (and use in your lab.md files) as needed to ensure changing the "workshop-language" changes the lab code.  This will come in most handy if you need to change a git URL for the workshop depending on where you are running it (local laptop git vs github).
 
 
 [1]: http://jekyllrb.com/

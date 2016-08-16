@@ -25,12 +25,13 @@ Welcome to the workshop!  Please go through the list of labs below at your own p
 
 ### [Lab: Labels](workshop-lab-labels.html)
 
+### [Lab: CI | CD Pipelines](workshop-lab-cicd.html)
+
 ### [Lab: Blue | Green Deployment](workshop-lab-bluegreen.html)
 
 ### [Fin.](workshop-finally.html)
 
 <!--
-### [Lab: CI | CD Pipelines](workshop-lab-cicd.html)
 
 ### [Lab: Keep it Secret, Keep it Safe](workshop-secrets.html)
 

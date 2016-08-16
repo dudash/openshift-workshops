@@ -58,7 +58,19 @@ $ oc describe pods
 {% endhighlight %}
 
 ### We can see those details using the web console too
-Let's look at the image stream.  Hover over "Browse", then click "Image Streams", and then click on the guestbook image stream.  You should see something similar to this:
+Let's look at the image stream.  
+
+<blockquote>
+Click on "Browse", then click "Image Streams"
+</blockquote>
+
+This shows a list of all image streams within the project.  
+
+<blockquote>
+Now click on the guestbook image stream
+</blockquote>
+
+You should see something similar to this:
 
 <img src="{{ site.baseurl }}/www-default/screenshots/ose-guestbook-is.png" width="600"/><br/>
 

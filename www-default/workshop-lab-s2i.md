@@ -125,7 +125,7 @@ The console will print out the full log for your build.  Note, you could pipe th
       <div class="panel-body">
 
 <blockquote>
-Hover over Browse and then click on "Builds"
+Click on "Browse" and then click on "Builds"
 </blockquote>
 <p><img src="{{ site.baseurl }}/www-default/screenshots/ose-lab-s2i-builds.png" width="300"/></p>
 
