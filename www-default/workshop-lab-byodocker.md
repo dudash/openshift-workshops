@@ -1,13 +1,13 @@
 ---
 layout: lab
-title: BYO Docker
+title: BYO docker
 subtitle: Deploy an existing docker image
-html_title: BYO Dockerfile
+html_title: BYO dockerfile
 categories: [lab, developers, docker]
 ---
 
-## Bring your own Docker
-It's easy to get started with OpenShift whether that be using our app templates or bringing your existing Docker assets.  In this quick lab we will deploy app using an exisiting Docker image.  OpenShift will create an image stream for the image as well as deploy and manage containers based on that image.  And we will dig into the details to show how all that works.
+## Bring your own docker
+It's easy to get started with OpenShift whether that be using our app templates or bringing your existing docker assets.  In this quick lab we will deploy app using an exisiting docker image.  OpenShift will create an image stream for the image as well as deploy and manage containers based on that image.  And we will dig into the details to show how all that works.
 
 ### Let's point OpenShift to an existing built docker image
 > <i class="fa fa-terminal"></i> Goto the terminal and type the following:
@@ -20,7 +20,7 @@ $ oc new-app kubernetes/guestbook
 The output should show something *similar* to below:
 
 {% highlight csh %}
---> Found Docker image a49fe18 (17 months old) from Docker Hub for "kubernetes/guestbook"
+--> Found docker image a49fe18 (17 months old) from docker Hub for "kubernetes/guestbook"
     * An image stream will be created as "guestbook:latest" that will track this image
     * This image will be deployed in deployment config "guestbook"
     * Port 3000/tcp will be load balanced by service "guestbook"
@@ -58,7 +58,19 @@ $ oc describe pods
 {% endhighlight %}
 
 ### We can see those details using the web console too
-Let's look at the image stream.  Hover over "Browse", then click "Image Streams", and then click on the guestbook image stream.  You should see something similar to this:
+Let's look at the image stream.  
+
+<blockquote>
+Click on "Browse", then click "Image Streams"
+</blockquote>
+
+This shows a list of all image streams within the project.  
+
+<blockquote>
+Now click on the guestbook image stream
+</blockquote>
+
+You should see something similar to this:
 
 <img src="{{ site.baseurl }}/www-default/screenshots/ose-guestbook-is.png" width="600"/><br/>
 

@@ -14,16 +14,16 @@ Create a copy of this or customize to tailor a workshop to your audience
 How to install the prerequisites
 
 ## workshop-lab-welcome.md
-Shows attendees how to login and provides and overview of the web console and CLI
+Shows attendees how to login and provides and overview of the web console and CLI.  4 min.
 
 ## workshop-lab-byodocker.md
-Covers how to deploy exisiting docker images to Open Shift
+Covers how to deploy exisiting docker images to Open Shift.  5 min.
 
 ## workshop-lab-s2i.md
-Covers the Source to Image capability of Open Shift
+Covers the Source to Image capability of Open Shift.  5 min.
 
 ## workshop-lab-devmanage.md
-Covers basic developer focused tasks to manage an app in your Open Shift development environment
+Covers basic developer focused tasks to manage an app in your Open Shift development environment.  9 min.
 
 ## workshop-lab-rollbacks.md
 Covers how to setup webhooks and perform rollbacks
@@ -33,6 +33,12 @@ Covers replication of pods and the recovery features Open Shift provides
 
 ## workshop-lab-labels.md
 Covers the topic of labels within Open Shift and when/how to use them
+
+## workshop-lab-bluegreen.md
+Covers the DevOps concept of Blue/Green deployments.
+
+## workshop-lab-cicd.md
+Covers integration with some example CI/CD tools and walks through an example use case - Coming soon.
 
 ## workshop-lab-secrets.md
 Covers developer usage of secrets to hide sensitive information and make it available to your containers - Coming soon.
@@ -45,12 +51,6 @@ Covers creating and using templates - Coming soon.
 
 ## workshop-lab-advanceddev.md
 Covers advanced developer focused tasks (including oc port-forward) - Coming soon.
-
-## workshop-lab-cicd.md
-Covers integration with some example CI/CD tools and walks through an example use case - Coming soon.
-
-## workshop-lab-bluegreen.md
-Covers the DevOps concept of Blue/Green deployments.
 
 ## workshop-lab-xpaas.md
 Covers using other JBOSS products within OpenShift - Coming soon.

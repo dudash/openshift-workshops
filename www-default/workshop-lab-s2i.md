@@ -7,7 +7,7 @@ categories: [lab, s2i, developers]
 ---
 
 ## Source to Image (S2I)
-One of the useful components of Open Shift is its source-to-image capability.  S2I is a framework that makes it easy to turn your source code into runnable images.  The main advantage of using S2I for building reproducible Docker images is the ease of use for developers.  You'll see just how simple it can be in this lab.
+One of the useful components of Open Shift is its source-to-image capability.  S2I is a framework that makes it easy to turn your source code into runnable images.  The main advantage of using S2I for building reproducible docker images is the ease of use for developers.  You'll see just how simple it can be in this lab.
 
 ### Let's build a node.js web server using S2I
 We can do this either via the command line (CLI) or the web console.  You decide which you'd rather do and follow the steps below:
@@ -125,7 +125,7 @@ The console will print out the full log for your build.  Note, you could pipe th
       <div class="panel-body">
 
 <blockquote>
-Hover over Browse and then click on "Builds"
+Click on "Browse" and then click on "Builds"
 </blockquote>
 <p><img src="{{ site.baseurl }}/www-default/screenshots/ose-lab-s2i-builds.png" width="300"/></p>
 
@@ -209,6 +209,6 @@ The app should look like this in your web browser:
 Clicking the checkboxes will toggle on/off the individual metro stations on each colored line.  A numbered icon indicates there is more than one metro station in that area and they have been consolidated - click the number or zoom in to see more.
 
 ## Summary
-In this lab we deployed a sample application using source to image.  This process built our code and wrapped that in a Docker image.  It then deployed the image into our Open Shift platform in a pod and exposed a route to allow outside web traffic to access our application.  In the next lab we will look at some details of this app's deployment and make some changes to see how Open Shift can help to automate our development processes.
+In this lab we deployed a sample application using source to image.  This process built our code and wrapped that in a docker image.  It then deployed the image into our Open Shift platform in a pod and exposed a route to allow outside web traffic to access our application.  In the next lab we will look at some details of this app's deployment and make some changes to see how Open Shift can help to automate our development processes.
 
 [1]: https://docs.openshift.com/enterprise/latest/dev_guide/new_app.html
