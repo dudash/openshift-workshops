@@ -106,7 +106,9 @@ In this example pipeline we will be building, testing, and staging a Node.js web
 <blockquote>Fork the project into your own GitHub account</blockquote>
 <p><img src="{{ site.baseurl }}/www-default/screenshots/ose-lab-cicd-fork.png" width="700" /></p>
 
-* Create a new app in your the Jenkins project using the URL to your forked project. You can follow the steps to create a new project and Image Stream [HERE](workshop-lab-s2i.html)
+* Create a new app in your the Jenkins project using the URL to your forked project. You can follow the steps to create a new project and Image Stream [HERE](workshop-lab-s2i.html). 
+
+* Where do my unit tests execute? As part of the process of building the new image, the best practice is to execute unit tests after building the image but before executing the build. This allows you to run unit tests in the context of the container environment, but will prevent a deployment if your checks do not pass. For more information about how to modify the s2i process to include your tests, refer [here][2].
 
 
 ### Setting up our OpenShift environment to match our lifecycle stages
@@ -156,10 +158,11 @@ to get this to work
       <div class="panel-body">
 <blockquote>Click add build step and choose "Execute shell"</blockquote>
 <p><img src="{{ site.baseurl }}/www-default/screenshots/ose-lab-cicd-add-exec.png" width="200" /></p>
-* TBD add unit test step here
- <blockquote>Click add build step and choose "Tag OpenShift Image". Enter in all the info, tag as "readyfortest"</blockquote>
+Additional steps could go here. For now let's just add some bash to the text area:
+{% highlight csh %}
+echo "inside my jenkins job"
+{% endhighlight%}
 
-  <p><img src="{{ site.baseurl }}/www-default/screenshots/ose-lab-cicd-new-tag.png" width="700" /></p>
 <blockquote>In the "Post-build actions" subsection click "Add post-build action" and select "Build other projects". Type in "yourname-ci-deploytotest"</blockquote>
 <p><img src="{{ site.baseurl }}/www-default/screenshots/ose-lab-cicd-build-other-project.png" width="500" /></p>
 <blockquote>Click "Save", don't worry about the error here, we are about to build that Jenkins job.</blockquote>
@@ -167,17 +170,24 @@ to get this to work
 <blockquote>Click "New Item"</blockquote>
 <blockquote>Call it "yourname-ci-deploytotest", select "freestyle", click "OK"</blockquote>
 <p><img src="{{ site.baseurl }}/www-default/screenshots/ose-lab-cicd-deploy-to-test.png" width="500" /></p>
-* TBD add build step to pull tagged image "readyfortest"
+
+<blockquote>Click add build step and choose "Tag OpenShift Image". Enter in all the info, tag as "readyfortest"</blockquote>
+<p><img src="{{ site.baseurl }}/www-default/screenshots/ose-lab-cicd-new-tag.png" width="700" /></p>
       </div>
     </div>
   </div>
 </div>
+
 ### Watch me release!
-So now that you've done all that setup work, forget about it.  What?!  Yeah, all that configuration work only needed to be done once.  Now that the pipeline is defined everything happens automatically on every git commit.  Let's see it in action:
 
-TBD make a code change and commit it on an even minute boundary
+At this point you should see the following scenario play out:
+  * Once you initiate a git push, the first Jenkins job will execute. You will see Jenkins notice the the change to the image in the registry, and begin running the first job.
 
-TBD commit on an odd minute boundary
+  * When this job completes, a second job will execute. This second job will use the OpenShift Pipeline plugin to create a new tag of the image called "ready for test".
+
+  * You can see the history of this new tag by browsing to  initiate two jobs in the pipeline with the final step being the new tag of "readyfortest". The new tag can then be used for automatic or manual builds of the new test application. You can view the status of the new tag in OpenShift by browsing to Image Streams -> your image stream
+
+  <p><img src="{{ site.baseurl }}/www-default/screenshots/ose-lab-cicd-image-stream-view.png" width="700" /></p> 
 
 
 ## Summary
@@ -190,4 +200,5 @@ Coming soon...  Read more about usage of [Jenkins on Open Shift here][4].  Read 
 [4]: https://docs.openshift.com/enterprise/latest/using_images/other_images/jenkins.html
 [5]: https://en.wikipedia.org/wiki/Continuous_delivery
 [6]: https://github.com/openshift/origin/blob/master/examples/jenkins/README.md
+[7]: https://docs.openshift.com/enterprise/latest/creating_images/s2i_testing.html#creating-images-s2i-testing
 
