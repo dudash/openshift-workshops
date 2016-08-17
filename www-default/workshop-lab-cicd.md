@@ -135,6 +135,11 @@ In this example pipeline we will be building, testing, and staging a Node.js web
 
 <blockquote>Click "Poll SCM", set a schedule of: * * * * *</blockquote>
 <p><img src="{{ site.baseurl }}/www-default/screenshots/ose-lab-cicd-poll-scm.png" width="500" /></p>
+
+<blockquote>In the "Post-build actions" subsection click "Add post-build action" and select "Build other projects". Type in "yourname-ci-deploytotest"</blockquote>
+<p><img src="{{ site.baseurl }}/www-default/screenshots/ose-lab-cicd-build-other-project.png" width="500" /></p>
+<blockquote>Click "Save", don't worry about the error here, we are about to build that Jenkins job.</blockquote>
+
 <p>
 <b>Notes:</b> You will not need the URL of the OpenShift api endpoint or the Authorization Token<br/>
 to get this to work
@@ -156,21 +161,16 @@ to get this to work
     </div>
     <div id="collapseDOne" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingDOne">
       <div class="panel-body">
+<blockquote>Click "Back to dashboard"</blockquote>
+<blockquote>Click "New Item"</blockquote>
+<blockquote>Call it "yourname-ci-deploytotest", select "freestyle", click "OK"</blockquote>
+<p><img src="{{ site.baseurl }}/www-default/screenshots/ose-lab-cicd-deploy-to-test.png" width="500" /></p>
 <blockquote>Click add build step and choose "Execute shell"</blockquote>
 <p><img src="{{ site.baseurl }}/www-default/screenshots/ose-lab-cicd-add-exec.png" width="200" /></p>
 Additional steps could go here. For now let's just add some bash to the text area:
 {% highlight csh %}
 echo "inside my jenkins job"
 {% endhighlight%}
-
-<blockquote>In the "Post-build actions" subsection click "Add post-build action" and select "Build other projects". Type in "yourname-ci-deploytotest"</blockquote>
-<p><img src="{{ site.baseurl }}/www-default/screenshots/ose-lab-cicd-build-other-project.png" width="500" /></p>
-<blockquote>Click "Save", don't worry about the error here, we are about to build that Jenkins job.</blockquote>
-<blockquote>Click "Back to dashboard"</blockquote>
-<blockquote>Click "New Item"</blockquote>
-<blockquote>Call it "yourname-ci-deploytotest", select "freestyle", click "OK"</blockquote>
-<p><img src="{{ site.baseurl }}/www-default/screenshots/ose-lab-cicd-deploy-to-test.png" width="500" /></p>
-
 <blockquote>Click add build step and choose "Tag OpenShift Image". Enter in all the info, tag as "readyfortest"</blockquote>
 <p><img src="{{ site.baseurl }}/www-default/screenshots/ose-lab-cicd-new-tag.png" width="700" /></p>
       </div>
