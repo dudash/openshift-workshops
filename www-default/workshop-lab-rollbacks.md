@@ -25,7 +25,7 @@ Github should redirect you to the newly created fork of the source code.
 ### Build Trigger / Code Change Webhook
 When using S2I there are a few different things that can be used to [trigger][1] a rebuild of your source code.  The first is a configuration change, the second is an image change, and the last (which we are covering here) is a webhook.  A webhook is basically your git source code repository telling Open Shift that the code we care about has changed.  Let's set that up for our project now to see it in action.
 
-Jump back to your Open Shift web console and let's add the webapp to our project.  You should know how to do this from previous lab work.  If you need a refresher expand the box below.
+Jump back to your Open Shift web console and let's add the webapp to our project.  You should know how to do this from previous lab work, but this time point to *your* github URL for the source code.  If you need a refresher expand the box below.
 
 <div class="panel-group" id="accordOpt" role="tablist" aria-multiselectable="true">
   <div class="panel panel-default">
@@ -100,7 +100,7 @@ Copy the Generic webhook to the clipboard
       <div class="panel-body">
         
 <blockquote>
-Hover over "Browse" and then click on "Builds"
+Click on "Browse" and then click on "Builds"
 </blockquote>
 This is going to show basic details for all build configurations in this project
 <p><img src="{{ site.baseurl }}/www-default/screenshots/ose-lab-rollbacks-buildconfigs.png" width="500"/></p>
@@ -224,7 +224,7 @@ $ oc get pods -w
       <div class="panel-body">
 
 <blockquote>
-Hover over "Browse" and then click on "Deployments"
+Click on "Browse" and then click on "Deployments"
 </blockquote>
 This is going to show basic details for all deployment configurations in this project
 
@@ -257,7 +257,7 @@ Open Shift has done a graceful removal of the old pod and created a new one.
 <i class="fa fa-info-circle"></i> You can integrate your CI/CD tools to do [rollbacks with the REST API][5].
 
 ## Summary
-In this lab we saw how you can configure a source code repository to trigger builds with webhooks.  This webhook could come from Github, Jenkins, Travis-CI, or any tool capable of sending a URL POST.  Keep in mind that there are other types of build triggers you can setup.  For example: if a new version of the upstream RHEL image changes.  We also inspected our deployment history and did a rollback of our running deployment to one based on an older image.
+In this lab we saw how you can configure a source code repository to trigger builds with webhooks.  This webhook could come from Github, Jenkins, Travis-CI, or any tool capable of sending a URL POST.  Keep in mind that there are other types of build triggers you can setup.  For example: if a new version of the upstream RHEL image changes.  We also inspected our deployment history and did a rollback of our running deployment to one based on an older image with the click of a button.
 
 
 [1]: https://docs.openshift.com/enterprise/3.1/dev_guide/builds.html#build-triggers

@@ -26,7 +26,7 @@ Covers the Source to Image capability of Open Shift.  5 min.
 Covers basic developer focused tasks to manage an app in your Open Shift development environment.  9 min.
 
 ## workshop-lab-rollbacks.md
-Covers how to setup webhooks and perform rollbacks
+Covers how to setup webhooks and perform rollbacks.  10 min.
 
 ## workshop-lab-replicationrecovery.md
 Covers replication of pods and the recovery features Open Shift provides
