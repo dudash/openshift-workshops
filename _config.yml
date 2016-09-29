@@ -1,3 +1,5 @@
 baseurl: /openshift-workshops
 workshop-dir: www-default
+git-host-default: https://github.com/dudash
+git-host-offline: http://openshift.example.com:3000/demo
 exclude: [README.md, package.json, grunt.js, Gruntfile.js, Gruntfile.coffee, node_modules, LABS-MASTERLIST.md]

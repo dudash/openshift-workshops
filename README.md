@@ -24,7 +24,7 @@ In your preferred webbrowser open http://127.0.0.1:4000/
 ## Releasing
 ### Choose your set of labs
 First update the index.html to point to the correct directory for the labs you want
-Second update the _config.yml to set the workshop-dir to that directory as well
+Second update the _config.yml to set the workshop-dir to that directory as well <- (workshop-dir is OBE due to side-by-side labs and will be cleaned up / removed soon).
 In the future I'd like to set these as environment variables somehow that can be passed in on startup
 
 ### How to Release on the Internet
