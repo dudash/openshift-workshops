@@ -117,7 +117,7 @@ Click "Overview" to get back to the deployment summary
 Click "#1" to see the build details
 </blockquote>
 Because we built this app using S2I, we get to see the details about the build - including the container image that was used for building the source code.  Note that you can kick-off a rebuild here if something went wrong with the initial build and you'd like to attempt it again.
-<p><img src="{{ site.baseurl }}/www/3.1/default/screenshots/ose-lab-devman-buildsummary.png" width="500"/></p>
+<p><img src="{{ site.baseurl }}/www/3.3/default/screenshots/ose-lab-devman-buildsummary.png" width="500"/></p>
 
 <blockquote>
 Click "Overview" to get back to the deployment summary again
@@ -181,7 +181,7 @@ You will see in the output details of your app starting up and any status messag
       <div class="panel-body">
 
 <blockquote>
-Click on "Browse" and then click on "Pods"
+Click on "Applications" and then click on "Pods"
 </blockquote>
 This is going to show basic details for all pods in this project (including the builders).
 <p><img src="{{ site.baseurl }}/www/3.1/default/screenshots/ose-lab-devman-allpods.png" width="500"/></p>
@@ -190,13 +190,13 @@ Next let's look at the log for the pod running our application.
 <blockquote>
 Click the pod that starts with "dc-metro-map-" and has a status of Running
 </blockquote>
-<p><img src="{{ site.baseurl }}/www/3.1/default/screenshots/ose-lab-devman-poddetails.png" width="500"/></p>
+<p><img src="{{ site.baseurl }}/www/3.3/default/screenshots/ose-lab-devman-poddetails.png" width="500"/></p>
 Here you see the status details of your pod as well as its configuration.  Take a minute here and look at what details are available.
 
 <blockquote>
 Click the "Logs" button
 </blockquote>
-<p><img src="{{ site.baseurl }}/www/3.1/default/screenshots/ose-lab-devman-podslogs.png" width="500"/></p>
+<p><img src="{{ site.baseurl }}/www/3.3/default/screenshots/ose-lab-devman-podslogs.png" width="500"/></p>
 Now you can see in the output window the details of your app starting up and any status messages it has reported since it started.
 
       </div>
@@ -255,7 +255,7 @@ Due to the deployment config strategy being set to "Rolling" and the "ConfigChan
       <div class="panel-body">
 
 <blockquote>
-Click on "Browse" and then click on "Deployments"
+Click on "Applications" and then click on "Deployments"
 </blockquote>
 This is going to show basic details for all deployment configurations in this project
 
@@ -265,7 +265,7 @@ Click the "dc-metro-map" deployment config
 There are a lot of details here, feel free to check them out and ask questions, but we are here to set some new environment variables.  
 
 <blockquote>
-Click the Actions button (in 3.1 it's the "..." button) in the top right to edit this config (next to the deploy button).
+Click the Actions button in the top right to edit this config (next to the deploy button).
 </blockquote>
 <p><img src="{{ site.baseurl }}/www/3.1/default/screenshots/ose-lab-devman-deployconfigdetails.png" width="500"/></p>
 This opens up an edit window with the yaml data for this deployment config.  Scroll down to the section spec->template->spec->containers and:
@@ -348,7 +348,7 @@ $ exit
       <div class="panel-body">
 
 <blockquote>
-Click on "Browse" and then click on "Pods"
+Click on "Applications" and then click on "Pods"
 </blockquote>
 
 <blockquote>
