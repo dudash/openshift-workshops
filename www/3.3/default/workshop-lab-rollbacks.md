@@ -42,8 +42,9 @@ Jump back to your Open Shift web console and let's add the webapp to our project
 <blockquote>
 Click the "Add to Project" button
 </blockquote>
+<p><img src="{{ site.baseurl }}/www/3.3/default/screenshots/ose-lab-rollbacks-add-to-project.png" width="100"/></p>
 <blockquote>
-Select the node.js **builder**
+Select the "Browse Catalog" tab and search for a node.js **builder**
 </blockquote>
 <blockquote>
 Fill out the boxes to point to the fork and context dir
@@ -100,7 +101,7 @@ Copy the Generic webhook to the clipboard
       <div class="panel-body">
         
 <blockquote>
-Click on "Browse" and then click on "Builds"
+Click on "Builds" and then click on "Builds"
 </blockquote>
 This is going to show basic details for all build configurations in this project
 <p><img src="{{ site.baseurl }}/www/3.1/default/screenshots/ose-lab-rollbacks-buildconfigs.png" width="500"/></p>
@@ -114,7 +115,7 @@ You will see the summary of builds using this build config
 <blockquote>
 Click the "Configuration" tab (next to the active Summary tab)
 </blockquote>
-<p><img src="{{ site.baseurl }}/www/3.1/default/screenshots/ose-lab-devman-deployconfigconfig.png" width="500"/></p>
+<p><img src="{{ site.baseurl }}/www/3.3/default/screenshots/ose-lab-devman-deployconfigconfig.png" width="500"/></p>
 Now you can see the various configuration details including the Github specific and Generic webhook URLs.
 
 <blockquote>
@@ -224,7 +225,7 @@ $ oc get pods -w
       <div class="panel-body">
 
 <blockquote>
-Click on "Browse" and then click on "Deployments"
+Click on "Applications" and then click on "Deployments"
 </blockquote>
 This is going to show basic details for all deployment configurations in this project
 
@@ -237,7 +238,7 @@ Toward the bottom of the screen you will see a table of deployments using this d
 <blockquote>
 In the Deployments table click the #1
 </blockquote>
-<p><img src="{{ site.baseurl }}/www/3.1/default/screenshots/ose-lab-rollbacks-deploymentconfig1.png" width="500"/></p>
+<p><img src="{{ site.baseurl }}/www/3.3/default/screenshots/ose-lab-rollbacks-deploymentconfig1.png" width="500"/></p>
 
 <blockquote>
 Click the "Rollback button", accept defaults, and click "Rollback" again
