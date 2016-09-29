@@ -10,15 +10,29 @@ categories: [lab, developers, docker]
 It's easy to get started with OpenShift whether that be using our app templates or bringing your existing docker assets.  In this quick lab we will deploy app using an exisiting docker image.  OpenShift will create an image stream for the image as well as deploy and manage containers based on that image.  And we will dig into the details to show how all that works.
 
 ### Let's point OpenShift to an existing built docker image
-> <i class="fa fa-terminal"></i> Goto the terminal and type the following:
 
+<div class="panel-group" id="accordionA" role="tablist" aria-multiselectable="true">
+  <div class="panel panel-default">
+    <div class="panel-heading" role="tab" id="headingAOne">
+      <div class="panel-title">
+        <a role="button" data-toggle="collapse" data-parent="#accordionA" href="#collapseAOne" aria-expanded="true" aria-controls="collapseAOne">
+          CLI Steps
+        </a>
+      </div>
+    </div>
+    <div id="collapseAOne" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingAOne">
+      <div class="panel-body">
+
+<blockquote>
+<i class="fa fa-terminal"></i> Goto the terminal and type the following:
+</blockquote>
 {% highlight csh %}
 $ oc new-app kubernetes/guestbook
 {% endhighlight %}
 
-
+<blockquote>
 The output should show something *similar* to below:
-
+</blockquote>
 {% highlight csh %}
 --> Found docker image a49fe18 (17 months old) from docker Hub for "kubernetes/guestbook"
     * An image stream will be created as "guestbook:latest" that will track this image
@@ -31,6 +45,52 @@ The output should show something *similar* to below:
 --> Success
     Run 'oc status' to view your app.
 {% endhighlight %}
+
+      </div>
+    </div>
+  </div>
+  <div class="panel panel-default">
+    <div class="panel-heading" role="tab" id="headingATwo">
+      <div class="panel-title">
+        <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordionA" href="#collapseATwo" aria-expanded="false" aria-controls="collapseATwo">
+          Web Console Steps
+        </a>
+      </div>
+    </div>
+    <div id="collapseATwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingATwo">
+      <div class="panel-body">
+
+<blockquote>
+Click "Add to Project"
+</blockquote>
+<p><img src="{{ site.baseurl }}/www/3.1/default/screenshots/ose-lab-s2i-addbutton.png" width="100"/></p>
+
+<blockquote>
+Select the tab for "Deploy Image" from the top options
+</blockquote>
+<p><img src="{{ site.baseurl }}/www/3.3/default/screenshots/ose-guestbook-deploy-image.png" width="400"/></p>
+
+<blockquote>
+Select the option for "Image Name" and enter "kubernetes/guestbook", then click the magnifying glass to the far right to search for the image.
+</blockquote>
+<p><img src="{{ site.baseurl }}/www/3.3/default/screenshots/ose-guestbook-imagename-expand.png" width="600"/></p>
+
+<blockquote>
+Observe default values that are populated in the search results:
+</blockquote>
+<p><img src="{{ site.baseurl }}/www/3.3/default/screenshots/ose-guestbook-create-1.png" width="600"/></p>
+<p><img src="{{ site.baseurl }}/www/3.3/default/screenshots/ose-guestbook-create-2.png" width="600"/></p>
+
+<blockquote>
+Scroll to the bottom and click "Create"
+</blockquote>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+
 
 
 ### We can browse our project details with the command line
@@ -61,7 +121,7 @@ $ oc describe pods
 Let's look at the image stream.  
 
 <blockquote>
-Click on "Browse", then click "Image Streams"
+Click on "Builds -> Images", then click "Image Streams"
 </blockquote>
 
 This shows a list of all image streams within the project.  
@@ -72,7 +132,7 @@ Now click on the guestbook image stream
 
 You should see something similar to this:
 
-<img src="{{ site.baseurl }}/www/3.1/default/screenshots/ose-guestbook-is.png" width="600"/><br/>
+<img src="{{ site.baseurl }}/www/3.3/default/screenshots/ose-guestbook-is.png" width="600"/><br/>
 
 
 ### Does this guestbook do anything?
@@ -93,7 +153,7 @@ Good catch, your service is running but there is no way for users to access it y
 <blockquote>
 To expose via the web console, click on "Overview" to get to this view:
 </blockquote>
-<img src="{{ site.baseurl }}/www/3.1/default/screenshots/ose-guestbook-noroute.png" width="600"/><br/>
+<img src="{{ site.baseurl }}/www/3.3/default/screenshots/ose-guestbook-noroute.png" width="600"/><br/>
 
 <p>Notice there is no exposed route </p>
 
