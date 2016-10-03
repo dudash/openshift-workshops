@@ -26,7 +26,7 @@ Note that we exposed this application using a route named "green". Navigate to y
 ### Release a new version of our app and test it in the same environment
 What we'll do next is create a new version of the application called "blue". The quickest way to make a change to the code is directly in the GitHub web interface. In GitHub, edit the image.php file in the root directory of your repo. 
 
-<p><img src="{{ site.baseurl }}/www/3.1/default/screenshots/ose-lab-bluegreen-editgithub.png" width="500"/></p>
+<p><img src="{{ site.baseurl }}/www/3.3/default/screenshots/ose-lab-bluegreen-editgithub.png" width="500"/></p>
 
 Switch the commented out line to change the color of the rendered box (lines 9-10). Commit your changes.
 
@@ -78,13 +78,13 @@ This will bring up the Route configuration yaml. Edit the element spec: to: name
       <div class="panel-body">
 
 Navigate to the Routes view from the left-hand menu:
-<p><img src="{{ site.baseurl }}/www/3.1/default/screenshots/ose-lab-bluegreen-navtoroutes.png" width="500"/></p>
+<p><img src="{{ site.baseurl }}/www/3.3/default/screenshots/ose-lab-bluegreen-navtoroutes.png" width="500"/></p>
 
 In your Routes overview, click on the "green" route:
-<p><img src="{{ site.baseurl }}/www/3.1/default/screenshots/ose-lab-bluegreen-routesoverview.png" width="500"/></p>
+<p><img src="{{ site.baseurl }}/www/3.3/default/screenshots/ose-lab-bluegreen-routesoverview.png" width="500"/></p>
 
 In the Route detail page, click on Actions > Edit YAML:
-<p><img src="{{ site.baseurl }}/www/3.1/default/screenshots/ose-lab-bluegreen-routedetail.png" width="500"/></p>
+<p><img src="{{ site.baseurl }}/www/3.3/default/screenshots/ose-lab-bluegreen-routedetail.png" width="500"/></p>
 
 Edit the YAML element spec: to: name: and change the value from "green" to "blue":
 <p><img src="{{ site.baseurl }}/www/3.1/default/screenshots/ose-lab-bluegreen-edityaml.png" width="500"/></p>
@@ -107,5 +107,5 @@ Pretty easy, right?
 
 If you want to read more about Blue/Green check out [this post][2] with a longer description as well as links to additional resources.
 
-[1]: https://github.com/VeerMuchandi/bluegreen
+[1]: https://github.com/dudash/openshift-workshops
 [2]: http://martinfowler.com/bliki/BlueGreenDeployment.html
