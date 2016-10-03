@@ -61,7 +61,7 @@ Click "Add to Project"
 <p><img src="{{ site.baseurl }}/www/3.1/offline/screenshots/oseoffline-lab-s2i-addbutton.png" width="100"/></p>
 
 <blockquote>
-Click "Browse" and filter for database, then click the mongodb-ephemeral builder image
+Click "Browse Catalog" and filter for database, then click the mongodb-ephemeral builder image
 </blockquote>
 <p><img src="{{ site.baseurl }}/www/3.1/offline/screenshots/oseoffline-lab-database-filterdatabase.png" width="600"/></p>
 

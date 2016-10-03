@@ -54,10 +54,10 @@ Copy the Generic webhook to the clipboard
       <div class="panel-body">
         
 <blockquote>
-Hover over "Browse" and then click on "Builds"
+Hover over "Builds" and then click on "Builds"
 </blockquote>
 This is going to show basic details for all build configurations in this project
-<p><img src="{{ site.baseurl }}/www/3.1/offline/screenshots/oseoffline-lab-rollbacks-buildconfigs.png" width="500"/></p>
+<p><img src="{{ site.baseurl }}/www/3.3/offline/screenshots/oseoffline-lab-rollbacks-buildconfigs.png" width="500"/></p>
 
 <blockquote>
 Click the "webapp" build config
@@ -190,7 +190,7 @@ $ oc rollback webapp-2
       <div class="panel-body">
 
 <blockquote>
-Hover over "Browse" and then click on "Deployments"
+Hover over "Applications" and then click on "Deployments"
 </blockquote>
 
 <blockquote>
@@ -201,7 +201,7 @@ Toward the bottom of the screen you will see a table of deployments using this d
 <blockquote>
 In the Deployments table click the #1
 </blockquote>
-<p><img src="{{ site.baseurl }}/www/3.1/offline/screenshots/oseoffline-lab-rollbacks-deploymentconfig1.png" width="500"/></p>
+<p><img src="{{ site.baseurl }}/www/3.3/offline/screenshots/oseoffline-lab-rollbacks-deploymentconfig1.png" width="500"/></p>
 
 <blockquote>
 Click the "Rollback button", accept defaults, and click "Rollback" again

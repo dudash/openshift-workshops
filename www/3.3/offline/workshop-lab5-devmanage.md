@@ -84,8 +84,15 @@ This shows us even more about the deployed container's build and source code inc
       <div class="panel-body">
 
 <blockquote>
-Click "Overview"
+Click "Applications" and then "Deployments"
 </blockquote>
+<p><img src="{{ site.baseurl }}/www/3.3/offline/screenshots/oseoffline-lab-devman-deployments.png" width="300"/></p>
+
+<blockquote>
+Click the link for the current deployment
+</blockquote>
+<p><img src="{{ site.baseurl }}/www/3.3/offline/screenshots/oseoffline-lab-devman-deployment-webapp.png" width="400"/></p>
+
 Check out the details within the deployment (next to the Pods circle). Within the deployment for the webapp is a container summary that shows both the GUID for the image and the GUID for the git branch.
 <p><img src="{{ site.baseurl }}/www/3.1/offline/screenshots/oseoffline-lab-devman-containertracibility.png" width="500"/></p>
 
@@ -99,14 +106,14 @@ Here are the details of the image stream for this deployment.
 "></i> If you hover over the shortened image GUID or edit the image stream you can see the full GUID.<br/><br/>
 
 <blockquote>
-Click "Overview" to get back to the deployment summary
+Click "Builds" and then "Builds" to get back to the deployment summary
 </blockquote>
 
 <blockquote>
 Click "#1" to see the build details
 </blockquote>
 Because we built this app using S2I, we get to see the details about the build - including the container image that was used for building the source code.  Note that you can kick-off a rebuild here if something went wrong with the initial build and you'd like to attempt it again.
-<p><img src="{{ site.baseurl }}/www/3.1/offline/screenshots/oseoffline-lab-devman-buildsummary.png" width="500"/></p>
+<p><img src="{{ site.baseurl }}/www/3.3/offline/screenshots/oseoffline-lab-devman-buildsummary.png" width="500"/></p>
 
 <blockquote>
 Click "Overview" to get back to the deployment summary again
@@ -170,7 +177,7 @@ You will see in the output details of your app starting up and any status messag
       <div class="panel-body">
 
 <blockquote>
-Hover over "Browse" and then click on "Pods"
+Hover over "Applications" and then click on "Pods"
 </blockquote>
 This is going to show basic details for all pods in this project (including the builders).
 <p><img src="{{ site.baseurl }}/www/3.1/offline/screenshots/oseoffline-lab-devman-allpods.png" width="500"/></p>
@@ -246,7 +253,7 @@ Due to the deployment config strategy being set to "Rolling" and the "ConfigChan
       <div class="panel-body">
 
 <blockquote>
-Hover over "Browse" and then click on "Deployments"
+Hover over "Applications" and then click on "Deployments"
 </blockquote>
 This is going to show basic details for all deployment configurations in this project
 
@@ -264,7 +271,7 @@ Switch to your terminal and type:
 $ oc env dc/mongodb --list | grep MONGODB | oc env dc/webapp --overwrite -e -
 {% endhighlight %}
 
-**Alternatively**, you can look up your env variables from the mongodb deployment config and copy them into the webapp.  You would need to go back to the mongodb deployment config, click the vertically stacked "..." button in the top right to edit the config (next to the deploy button).  Then copy the variables for USER, PASSWORD, ADMIN_PASSWORD, and DATABASE.  Then come back to the webapp deployment config, click the "...", and add them in the section spec->template->spec->containers.  If you do it correctly it should look like the following.
+**Alternatively**, you can look up your env variables from the mongodb deployment config and copy them into the webapp.  You would need to go back to the mongodb deployment config, click the "Actions" button in the top right to edit the config (next to the deploy button).  Then copy the variables for USER, PASSWORD, ADMIN_PASSWORD, and DATABASE.  Then come back to the webapp deployment config, click the "...", and add them in the section spec->template->spec->containers.  If you do it correctly it should look like the following.
 <p><img src="{{ site.baseurl }}/www/3.1/offline/screenshots/oseoffline-lab-devman-deployconfigsetenv.png" width="500"/></p>
 
 Then you'd click "Save" to accept the changes. 
@@ -344,7 +351,7 @@ $ exit
       <div class="panel-body">
 
 <blockquote>
-Hover over "Browse" and then click on "Pods"
+Hover over "Applications" and then click on "Pods"
 </blockquote>
 
 <blockquote>

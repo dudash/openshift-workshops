@@ -69,7 +69,7 @@ $ oc describe pod/PODNAME | more
       <div class="panel-body">
 
 <blockquote>
-Hover over "Browse" and then click on "Pods"
+Hover over "Applications" and then click on "Pods"
 </blockquote>
 This is going to show basic details for all pods in this project (including the builders).
 <p><img src="{{ site.baseurl }}/www/3.1/offline/screenshots/oseoffline-lab-labels-allpods.png" width="500"/></p>
@@ -82,7 +82,7 @@ Click the pod for the webapp (it shoud have a status of Running)
 Here, at the top, you can see the labels on this pod
 
 <blockquote>
-Click vertically stacked "..." button, then click "Edit" the pod
+Click "Actions" button, then click "Edit YAML" for the pod
 </blockquote>
 <p><img src="{{ site.baseurl }}/www/3.1/offline/screenshots/oseoffline-lab-labels-podedit.png" width="500"/></p>
 You will see all the labels under the metadata->labels section.

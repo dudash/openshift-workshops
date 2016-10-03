@@ -54,9 +54,9 @@ Click "Add to Project"
 <p><img src="{{ site.baseurl }}/www/3.1/offline/screenshots/oseoffline-lab-s2i-addbutton.png" width="100"/></p>
 
 <blockquote>
-Click "Browse" and filter for nodejs, then click the nodejs:0.10 builder image
+Click "Browse Catalog" and filter for nodejs, then click the nodejs:0.10 builder image
 </blockquote>
-<p><img src="{{ site.baseurl }}/www/3.1/offline/screenshots/oseoffline-lab-s2i-filternode.png" width="600"/></p>
+<p><img src="{{ site.baseurl }}/www/3.3/default/screenshots/ose-lab-s2i-filternode.png" width="600"/></p>
 
 <blockquote>
 Fill out the boxes to look as follows:
@@ -131,14 +131,14 @@ The console will print out the full log for your build.  Note, you could pipe th
       <div class="panel-body">
 
 <blockquote>
-Hover over Browse and then click on "Builds"
+Hover over "Builds" and then click on "Builds"
 </blockquote>
-<p><img src="{{ site.baseurl }}/www/3.1/offline/screenshots/oseoffline-lab-s2i-builds.png" width="300"/></p>
+<p><img src="{{ site.baseurl }}/www/3.3/offline/screenshots/oseoffline-lab-s2i-builds.png" width="300"/></p>
 
 <blockquote>
 Click on the "webapp" link
 </blockquote>
-<p><img src="{{ site.baseurl }}/www/3.1/offline/screenshots/oseoffline-lab-s2i-webappbuild.png" width="300"/></p>
+<p><img src="{{ site.baseurl }}/www/3.3/offline/screenshots/oseoffline-lab-s2i-webappbuild.png" width="300"/></p>
 
 <blockquote>
 Click on the "View Log" tab to see the details of your latest build
@@ -195,12 +195,12 @@ Copy the HOST/PORT and paste into your favorite web browser
 <blockquote>
 Click on Overview
 </blockquote>
-<p><img src="{{ site.baseurl }}/www/3.1/offline/screenshots/oseoffline-lab-s2i-overview.png" width="100"/></p>
+<p><img src="{{ site.baseurl }}/www/3.3/offline/screenshots/oseoffline-lab-s2i-overview.png" width="100"/></p>
 
 <blockquote>
-Click the URL that is listed in the service
+Click the URL that is listed in the header
 </blockquote>
-<p><img src="{{ site.baseurl }}/www/3.1/offline/screenshots/oseoffline-lab-s2i-svc.png" width="300"/></p>
+<p><img src="{{ site.baseurl }}/www/3.3/offline/screenshots/oseoffline-lab-s2i-svc.png" width="600"/></p>
 
       </div>
     </div>

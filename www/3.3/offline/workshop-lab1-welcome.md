@@ -30,7 +30,7 @@ OpenShift provides a web console that allow you to perform various tasks via a w
 ### Let's Login
 > Navigate to the URI provided by your instructor and login with the user/password provided (if there's an icon on the Desktop, just double click that)
 
-<img src="{{ site.baseurl }}/www/3.1/offline/screenshots/ose-login.png" width="600"/><br/>
+<img src="{{ site.baseurl }}/www/3.3/default/screenshots/ose-login.png" width="600"/><br/>
 *Login Webpage*
 
 Once logged in you should see your available projects - which, for this workshop, is just one project.

@@ -55,7 +55,7 @@ Notice that you now have 4 unique pods availble to inspect.  If you want go ahea
       <div class="panel-body">
 
 <blockquote>
-Click "Overview"
+Click "Applications" then "Deployments"
 </blockquote>
 <blockquote>
 In the webapp deployment, click the up arrow 3 times.
@@ -64,10 +64,10 @@ The deployment should indicate that it is scaling to 4 pods, and eventually you 
 <p><img src="{{ site.baseurl }}/www/3.1/offline/screenshots/oseoffline-lab-replicationrecovery-4pods.png" width="500"/></p>
 
 <blockquote>
-Hover over "Browse" and click "Pods"
+Hover over "Applications" and click "Pods"
 </blockquote>
 Notice that you now have 4 unique webapp pods available to inspect.  If you want go ahead and inspect them you can see that each have their own IP address and logs.
-<p><img src="{{ site.baseurl }}/www/3.1/offline/screenshots/oseoffline-lab-replicationrecovery-4podslist.png" width="500"/></p>
+<p><img src="{{ site.baseurl }}/www/3.3/offline/screenshots/oseoffline-lab-replicationrecovery-4podslist.png" width="500"/></p>
 
       </div>
     </div>
@@ -124,7 +124,7 @@ Assuming you are in the browse pods list.
 Click one of the running webapp pods (not a build pod)
 </blockquote>
 <blockquote>
-Click the vertically stacked "..." button in the top right and then delete
+Click the "Actions" button in the top right and then delete
 </blockquote>
 <p><img src="{{ site.baseurl }}/www/3.1/offline/screenshots/oseoffline-lab-replicationrecovery-deletepod.png" width="400"/></p>
 
