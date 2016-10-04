@@ -98,7 +98,12 @@ This shows us even more about the deployed container's build and source code inc
 <blockquote>
 Click "Overview"
 </blockquote>
-Check out the details within the deployment (next to the Pods circle). Within the deployment for the dc-metro-map is a container summary that shows both the GUID for the image and the GUID for the git branch.
+<blockquote>
+Check out the details within the deployment (above and to the right of the Pods circle). 
+</blockquote>
+<p><img src="{{ site.baseurl }}/www/3.3/default/screenshots/ose-lab-devman-deployment-shortcut.png" width="200"/></p>
+
+Within the deployment for the dc-metro-map is a container summary that shows both the GUID for the image and the GUID for the git branch.
 <p><img src="{{ site.baseurl }}/www/3.1/default/screenshots/ose-lab-devman-containertracibility.png" width="500"/></p>
 
 <blockquote>
@@ -110,7 +115,7 @@ Here are the details of the image stream for this deployment.
 <i class="fa fa-info-circle"></i> If you hover over the shortened image GUID or edit the image stream you can see the full GUID.<br/><br/>
 
 <blockquote>
-Click "Overview" to get back to the deployment summary
+Click "Builds" and then Builds to get back to the build summary
 </blockquote>
 
 <blockquote>
@@ -120,8 +125,9 @@ Because we built this app using S2I, we get to see the details about the build -
 <p><img src="{{ site.baseurl }}/www/3.3/default/screenshots/ose-lab-devman-buildsummary.png" width="500"/></p>
 
 <blockquote>
-Click "Overview" to get back to the deployment summary again
+Click "Overview" and then the deployment detail link to get back to the deployment summary again
 </blockquote>
+<p><img src="{{ site.baseurl }}/www/3.3/default/screenshots/ose-lab-devman-deployment-shortcut.png" width="200"/></p>
 Notice that next to the build # you can see the comment from the last commit when the build was started.  And you can see the that commit's author.  You can click that commit GUID to be taken to the exact version of the source code that is in this deployed application.
 <p><img src="{{ site.baseurl }}/www/3.1/default/screenshots/ose-lab-devman-commitmsg.png" width="400"/></p>
 

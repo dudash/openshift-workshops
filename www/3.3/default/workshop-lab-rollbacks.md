@@ -44,7 +44,7 @@ Click the "Add to Project" button
 </blockquote>
 <p><img src="{{ site.baseurl }}/www/3.3/default/screenshots/ose-lab-rollbacks-add-to-project.png" width="100"/></p>
 <blockquote>
-Select the "Browse Catalog" tab and search for a node.js **builder**
+Select the "Browse Catalog" tab and search for the nodejs:0.10 builder image.
 </blockquote>
 <blockquote>
 Fill out the boxes to point to the fork and context dir
