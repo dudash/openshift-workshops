@@ -7,7 +7,7 @@ categories: [lab, databases, developers]
 ---
 
 ## Databases
-We can easily add a database pod into OpenShift wrapped in a service for other pods to access. Open Shift has supported templates to run containerized MySQL, MongoDB, and Postgres databases.  Let's try that now.
+We can easily add a database pod into OpenShift wrapped in a service for other pods to access. OpenShift has supported templates to run containerized MySQL, MongoDB, and Postgres databases.  Let's try that now.
 
 <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
   <div class="panel panel-default">
@@ -70,7 +70,7 @@ We will accept the default values here.  So just:
 Scroll to the bottom and click "Create"
 </blockquote>
 
-Open Shift will display a next steps page with details about what happened and what you can do next.  Read that, then:
+OpenShift will display a next steps page with details about what happened and what you can do next.  Read that, then:
 <blockquote>
 Click "Go to overview"
 </blockquote>
@@ -81,7 +81,7 @@ Click "Go to overview"
 </div>
 
 ## Summary
-Now you have a runnning database generated from a supported Open Shift template using generated passwords and other env variables.  We are using ephemeral databases in this lab, but you can also do persistent storage.  However, we will save that topic for your [homework][2] or the topic of an advanced lab.
+Now you have a runnning database generated from a supported OpenShift template using generated passwords and other env variables.  We are using ephemeral databases in this lab, but you can also do persistent storage.  However, we will save that topic for your [homework][2] or the topic of an advanced lab.
 
 [1]: https://docs.openshift.com/enterprise/3.1/using_images/db_images/index.html
 [2]: https://docs.openshift.com/enterprise/3.1/dev_guide/persistent_volumes.html

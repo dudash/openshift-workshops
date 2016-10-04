@@ -7,7 +7,7 @@ categories: [lab, developers, ops, rollback]
 ---
 
 ## Build Triggers, Webhooks and Rollbacks - Oh My!
-Once you have an app deployed in Open Shift you can take advantage of some continuous capabilities that help to enable DevOps and automate your management process.  We will cover some of those in this lab: Build triggers, webhooks, and rollbacks.
+Once you have an app deployed in OpenShift you can take advantage of some continuous capabilities that help to enable DevOps and automate your management process.  We will cover some of those in this lab: Build triggers, webhooks, and rollbacks.
 
 
 ### A bit of configuration
@@ -23,9 +23,9 @@ Github should redirect you to the newly created fork of the source code.
 
 
 ### Build Trigger / Code Change Webhook
-When using S2I there are a few different things that can be used to [trigger][1] a rebuild of your source code.  The first is a configuration change, the second is an image change, and the last (which we are covering here) is a webhook.  A webhook is basically your git source code repository telling Open Shift that the code we care about has changed.  Let's set that up for our project now to see it in action.
+When using S2I there are a few different things that can be used to [trigger][1] a rebuild of your source code.  The first is a configuration change, the second is an image change, and the last (which we are covering here) is a webhook.  A webhook is basically your git source code repository telling OpenShift that the code we care about has changed.  Let's set that up for our project now to see it in action.
 
-Jump back to your Open Shift web console and let's add the webapp to our project.  You should know how to do this from previous lab work, but this time point to *your* github URL for the source code.  If you need a refresher expand the box below.
+Jump back to your OpenShift web console and let's add the webapp to our project.  You should know how to do this from previous lab work, but this time point to *your* github URL for the source code.  If you need a refresher expand the box below.
 
 <div class="panel-group" id="accordOpt" role="tablist" aria-multiselectable="true">
   <div class="panel panel-default">
@@ -180,7 +180,7 @@ Click the button to "Add webhook"
   </div>
 </div>
 
-Good work!  Now any "push" to the forked repository will send a webhook that triggers Open Shift to: re-build the code and image using s2i, and then perform a new pod deployment.  In fact Github should have sent a test trigger and Open Shift should have kicked off a new build already.
+Good work!  Now any "push" to the forked repository will send a webhook that triggers OpenShift to: re-build the code and image using s2i, and then perform a new pod deployment.  In fact Github should have sent a test trigger and OpenShift should have kicked off a new build already.
 
 
 ### Deployment Triggers
@@ -251,9 +251,9 @@ You can go back to the overview page to see your previous deployment spinning do
   </div>
 </div>
 
-Open Shift has done a graceful removal of the old pod and created a new one.  
+OpenShift has done a graceful removal of the old pod and created a new one.  
 
-<i class="fa fa-info-circle"></i> The old pod wasn't killed until the new pod was successfully started and ready to be used.  This is so that Open Shift could continue to route traffic to the old pod until the new one was ready.
+<i class="fa fa-info-circle"></i> The old pod wasn't killed until the new pod was successfully started and ready to be used.  This is so that OpenShift could continue to route traffic to the old pod until the new one was ready.
 
 <i class="fa fa-info-circle"></i> You can integrate your CI/CD tools to do [rollbacks with the REST API][5].
 

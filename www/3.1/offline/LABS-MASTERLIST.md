@@ -17,28 +17,28 @@ How to install the prerequisites
 Shows attendees how to login and provides and overview of the web console and CLI
 
 ## workshop-lab-byodocker.md
-Covers how to deploy exisiting docker images to Open Shift
+Covers how to deploy exisiting docker images to OpenShift
 
 ## workshop-lab-s2inodejs.md
-Covers the Source to Image capability of Open Shift
+Covers the Source to Image capability of OpenShift
 
 ## workshop-lab-devmanage.md
-Covers basic developer focused tasks to manage an app in your Open Shift development environment
+Covers basic developer focused tasks to manage an app in your OpenShift development environment
 
 ## workshop-lab-rollbacks.md
 Covers how to setup webhooks and perform rollbacks
 
 ## workshop-lab-replicationrecovery.md
-Covers replication of pods and the recovery features Open Shift provides
+Covers replication of pods and the recovery features OpenShift provides
 
 ## workshop-lab-labels.md
-Covers the topic of labels within Open Shift and when/how to use them
+Covers the topic of labels within OpenShift and when/how to use them
 
 ## workshop-lab-secrets.md
 Covers developer usage of secrets to hide sensitive information and make it available to your containers - Coming soon.
 
 ## workshop-lab-storage.md
-Covers hooking up a database in your Open Shift environment - Coming soon.
+Covers hooking up a database in your OpenShift environment - Coming soon.
 
 ## workshop-lab-templates.md
 Covers creating and using templates - Coming soon.
@@ -62,7 +62,7 @@ Covers how to setup autoscaling in OpenShift - Coming soon.
 Covers how to create and install custom S2I builders - Coming soon.
 
 ## workshop-lab-ops.md
-Covers some ops/administrative focused tasks to manage a procuction Open Shift environment - Coming soon.
+Covers some ops/administrative focused tasks to manage a procuction OpenShift environment - Coming soon.
 
 ## workshop-lab-nodeselectors.md
 Covers ops/administrative focused node selectors to place pods and define policy - Coming soon.

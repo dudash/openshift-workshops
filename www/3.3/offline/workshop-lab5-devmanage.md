@@ -6,12 +6,12 @@ html_title: App Development
 categories: [lab, developers]
 ---
 
-## Developing and managing an application in Open Shift
-In this lab we will explore some of the common activities undertaken by developers working in Open Shift.  You will become familiar with how to use environment variables, build configurations, and more.  Let's look at some of the basic things a developer might care about for a deployed app.
+## Developing and managing an application in OpenShift
+In this lab we will explore some of the common activities undertaken by developers working in OpenShift.  You will become familiar with how to use environment variables, build configurations, and more.  Let's look at some of the basic things a developer might care about for a deployed app.
 
 
 ### See the app in action and inspect some details
-There is no more ambiguity or confusion about where the app came from.  Open Shift provides traceability for your running deployment back to the docker image and the registry it came from, as well as (for images built by openshift) back to the exact source code branch and commit.  Let's take a look at that.
+There is no more ambiguity or confusion about where the app came from.  OpenShift provides traceability for your running deployment back to the docker image and the registry it came from, as well as (for images built by openshift) back to the exact source code branch and commit.  Let's take a look at that.
 
 <div class="panel-group" id="accordionA" role="tablist" aria-multiselectable="true">
   <div class="panel panel-default">
@@ -202,7 +202,7 @@ Now you can see in the output window the details of your app starting up and any
 
 
 ### How about we set some environment variables?
-Whether it's a database name or a configuration variable, most applications make use of environment variables.  It's best not to bake these into your containers because they do change and you don't want to rebuild an image just to change an environment variable.  Good news!  You don't have to.  Open Shift let's you specify environment variables in your deployment configuration and they get passed along through the pod to the container.  Let's try doing that.
+Whether it's a database name or a configuration variable, most applications make use of environment variables.  It's best not to bake these into your containers because they do change and you don't want to rebuild an image just to change an environment variable.  Good news!  You don't have to.  OpenShift let's you specify environment variables in your deployment configuration and they get passed along through the pod to the container.  Let's try doing that.
 
 <div class="panel-group" id="accordionC" role="tablist" aria-multiselectable="true">
   <div class="panel panel-default">
@@ -230,7 +230,7 @@ Quickly followed by:
 $ oc get pods -w
 {% endhighlight %}
 
-Due to the deployment config strategy being set to "Rolling" and the "ConfigChange" trigger being set, Open Shift auto deployed a new pod as soon as you updated with the new env variables.  If you were quick enough you saw this happening with the get pods -w command.
+Due to the deployment config strategy being set to "Rolling" and the "ConfigChange" trigger being set, OpenShift auto deployed a new pod as soon as you updated with the new env variables.  If you were quick enough you saw this happening with the get pods -w command.
 
 <blockquote>
 <i class="fa fa-terminal"></i> Type Ctrl+C to stop watching the pods
@@ -280,7 +280,7 @@ Then you'd click "Save" to accept the changes.
 Go back to the summary view by clicking "Overview" on the left menu bar
 </blockquote>
 
-If you are quick enough you will see a new pod spin up and an the old pod spin down.  This is due to the deployment config strategy being set to "Rolling" and having a "ConfigChange" trigger, Open Shift auto deployed a new pod as soon as you updated with the env variable.
+If you are quick enough you will see a new pod spin up and an the old pod spin down.  This is due to the deployment config strategy being set to "Rolling" and having a "ConfigChange" trigger, OpenShift auto deployed a new pod as soon as you updated with the env variable.
       </div>
     </div>
   </div>
@@ -297,7 +297,7 @@ Environment variables are great, but sometimes we don't want sensitive data expo
 
 
 ### Getting into a pod
-There are situations when you might want to jump into a running pod, and Open Shift lets you do that pretty easily.  We set some environment variables in this lab, let's jump onto our pod to inspect them.  
+There are situations when you might want to jump into a running pod, and OpenShift lets you do that pretty easily.  We set some environment variables in this lab, let's jump onto our pod to inspect them.  
 
 <div class="panel-group" id="accordionD" role="tablist" aria-multiselectable="true">
   <div class="panel panel-default">
@@ -377,7 +377,7 @@ That should return all the **MONGODB_XXX** variables matching the values that we
 
   
 ## Summary
-In this lab you've seen how to trace running software back to its roots, how to see details on the pods running your software, how to update deployment configurations, how to inspect logs files, how to set environment variables consistently across your environment, and how to interactively attach to running containers.  All these things should come in handy for any developer working in an Open Shift platform.
+In this lab you've seen how to trace running software back to its roots, how to see details on the pods running your software, how to update deployment configurations, how to inspect logs files, how to set environment variables consistently across your environment, and how to interactively attach to running containers.  All these things should come in handy for any developer working in an OpenShift platform.
 
 To dig deeper in to details behind the steps you performed in this lab, check out the OSE [developer's guide][1].
 

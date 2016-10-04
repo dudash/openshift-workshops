@@ -12,8 +12,8 @@ Hopefully, these labs provided you some idea of how to perform common tasks with
 While you're here, we can help you install the [Container Development Kit (CDK)][3] on your laptop.  It requires a couple large downloads, but the install process is reallly easy.  You can find the [install and getting started guides here][4].
 
 Here are some good resources to continue learning OpenShift:
-* [Open Shift Architecture][1]
-* [Open Shift Developer's Guide][2]
+* [OpenShift Architecture][1]
+* [OpenShift Developer's Guide][2]
 
 [1]: https://docs.openshift.com/container-platform/3.3/architecture/core_concepts/index.html
 [2]: https://docs.openshift.com/container-platform/3.3/dev_guide/index.html
