@@ -7,7 +7,7 @@ categories: [lab, developers, ops]
 ---
 
 ## Overview
-In modern software projects many teams utilize the concept of continuous integration and continuous delivery (CI/CD).  By setting up a tool chain that continuously builds, tests, and stages software releases a team can ensure that their product can be reliably released at any time.  Open Shift can be an enabler in the creation and managecment of this tool chain.  In this lab we will walk through creating a simple example of a CI/CD [pipeline][1] utlizing Jenkins, all running on top of Open Shift!
+In modern software projects many teams utilize the concept of continuous integration and continuous delivery (CI/CD).  By setting up a tool chain that continuously builds, tests, and stages software releases a team can ensure that their product can be reliably released at any time.  OpenShift can be an enabler in the creation and managecment of this tool chain.  In this lab we will walk through creating a simple example of a CI/CD [pipeline][1] utlizing Jenkins, all running on top of OpenShift!
 
 ### Start by installing Jenkins
 First we will start by installing Jenkins to run in a pod within your workshop project.  Because this is just a workshop we use the ephemeral template to create our Jenkins sever (for a enterprise system you would probably want to use the persistent template).  Follow the steps below:
@@ -183,15 +183,15 @@ echo "inside my jenkins job"
 At this point you should see the following scenario play out:
   * Once you initiate a git push, the first Jenkins job will execute. You will see Jenkins notice the the change to the image in the registry, and begin running the first job.
 
-  * When this job completes, a second job will execute. This second job will use the OpenShift Pipeline plugin to create a new tag of the image called "ready for test".
+  * When this job completes, a second job will execute. This second job will use the OpenShift Pipeline plugin to create a new tag of the image called "readyfortest".
 
-  * You can see the history of this new tag by browsing to  initiate two jobs in the pipeline with the final step being the new tag of "readyfortest". The new tag can then be used for automatic or manual builds of the new test application. You can view the status of the new tag in OpenShift by browsing to Image Streams -> your image stream
+  * You can see the history of this new tag by browsing to  initiate two jobs in the pipeline with the final step being the new tag of "readyfortest". The new tag can then be used for automatic or manual builds of the new test application. You can view the status of the new tag in OpenShift by browsing to Builds -> Images -> your image stream
 
   <p><img src="{{ site.baseurl }}/www/3.1/default/screenshots/ose-lab-cicd-image-stream-view.png" width="700" /></p> 
 
 
 ## Summary
-Coming soon...  Read more about usage of [Jenkins on Open Shift here][4].  Read more about the concepts behind [pipelines in Jenkins here][1].
+Coming soon...  Read more about usage of [Jenkins on OpenShift here][4].  Read more about the concepts behind [pipelines in Jenkins here][1].
 
 
 [1]: https://jenkins.io/doc/pipeline/

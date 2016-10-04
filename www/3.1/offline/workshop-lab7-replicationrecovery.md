@@ -7,7 +7,7 @@ categories: [lab, ops]
 ---
 
 ## Things will go wrong, and that's why we have replication and recovery
-Things will go wrong with your software, or your hardware, or from something out of your control.  But we can plan for that failure, and planning for it let's us minimize the impact.  Open Shift supports this via what we call replication and recovery.
+Things will go wrong with your software, or your hardware, or from something out of your control.  But we can plan for that failure, and planning for it let's us minimize the impact.  OpenShift supports this via what we call replication and recovery.
 
 ### Replication
 Let's walk through a simple example of how the replication controller can keep your deployment at a desired state.  Assuming you still have the webapp project running we can manually scale up our replicas to handle increased user load.
@@ -60,7 +60,7 @@ Click "Overview"
 <blockquote>
 In the webapp deployment, click the up arrow 3 times.
 </blockquote>
-The deployment should indicate that it is scaling to 4 pods, and eventually you will have 4 running pods.  Keep in mind that each pod has it's own container which is an identical deployment of the webapp.  Open Shift is now (by default) round robin load-balancing traffic to each pod.
+The deployment should indicate that it is scaling to 4 pods, and eventually you will have 4 running pods.  Keep in mind that each pod has it's own container which is an identical deployment of the webapp.  OpenShift is now (by default) round robin load-balancing traffic to each pod.
 <p><img src="{{ site.baseurl }}/www/3.1/offline/screenshots/oseoffline-lab-replicationrecovery-4pods.png" width="500"/></p>
 
 <blockquote>
@@ -74,10 +74,10 @@ Notice that you now have 4 unique webapp pods available to inspect.  If you want
   </div>
 </div>
 
-So you've told Open Shift that you'd like to maintain 4 running, load-balanced, instances of our web app.
+So you've told OpenShift that you'd like to maintain 4 running, load-balanced, instances of our web app.
 
 ### Recovery
-OK, now that we have a slightly more interesting desired replication state, we can test a service outages scenario. In this scenario, the webapp replication controller will ensure that other pods are created to replace those that become unhealthy.  Let's force inflict an issue and see how Open Shift reponds.
+OK, now that we have a slightly more interesting desired replication state, we can test a service outages scenario. In this scenario, the webapp replication controller will ensure that other pods are created to replace those that become unhealthy.  Let's force inflict an issue and see how OpenShift reponds.
 
 <div class="panel-group" id="accordionB" role="tablist" aria-multiselectable="true">
   <div class="panel panel-default">
@@ -139,7 +139,7 @@ It happens quickly, but if you look quickly you'll see the pod you deleted disap
 
 
 ### Application Health
-In addition to the health of your application's pods, Open Shift will watch the containers inside those pods.  Let's force inflict some issues and see how Open Shift reponds.  
+In addition to the health of your application's pods, OpenShift will watch the containers inside those pods.  Let's force inflict some issues and see how OpenShift reponds.  
 
 <div class="panel-group" id="accordionC" role="tablist" aria-multiselectable="true">
   <div class="panel panel-default">
@@ -185,7 +185,7 @@ This will kick you out off the container with an error like "Error executing com
 $ oc get pods -w
 {% endhighlight %}
 
-If a container dies multiple times quickly, Open Shift is going to put the pod in a CrashBackOff state.  This ensures the system doesn't waste resources trying to restart containers that are continuously crashing.
+If a container dies multiple times quickly, OpenShift is going to put the pod in a CrashBackOff state.  This ensures the system doesn't waste resources trying to restart containers that are continuously crashing.
 
       </div>
     </div>
@@ -226,7 +226,7 @@ Go back to the pods list
 
 <p><img src="{{ site.baseurl }}/www/3.1/offline/screenshots/oseoffline-lab-replicationrecovery-backoff.png" width="500"/></p>
 
-If a container dies multiple times too quickly, Open Shift is going to put the pod in a CrashBackOff state.  This ensures the system doesn't waste resources trying to restart containers that are continuously crashing.
+If a container dies multiple times too quickly, OpenShift is going to put the pod in a CrashBackOff state.  This ensures the system doesn't waste resources trying to restart containers that are continuously crashing.
 
       </div>
     </div>
@@ -239,7 +239,7 @@ Let's scale back down to 1 replica.  If you are using the web console just click
 
 
 ## Summary
-In this lab we learned about replication controllers and how they can be used to scale your applications and services.  We also tried to break a few things and saw how Open Shift responded to heal the system and keep it running.  This topic can get deeper than we've experimented with here, but getting deeper into application health and recovery is an advanced topic.  If you're interested you can read more about it in the documentation [here][1], [here][2], and [here][3].
+In this lab we learned about replication controllers and how they can be used to scale your applications and services.  We also tried to break a few things and saw how OpenShift responded to heal the system and keep it running.  This topic can get deeper than we've experimented with here, but getting deeper into application health and recovery is an advanced topic.  If you're interested you can read more about it in the documentation [here][1], [here][2], and [here][3].
 
 
 [1]: https://docs.openshift.com/enterprise/3.1/dev_guide/application_health.html

@@ -6,7 +6,7 @@ html_title: Welcome to OpenShift
 categories: [lab, intro, welcome, developers, ops]
 ---
 
-## Welcome to Open Shift!
+## Welcome to OpenShift!
 This lab provides a quick tour of the console to help you get familiar with the user interface along with some key terminology we will use in subsequent lab content.  If you are already familiar with the basics of OpenShift you can skip this lab - after making sure you can login.
 
 ## Key Terms

@@ -6,8 +6,8 @@ html_title: Basic Ops
 categories: [lab, ops]
 ---
 
-## Operations on Open Shift
-This lab walks you through some basic functionality that you might perform when working with your deployed apps and services.  We will cover how Open Shift can  auto recover from failures and how you can investigate the inner workings of the platform along with its configuration.  This is an advanced lab with the goal of getting you comfortable with the internal working components of Open Shift.
+## Operations on OpenShift
+This lab walks you through some basic functionality that you might perform when working with your deployed apps and services.  We will cover how OpenShift can  auto recover from failures and how you can investigate the inner workings of the platform along with its configuration.  This is an advanced lab with the goal of getting you comfortable with the internal working components of OpenShift.
 
 <i class="fa fa-warning"></i> Please note: many of the steps in this lab require additional privledges via an administrative of service account.  If only have access to via developer account with limited project access you might not be able to continue.
 
@@ -19,7 +19,7 @@ Coming soon...
 
 
 ### Checking on your cluster nodes and the master
-As an administrator you can view the health of the nodes in your cluster and look into events that occured within Open Shift.  Let's take a look at that:
+As an administrator you can view the health of the nodes in your cluster and look into events that occured within OpenShift.  Let's take a look at that:
 
 Coming soon...
 

@@ -7,10 +7,10 @@ categories: [lab, developers, ops, rollback]
 ---
 
 ## Build Triggers, Webhooks and Rollbacks - Oh My!
-Once you have an app deployed in Open Shift you can take advantage of some continuous capabilities that help to enable DevOps and automate your management process.  We will cover some of those in this lab: Build triggers, webhooks, and rollbacks.
+Once you have an app deployed in OpenShift you can take advantage of some continuous capabilities that help to enable DevOps and automate your management process.  We will cover some of those in this lab: Build triggers, webhooks, and rollbacks.
 
 ### Build Trigger / Code Change Webhook
-When using S2I there are a few different things that can be used to [trigger][1] a rebuild of your source code.  The first is a configuration change, the second is an image change, and the last (which we are covering here) is a webhook.  A webhook is basically your git source code repository telling Open Shift that the code we care about has changed.  Let's set that up for our project now to see it in action.
+When using S2I there are a few different things that can be used to [trigger][1] a rebuild of your source code.  The first is a configuration change, the second is an image change, and the last (which we are covering here) is a webhook.  A webhook is basically your git source code repository telling OpenShift that the code we care about has changed.  Let's set that up for our project now to see it in action.
 
 The builder template that was used when the webapp was added to the project created a number of resources for you.  What we care about right now is the build configuration because that contains the webhooks.  Let's find the URL for the webhook:
 
@@ -121,7 +121,7 @@ Paste in the URL you copied
 Click the button to "Add webhook"
 </blockquote>
 
-Good work!  Now any "push" to the forked repository will send a webhook that triggers Open Shift to: re-build the code and image using s2i, and then perform a new pod deployment.
+Good work!  Now any "push" to the forked repository will send a webhook that triggers OpenShift to: re-build the code and image using s2i, and then perform a new pod deployment.
 
 Let's test that out.  
 
@@ -131,7 +131,7 @@ Select the webhook and click the "Test Delivery" button.
 <p><img src="{{ site.baseurl }}/www/3.1/offline/screenshots/oseoffline-lab-rollbacks-testdelivery.png" width="400"/></p>
 
 <blockquote>
-Switch back to the Open Shift web console and browse to Builds for the webapp
+Switch back to the OpenShift web console and browse to Builds for the webapp
 </blockquote>
 
 You should see the new build #2 has been triggered.
@@ -169,7 +169,7 @@ $ oc rollback webapp-1
 $ oc get pods -w
 {% endhighlight %}
 
-Open Shift has done a graceful removal of the old pod and created a new one using the previous deployment configuration.  Open the page for the webapp and refresh it.  Notice it is no longer talking to the database.  Let's put it back to a working state again:
+OpenShift has done a graceful removal of the old pod and created a new one using the previous deployment configuration.  Open the page for the webapp and refresh it.  Notice it is no longer talking to the database.  Let's put it back to a working state again:
 
 {% highlight csh %}
 $ oc rollback webapp-2
@@ -209,7 +209,7 @@ Click the "Rollback button", accept defaults, and click "Rollback" again
 
 You can go back to the overview page to see your previous deployment spinning down and your new one spinning up.
 
-Open Shift has done a graceful removal of the old pod and created a new one using the previous deployment configuration.  Open the page for the webapp and refresh it.  Notice it is no longer talking to the database.  
+OpenShift has done a graceful removal of the old pod and created a new one using the previous deployment configuration.  Open the page for the webapp and refresh it.  Notice it is no longer talking to the database.  
 <p><img src="{{ site.baseurl }}/www/3.1/offline/screenshots/oseoffline-lab-rollbacks-nodb.png" width="200"/></p>
 
 <br/>
@@ -226,7 +226,7 @@ Following steps just like above, Click the "Rollback button", for the previously
 </div>
 
 
-<i class="fa fa-info-circle"></i> The old pod wasn't killed until the new pod was successfully started and ready to be used.  This is so that Open Shift could continue to route traffic to the old pod until the new one was ready.
+<i class="fa fa-info-circle"></i> The old pod wasn't killed until the new pod was successfully started and ready to be used.  This is so that OpenShift could continue to route traffic to the old pod until the new one was ready.
 
 <i class="fa fa-info-circle"></i> You can integrate your CI/CD tools to do [rollbacks with the REST API][5].
 
