@@ -51,13 +51,13 @@ First we will start by installing Jenkins to run in a pod within your workshop p
     </div>
     <div id="collapseATwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingATwo">
       <div class="panel-body">
-        <blockquote>Go into Jenkins project</blockquote>
 
-        <blockquote>Click "Add to Project", select jenkins-ephemeral, click "Create". Accept all defaults.</blockquote>
+        <blockquote>Click "Add to Project", click "Browse Catalog" select "jenkins-ephemeral".</blockquote>
         <p><img src="{{ site.baseurl }}/www/3.1/default/screenshots/ose-lab-cicd-jenkins-ephemeral.png" width="500"/></p>
-  
+        <blockquote>Change the password to something that you can remember. Then click "Create"</blockquote>
+        <p><img src="{{ site.baseurl }}/www/3.3/default/screenshots/ose-lab-cicd-jenkins-password.png" width="300"/></p>
         <blockquote>Click "continue to overview", wait for it to start</blockquote>
-        <p><img src="{{ site.baseurl }}/www/3.1/default/screenshots/ose-lab-cicd-jenkins-start.png" width="500"/></p>
+        <p><img src="{{ site.baseurl }}/www/3.3/default/screenshots/ose-lab-cicd-jenkins-start.png" width="500"/></p>
   
         <blockquote>Click the service link to open jenkins, login as admin/password</blockquote>
         <p><img src="{{ site.baseurl }}/www/3.1/default/screenshots/ose-lab-cicd-jenkins-login.png" width="500"/></p>

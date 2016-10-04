@@ -24,11 +24,11 @@ $ oc expose service green
 Note that we exposed this application using a route named "green". Navigate to your application and validate it deployed correctly.
 
 ### Release a new version of our app and test it in the same environment
-What we'll do next is create a new version of the application called "blue". The quickest way to make a change to the code is directly in the GitHub web interface. In GitHub, edit the image.php file in the root directory of your repo. 
+What we'll do next is create a new version of the application called "blue". The quickest way to make a change to the code is directly in the GitHub web interface. In GitHub, edit the dc-metro-map/views/dcmetro.jade file in your repo. 
 
 <p><img src="{{ site.baseurl }}/www/3.3/default/screenshots/ose-lab-bluegreen-editgithub.png" width="500"/></p>
 
-Switch the commented out line to change the color of the rendered box (lines 9-10). Commit your changes.
+We can change the text labels indicated by name of a color. If you want to change the label for the "Red Line", change line 22 from "Red Line" to  "Silver Line". These changes will be easily viewable on the main screen of the application. 
 
 Use the same commands to deploy this new version of the app, but this time name the service "blue". No need to expose a new route -- we'll instead switch the "green" route to point to the "blue" service once we've verified it.
 
