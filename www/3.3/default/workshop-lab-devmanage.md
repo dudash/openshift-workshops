@@ -271,15 +271,15 @@ Click the "dc-metro-map" deployment config
 There are a lot of details here, feel free to check them out and ask questions, but we are here to set some new environment variables.  
 
 <blockquote>
-Click the Actions button in the top right to edit this config (next to the deploy button).
+Click the Environment tab next to the Details tab .
 </blockquote>
-<p><img src="{{ site.baseurl }}/www/3.1/default/screenshots/ose-lab-devman-deployconfigdetails.png" width="500"/></p>
-This opens up an edit window with the yaml data for this deployment config.  Scroll down to the section spec->template->spec->containers and:
+<p><img src="{{ site.baseurl }}/www/3.3/default/screenshots/ose-lab-devman-deployconfigdetails-config.png" width="500"/></p>
+This opens up a tab with the environment variables for this deployment config.
 
 <blockquote>
-Add an env section to look like the following:
+Add an environment variable with the name BEERME and a value of 'true'
 </blockquote>
-<p><img src="{{ site.baseurl }}/www/3.1/default/screenshots/ose-lab-devman-deployconfigsetenv.png" width="500"/></p>
+<p><img src="{{ site.baseurl }}/www/3.3/default/screenshots/ose-lab-devman-deployconfigdetails-populated.png" width="500"/></p>
 
 <blockquote>
 Click "Save".  And go back to the summary view by clicking "Overview" on the left menu bar
