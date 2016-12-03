@@ -9,6 +9,49 @@ categories: [lab, developers, ops]
 ## Overview
 In modern software projects many teams utilize the concept of continuous integration and continuous delivery (CI/CD).  By setting up a tool chain that continuously builds, tests, and stages software releases a team can ensure that their product can be reliably released at any time.  OpenShift can be an enabler in the creation and managecment of this tool chain.  In this lab we will walk through creating a simple example of a CI/CD [pipeline][1] utlizing Jenkins, all running on top of OpenShift!
 
+### Start by creating a new project
+To begin, we will create a new project. Name the new project "cicd".
+
+<div class="panel-group" id="accordionAa" role="tablist" aria-multiselectable="true">
+  <div class="panel panel-default">
+    <div class="panel-heading" role="tab" id="headingAaOne">
+      <div class="panel-title">
+        <a role="button" data-toggle="collapse" data-parent="#accordionAa" href="#collapseAaOne" aria-expanded="true" aria-controls="collapseAaOne">
+          CLI Steps
+        </a>
+      </div>
+    </div>
+    <div id="collapseAaOne" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingAaOne">
+      <div class="panel-body">
+        <blockquote>
+        <i class="fa fa-terminal"></i> Goto the terminal and type the following:
+        </blockquote>
+        {% highlight csh %}
+        $ oc new project cicd
+        {% endhighlight %}
+      </div>
+    </div>
+  </div>
+  <div class="panel panel-default">
+    <div class="panel-heading" role="tab" id="headingATwo">
+      <div class="panel-title">
+        <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordionAa" href="#collapseAaTwo" aria-expanded="false" aria-controls="collapseAaTwo">
+          Web Console Steps
+        </a>
+      </div>
+    </div>
+    <div id="collapseAaTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingAaTwo">
+      <div class="panel-body">
+
+        <blockquote>Browse to original landing page, and click "New Project".</blockquote>
+        <p><img src="{{ site.baseurl }}/www/3.3/default/screenshots/ose-lab-cicd-new-project.png" width="100"/></p>
+        <blockquote>Fill in the name of the project as "cicd" and click "Create"</blockquote>
+        <p><img src="{{ site.baseurl }}/www/3.3/default/screenshots/ose-lab-cicd-new-project-detail.png" width="500"/></p>
+      </div>
+    </div>
+  </div>
+</div>
+
 ### Start by installing Jenkins
 First we will start by installing Jenkins to run in a pod within your workshop project.  Because this is just a workshop we use the ephemeral template to create our Jenkins sever (for a enterprise system you would probably want to use the persistent template).  Follow the steps below:
 
@@ -54,8 +97,6 @@ First we will start by installing Jenkins to run in a pod within your workshop p
 
         <blockquote>Click "Add to Project", click "Browse Catalog" select "jenkins-ephemeral".</blockquote>
         <p><img src="{{ site.baseurl }}/www/3.1/default/screenshots/ose-lab-cicd-jenkins-ephemeral.png" width="500"/></p>
-        <blockquote>Change the password to something that you can remember. Then click "Create"</blockquote>
-        <p><img src="{{ site.baseurl }}/www/3.3/default/screenshots/ose-lab-cicd-jenkins-password.png" width="300"/></p>
         <blockquote>Click "continue to overview", wait for it to start</blockquote>
         <p><img src="{{ site.baseurl }}/www/3.3/default/screenshots/ose-lab-cicd-jenkins-start.png" width="500"/></p>
   
@@ -65,11 +106,6 @@ First we will start by installing Jenkins to run in a pod within your workshop p
     </div>
   </div>
 </div>
-
-
-
-  
-
 
 ### The OpenShift pipeline plugin
 Now let's make sure we have the OpenShift Pipeline [plugin][2] properly installed within Jenkins.  It will be used to define our application lifecycle and to let our Jenkins jobs perform commands on our OpenShift cluster.
@@ -100,18 +136,31 @@ Now let's make sure we have the OpenShift Pipeline [plugin][2] properly installe
 You can read more about the plugin [here][3].
 
 
-### Our sample web app and its automated tests
-In this example pipeline we will be building, testing, and staging a Node.js webapp.  We wrote all the code for you already, so don't worry you won't be coding in this lab.  You will just use the code and unit tests to see how CI/CD pipelines work.  And keep in mind that these principles are relevant whether your programming in Node.js, Ruby on Rails, Java, PHP or any one of today's popular programming languages.
+### Our deployments
+In this example pipeline we will be building, tagging, staging and scaling a Node.js webapp.  We wrote all the code for you already, so don't worry you won't be coding in this lab.  You will just use the code and unit tests to see how CI/CD pipelines work.  And keep in mind that these principles are relevant whether your programming in Node.js, Ruby on Rails, Java, PHP or any one of today's popular programming languages.
 
 <blockquote>Fork the project into your own GitHub account</blockquote>
 <p><img src="{{ site.baseurl }}/www/3.1/default/screenshots/ose-lab-cicd-fork.png" width="700" /></p>
 
-* Create a new app in your the Jenkins project using the URL to your forked project. You can follow the steps to create a new project and Image Stream [HERE](workshop-lab-s2i.html). 
+<blockquote>Create a dev deployment based on the forked repo
+</blockquote>
+<blockquote><i class="fa fa-terminal"></i> Goto the terminal and type the following:</blockquote>
+<p>
+{% highlight csh %}
+$ oc new-app https://github.com/yourrepo/openshift-workshops.git \
+   --name=dev --context-dir=dc-metro-map
+$ oc expose svc/dev
+{% endhighlight %}</p>
 
-* Where do my unit tests execute? As part of the process of building the new image, the best practice is to execute unit tests after building the image but before executing the build. This allows you to run unit tests in the context of the container environment, but will prevent a deployment if your checks do not pass. For more information about how to modify the s2i process to include your tests, refer [here][2].
-
-
-### Setting up our OpenShift environment to match our lifecycle stages
+<blockquote>Create a test deployment based on a tag of the dev ImageStream
+</blockquote>
+<blockquote><i class="fa fa-terminal"></i> Goto the terminal and type the following:</blockquote>
+<p>
+{% highlight csh %}
+$ oc new-app dev:readyToTest --name=test --allow-missing-imagestream-tags
+$ oc expose dc/test
+$ oc expose svc/test
+{% endhighlight %}</p>
 
 #### Setup Jekins jobs to use their openshift image stream (which is off your GitHub fork)
 
@@ -130,11 +179,8 @@ In this example pipeline we will be building, testing, and staging a Node.js web
 <p><img src="{{ site.baseurl }}/www/3.1/default/screenshots/ose-lab-cicd-new-item.png" width="500" /></p>
 <blockquote>call it yourname-ci-devel, select freestyle, click OK</blockquote>
 <p><img src="{{ site.baseurl }}/www/3.1/default/screenshots/ose-lab-cicd-name-job.png" width="500" /></p>
-<blockquote>under source code management select the OpenShift Image Streams and populate</blockquote>
-<p><img src="{{ site.baseurl }}/www/3.1/default/screenshots/ose-lab-cicd-ose-imagestream.png" width="500" /></p>
-
-<blockquote>Click "Poll SCM", set a schedule of: * * * * *</blockquote>
-<p><img src="{{ site.baseurl }}/www/3.1/default/screenshots/ose-lab-cicd-poll-scm.png" width="500" /></p>
+<blockquote>Click add build step and choose "Tag OpenShift Image". Enter in all the info, tag as "readyToTest"</blockquote>
+<p><img src="{{ site.baseurl }}/www/3.3/default/screenshots/ose-lab-cicd-new-tag.png" width="700" /></p>
 
 <blockquote>In the "Post-build actions" subsection click "Add post-build action" and select "Build other projects". Type in "yourname-ci-deploytotest"</blockquote>
 <p><img src="{{ site.baseurl }}/www/3.1/default/screenshots/ose-lab-cicd-build-other-project.png" width="500" /></p>
@@ -171,8 +217,12 @@ Additional steps could go here. For now let's just add some bash to the text are
 {% highlight csh %}
 echo "inside my jenkins job"
 {% endhighlight%}
-<blockquote>Click add build step and choose "Tag OpenShift Image". Enter in all the info, tag as "readyfortest"</blockquote>
-<p><img src="{{ site.baseurl }}/www/3.1/default/screenshots/ose-lab-cicd-new-tag.png" width="700" /></p>
+<blockquote>Click add build step and choose "Trigger OpenShift Deployment".</blockquote>
+<p><img src="{{ site.baseurl }}/www/3.3/default/screenshots/ose-lab-cicd-trigger-deployment.png" width="700" /></p>
+<blockquote>Click add build step and choose "Scale OpenShift Deployment".</blockquote>
+<p><img src="{{ site.baseurl }}/www/3.3/default/screenshots/ose-lab-cicd-scale-deployment.png" width="700" /></p>
+<blockquote>Click "Save".</blockquote>
+<p><img src="{{ site.baseurl }}/www/3.3/default/screenshots/ose-lab-cicd-save.png" width="200" /></p>
       </div>
     </div>
   </div>
@@ -181,13 +231,16 @@ echo "inside my jenkins job"
 ### Watch me release!
 
 At this point you should see the following scenario play out:
-  * Once you initiate a git push, the first Jenkins job will execute. You will see Jenkins notice the the change to the image in the registry, and begin running the first job.
 
-  * When this job completes, a second job will execute. This second job will use the OpenShift Pipeline plugin to create a new tag of the image called "readyfortest".
+  * Inside of Jenkins, you will click the dev pipline that was created we created. On the left-hand side you will see an option to <img src="{{ site.baseurl }}/www/3.3/default/screenshots/ose-lab-cicd-build-now.png" width="100" />. When you click this, the first job will begin to run. 
 
-  * You can see the history of this new tag by browsing to  initiate two jobs in the pipeline with the final step being the new tag of "readyfortest". The new tag can then be used for automatic or manual builds of the new test application. You can view the status of the new tag in OpenShift by browsing to Builds -> Images -> your image stream
+  * This first job will use the OpenShift Pipeline plugin to create a new tag of the image called "readyToTest".
 
-  <p><img src="{{ site.baseurl }}/www/3.1/default/screenshots/ose-lab-cicd-image-stream-view.png" width="700" /></p> 
+  * When this job completes, a second job will execute. This second job cause the deployment to initiate of our test application and then scale the test application to 2 pods.
+
+  * You can see the history of this new tag by browsing to initiate two jobs in the pipeline with the final step being the new tag of "readyToTest". The new tag can then be used for automatic or manual builds of the new test application. You can view the status of the new tag in OpenShift by browsing to Builds -> Images -> your image stream
+
+  <p><img src="{{ site.baseurl }}/www/3.3/default/screenshots/ose-lab-cicd-image-stream-view.png" width="700" /></p> 
 
 
 ## Summary
