@@ -147,7 +147,7 @@ In this example pipeline we will be building, tagging, staging and scaling a Nod
 <blockquote><i class="fa fa-terminal"></i> Goto the terminal and type the following:</blockquote>
 <p>
 {% highlight csh %}
-$ oc new-app https://github.com/yourrepo/openshift-workshops.git \
+$ oc new-app https://github.com/YOUR_ACCOUNT/openshift-workshops.git \
    --name=dev --context-dir=dc-metro-map
 $ oc expose svc/dev
 {% endhighlight %}</p>

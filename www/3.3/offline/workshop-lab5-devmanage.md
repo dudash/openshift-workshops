@@ -67,7 +67,7 @@ Notice the information about the configuration of how this app gets built.  In p
 $ oc describe build/webapp-1
 {% endhighlight %}
 
-This shows us even more about the deployed container's build and source code including exact commit GUID for this build.  We can also can see the commit's author, and the commit message.  You can inspect the code by opening a web browser and pointing it to: http://openshift.example.com:3000/demo/openshiftexamples-nodemongo/commit/GUID (replacing with the actual commit GUID that is listed for you).
+This shows us even more about the deployed container's build and source code including exact commit GUID for this build.  We can also can see the commit's author, and the commit message.  You can inspect the code by opening a web browser and pointing it to: http://{LOCAL GIT SERVER URL}/demo/openshiftexamples-nodemongo/commit/GUID (replacing with the actual commit GUID that is listed for you).
 
       </div>
     </div>

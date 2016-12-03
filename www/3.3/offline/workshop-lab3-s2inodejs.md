@@ -25,10 +25,10 @@ We can do this either via the command line (CLI) or the web console.  You decide
       <div class="panel-body">
 
 <blockquote>
-<i class="fa fa-terminal"></i> Goto the terminal and type the following:
+<i class="fa fa-terminal"></i> Goto the terminal and type the following (be sure to substitute in the correct base for the Git server URL):
 </blockquote>
 {% highlight csh %}
-$ oc new-app --name=webapp http://openshift.example.com:3000/demo/openshiftexamples-nodemongo.git#offline
+$ oc new-app --name=webapp http://{LOCAL GIT SERVER URL}/openshiftexamples-nodemongo.git#offline
 $ oc expose service webapp
 {% endhighlight %}
 
