@@ -83,11 +83,11 @@ Navigate to the Routes view from the left-hand menu:
 In your Routes overview, click on the "green" route:
 <p><img src="{{ site.baseurl }}/www/3.3/default/screenshots/ose-lab-bluegreen-routesoverview.png" width="500"/></p>
 
-In the Route detail page, click on Actions > Edit YAML:
-<p><img src="{{ site.baseurl }}/www/3.3/default/screenshots/ose-lab-bluegreen-routedetail.png" width="500"/></p>
+In the Route detail page, click on Actions > Edit:
+<p><img src="{{ site.baseurl }}/www/3.3/default/screenshots/ose-lab-bluegreen-routedetail.png" width="300"/></p>
 
-Edit the YAML element spec: to: name: and change the value from "green" to "blue":
-<p><img src="{{ site.baseurl }}/www/3.1/default/screenshots/ose-lab-bluegreen-edityaml.png" width="500"/></p>
+Edit the Route: select the name dropdown and change the value from "green" to "blue":
+<p><img src="{{ site.baseurl }}/www/3.3/default/screenshots/ose-lab-bluegreen-edit.png" width="500"/></p>
       
       </div>
     </div>
