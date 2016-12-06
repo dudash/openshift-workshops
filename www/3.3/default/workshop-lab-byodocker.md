@@ -121,7 +121,7 @@ $ oc describe pods
 Let's look at the image stream.  
 
 <blockquote>
-Click on "Builds -> Images", then click "Image Streams"
+Click on "Builds -> Images"
 </blockquote>
 
 This shows a list of all image streams within the project.  
