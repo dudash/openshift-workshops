@@ -9,6 +9,14 @@ categories: [lab, ops, blue, green]
 ## Blue/Green deployments
 When implementing continuous delivery for your software one very useful technique is called Blue/Green deployments.  It addresses the desire to minimize downtime during the release of a new version of an application to production.  Essentially, it involves running two production versions of your app side-by-side and then switching the routing from the last stable version to the new version once it is verified.  Using OpenShift, this can be very seamless because using containers we can easily and rapidly deploy a duplicate infrastructure to support alternate versions and modify routes as a service.  In this lab, we will walk through a simple Blue/Green workflow with an simple web application on OpenShift.
 
+### Before starting
+Before we get started with the Blue/Green deployment lab, let us clean up some of the projects from the previous lab. 
+{% highlight csh %}
+$ oc delete all -l app=jenkins-ephemeral
+$ oc delete all -l app=dev
+$ oc delete all -l app=test
+{% endhighlight %}
+
 ### Let's deploy an application
 To demonstrate Blue/Green deployments, we'll use a simple application that renders a colored box as an example. Using your GitHub account, please fork the following [project][1].
 
@@ -21,7 +29,7 @@ $ oc new-app --name=green [your-project-repo-url] --context-dir=dc-metro-map
 $ oc expose service green
 {% endhighlight %}
 
-Note that we exposed this application using a route named "green". Navigate to your application and validate it deployed correctly.
+Note that we exposed this application using a route named "green". Wait for the application to become available, then navigate to your application and validate it deployed correctly.
 
 ### Release a new version of our app and test it in the same environment
 What we'll do next is create a new version of the application called "blue". The quickest way to make a change to the code is directly in the GitHub web interface. In GitHub, edit the dc-metro-map/views/dcmetro.jade file in your repo. 
@@ -38,9 +46,11 @@ Use the same commands to deploy this new version of the app, but this time name 
 $ oc new-app --name=blue [your-project-repo-url] --context-dir=dc-metro-map
 {% endhighlight %}
 
+Wait for the "blue" application to become avialable before proceeding.
 
-### Switch from Blue to Green
-Now that we are satisfied with our change we can do the Blue/Green switch.  With OpenShift services and routes, this is super simple.  Follow the steps below to make the switch:
+
+### Switch from Green to Blue
+Now that we are satisfied with our change we can do the Green/Blue switch.  With OpenShift services and routes, this is super simple.  Follow the steps below to make the switch:
 
 <div class="panel-group" id="accordionA" role="tablist" aria-multiselectable="true">
   <div class="panel panel-default">

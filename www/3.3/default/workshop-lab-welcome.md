@@ -40,11 +40,11 @@ First let's create a new project to do our workshop work in.  We will use the st
 
 > Click on the "New Project" button and give it a name of demo-YOUR#
 
-> Populate "Display Name" and "Description" boxes with whatever you like.  And click "Create"
+> Populate "Display Name" with "demo-YOUR#" and populate "Description" boxes with whatever you like.  And click "Create"
 
 This is going to take you to the next logical step of adding something to the project, but we don't want to do that just yet.
 
-> Click the "demo-#" link on the top left to goto your project
+> Click the "demo-YOUR#" link on the top left to goto your project
 
 Don't worry, it's supposed to look empty right now because you currently don't have anything in your project (we'll fix that in the next lab).
 
