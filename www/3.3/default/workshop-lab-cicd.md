@@ -133,6 +133,7 @@ Now let's make sure we have the OpenShift Pipeline [plugin][2] properly installe
   </div>
 </div>
 
+
 You can read more about the plugin [here][3].
 
 
@@ -193,6 +194,7 @@ to get this to work
       </div>
     </div>
   </div>
+</div>
 </div>
 
 #### Connecting the pipeline for dev->test
