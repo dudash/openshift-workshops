@@ -71,7 +71,7 @@ First we will start by installing Jenkins to run in a pod within your workshop p
         <i class="fa fa-terminal"></i> Goto the terminal and type the following:
         </blockquote>
         {% highlight csh %}
-        $ oc new-app --template=jenkins-ephemeral
+        $ oc new-app --template=jenkins-ephemeral -e JENKINS_PASSWORD=password
         $ oc expose svc jenkins
         $ oc policy add-role-to-user edit -z default
         {% endhighlight %}
@@ -108,7 +108,7 @@ First we will start by installing Jenkins to run in a pod within your workshop p
 </div>
 
 ### The OpenShift pipeline plugin
-Now let's make sure we have the OpenShift Pipeline [plugin][2] properly installed within Jenkins.  It will be used to define our application lifecycle and to let our Jenkins jobs perform commands on our OpenShift cluster.
+Now let's make sure we have the OpenShift Pipeline [plugin][2] properly installed within Jenkins.  It will be used to define our application lifecycle and to let our Jenkins jobs perform commands on our OpenShift cluster. It is possible that the plugin is already installed in your environment, so use these steps to verify if it is installed and install it if is not.
 <div class="panel-group" id="accordionB" role="tablist" aria-multiselectable="true">
   <div class="panel panel-default">
     <div class="panel-heading" role="tab" id="headingBOne">
@@ -116,7 +116,7 @@ Now let's make sure we have the OpenShift Pipeline [plugin][2] properly installe
         <a role="button" data-toggle="collapse" data-parent="#accordionB" href="#collapseBOne" aria-expanded="true" aria-controls="collapseBOne">
           Install OSE Plugin Steps
         </a>
-      </div>
+      </div
     </div>
     <div id="collapseBOne" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingBOne">
       <div class="panel-body">
@@ -126,7 +126,7 @@ Now let's make sure we have the OpenShift Pipeline [plugin][2] properly installe
   <blockquote>Click on "Manage Plugins"</blockquote> 
   <p><img src="{{ site.baseurl }}/www/3.1/default/screenshots/ose-lab-cicd-manage-plugins.png" width="500" /></p>
   
-  <blockquote>Click on "Available" tab, and filter on "openshift". Find and install "Openshift Pipeline Jenkins Plugin"</blockquote>
+  <blockquote>Click on "Available" tab, and filter on "openshift". Find the"Openshift Pipeline Jenkins Plugin". If it is not installed, then install it.</blockquote>
   <p><img src="{{ site.baseurl }}/www/3.1/default/screenshots/ose-lab-cicd-jenkins-plugin.png" width="700" /></p>
       </div>
     </div>
@@ -158,7 +158,7 @@ $ oc expose svc/dev
 <p>
 {% highlight csh %}
 $ oc new-app dev:readyToTest --name=test --allow-missing-imagestream-tags
-$ oc expose dc/test
+$ oc expose dc/test --port 8080
 $ oc expose svc/test
 {% endhighlight %}</p>
 
