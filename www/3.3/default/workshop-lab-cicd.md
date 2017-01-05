@@ -116,7 +116,7 @@ Now let's make sure we have the OpenShift Pipeline [plugin][2] properly installe
         <a role="button" data-toggle="collapse" data-parent="#accordionB" href="#collapseBOne" aria-expanded="true" aria-controls="collapseBOne">
           Install OSE Plugin Steps
         </a>
-      </div
+      </div>
     </div>
     <div id="collapseBOne" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingBOne">
       <div class="panel-body">
