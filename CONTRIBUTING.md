@@ -4,6 +4,10 @@ We'd love for you to help support writing workshops and labs using openshift.  H
 
 ## Documentation - Getting Started
 
+### On RHEL/Fedora install the following packages to install the developer dependencies.
+> sudo dnf group install "C Development Tools and Libraries"
+> sudo dnf install redhat-rpm-config
+
 Get the dependencies:
 
 > gem instal jekyll
