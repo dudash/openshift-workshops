@@ -27,7 +27,7 @@ To begin, we will create a new project. Name the new project "cicd".
         <i class="fa fa-terminal"></i> Goto the terminal and type the following:
         </blockquote>
         {% highlight csh %}
-        $ oc new project cicd
+        $ oc new-project cicd
         {% endhighlight %}
       </div>
     </div>
