@@ -27,7 +27,7 @@ To begin, we will create a new project. Name the new project "cicd".
         <i class="fa fa-terminal"></i> Goto the terminal and type the following:
         </blockquote>
         {% highlight csh %}
-        $ oc new project cicd
+        $ oc new-project cicd
         {% endhighlight %}
       </div>
     </div>
@@ -71,7 +71,7 @@ First we will start by installing Jenkins to run in a pod within your workshop p
         <i class="fa fa-terminal"></i> Goto the terminal and type the following:
         </blockquote>
         {% highlight csh %}
-        $ oc new-app --template=jenkins-ephemeral -e JENKINS_PASSWORD=password
+        $ oc new-app --template=jenkins-ephemeral -p JENKINS_PASSWORD=password
         $ oc expose svc jenkins
         $ oc policy add-role-to-user edit -z default
         {% endhighlight %}
