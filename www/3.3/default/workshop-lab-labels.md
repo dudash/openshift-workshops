@@ -100,7 +100,7 @@ Your updated label will show up in the pod's list.
 ### When Finished
 Before we get started with the CI/CD lab, let us clean up some of the projects from the this lab. 
 {% highlight csh %}
-$ oc delete all 
+$ oc delete all --all
 {% endhighlight %}
 
 ## Summary
