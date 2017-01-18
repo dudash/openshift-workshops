@@ -239,7 +239,7 @@ At this point you should see the following scenario play out:
 
   * This first job will use the OpenShift Pipeline plugin to create a new tag of the image called "readyToTest".
 
-  * When this job completes, a second job will execute. This second job cause the deployment to initiate of our test application and then scale the test application to 2 pods.
+  * When this job completes, a second job will execute. This second job cause the deployment to initiate of our test application.
 
   * You can see the history of this new tag by browsing to initiate two jobs in the pipeline with the final step being the new tag of "readyToTest". The new tag can then be used for automatic or manual builds of the new test application. You can view the status of the new tag in OpenShift by browsing to Builds -> Images -> your image stream
 
