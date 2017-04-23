@@ -25,9 +25,9 @@ Welcome to the workshop!  Please go through the list of labs below at your own p
 
 ### [Lab: Labels](workshop-lab-labels.html)
 
-### [Lab: CI | CD Pipelines](workshop-lab-cicd.html)
-
 ### [Lab: Blue | Green Deployment](workshop-lab-bluegreen.html)
+
+### [Lab: CI | CD Pipelines](workshop-lab-cicd.html)
 
 ### [Fin.](workshop-finally.html)
 
