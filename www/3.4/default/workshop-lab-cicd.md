@@ -27,7 +27,7 @@ To begin, we will create a new project. Name the new project "cicd".
         <i class="fa fa-terminal"></i> Goto the terminal and type the following:
         </blockquote>
         {% highlight csh %}
-        $ oc new-project cicd
+        $ oc new-project cicd-$USER_ID
         {% endhighlight %}
       </div>
     </div>
@@ -45,7 +45,7 @@ To begin, we will create a new project. Name the new project "cicd".
 
         <blockquote>Browse to original landing page, and click "New Project".</blockquote>
         <p><img src="{{ site.baseurl }}/www/3.3/default/screenshots/ose-lab-cicd-new-project.png" width="100"/></p>
-        <blockquote>Fill in the name of the project as "cicd" and click "Create"</blockquote>
+        <blockquote>Fill in the name of the project as "cicd-$USER_ID" and click "Create"</blockquote>
         <p><img src="{{ site.baseurl }}/www/3.3/default/screenshots/ose-lab-cicd-new-project-detail.png" width="500"/></p>
       </div>
     </div>
@@ -71,9 +71,7 @@ First we will start by installing Jenkins to run in a pod within your workshop p
         <i class="fa fa-terminal"></i> Goto the terminal and type the following:
         </blockquote>
         {% highlight csh %}
-        $ oc new-app --template=jenkins-ephemeral -p JENKINS_PASSWORD=password
-        $ oc expose svc jenkins
-        $ oc policy add-role-to-user edit -z default
+        $ oc new-app --template=jenkins-ephemeral
         {% endhighlight %}
 
         <blockquote>Copy hostname and paste in browser's address bar...</blockquote>
@@ -107,146 +105,161 @@ First we will start by installing Jenkins to run in a pod within your workshop p
   </div>
 </div>
 
-### The OpenShift pipeline plugin
-Now let's make sure we have the OpenShift Pipeline [plugin][2] properly installed within Jenkins.  It will be used to define our application lifecycle and to let our Jenkins jobs perform commands on our OpenShift cluster. It is possible that the plugin is already installed in your environment, so use these steps to verify if it is installed and install it if is not.
+### Accessing Jenkins
+Jenkins and OpenShift are integrated together in this version of the product. Upon attempting to access the route for Jenkins, you will be brought to a prompt:
+<p><img src="{{ site.baseurl }}/www/3.4/default/screenshots/ose-lab-cicd-sso1.png" width="400"/></p>
+
+Click the button to "Login to OpenShift" and re-enter your OpenShift user credentials.
+<p><img src="{{ site.baseurl }}/www/3.4/default/screenshots/ose-lab-cicd-sso2.png" width="500"/></p>
+
+You will then be prompted to grant permissions to the service. Click the button to "Allow Selected Permissions".
+<p><img src="{{ site.baseurl }}/www/3.4/default/screenshots/ose-lab-cicd-sso3.png" width="600"/></p>
+If all worked, you should be re-directed to the Jenkins dashboard (which is now running on the OpenShift Container Platform).
+<p><img src="{{ site.baseurl }}/www/3.4/default/screenshots/ose-lab-cicd-sso4.png" width="600"/></p>
+
+### The OpenShift Build pipeline
+
 <div class="panel-group" id="accordionB" role="tablist" aria-multiselectable="true">
   <div class="panel panel-default">
     <div class="panel-heading" role="tab" id="headingBOne">
       <div class="panel-title">
         <a role="button" data-toggle="collapse" data-parent="#accordionB" href="#collapseBOne" aria-expanded="true" aria-controls="collapseBOne">
-          Install OSE Plugin Steps
+          CLI Steps
         </a>
       </div>
     </div>
     <div id="collapseBOne" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingBOne">
       <div class="panel-body">
-  <blockquote>Click "Manage Jenkins"</blockquote>
-  <p><img src="{{ site.baseurl }}/www/3.1/default/screenshots/ose-lab-cicd-manage-jenkins.png" width="100" height="100"/></p>
+      <blockquote>
+      <i class="fa fa-terminal"></i> Goto the terminal and get the pipeline yaml:
+      </blockquote>
+      {% highlight csh %}
+      $ wget https://raw.githubusercontent.com/openshift/origin/master/examples/jenkins/pipeline/samplepipeline.yaml
+      {% endhighlight %}
 
-  <blockquote>Click on "Manage Plugins"</blockquote>
-  <p><img src="{{ site.baseurl }}/www/3.1/default/screenshots/ose-lab-cicd-manage-plugins.png" width="500" /></p>
+      <blockquote>
+      <i class="fa fa-terminal"></i> Process the template into OpenShift:
+      </blockquote>
+      {% highlight csh %}
+      $ oc new-app -f samplepipeline.yaml
+      {% endhighlight %}
 
-  <blockquote>Click on "Available" tab, and filter on "openshift". Find the"Openshift Pipeline Jenkins Plugin". If it is not installed, then install it.</blockquote>
-  <p><img src="{{ site.baseurl }}/www/3.1/default/screenshots/ose-lab-cicd-jenkins-plugin.png" width="700" /></p>
+
+
+      </div>
+    </div>
+  </div>
+  <div class="panel panel-default">
+    <div class="panel-heading" role="tab" id="headingBTwo">
+      <div class="panel-title">
+        <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordionB" href="#collapseBTwo" aria-expanded="false" aria-controls="collapseBTwo">
+          Web Console Steps
+        </a>
+      </div>
+    </div>
+    <div id="collapseBTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingBTwo">
+      <div class="panel-body">
+      <blockquote>Copy the YAML from the following URL</blockquote>
+      {% highlight csh %}
+        https://raw.githubusercontent.com/openshift/origin/master/examples/jenkins/pipeline/samplepipeline.yaml
+      {% endhighlight %}
+
+      <blockquote>Click "Add to Project" and select the tab that says "Import YAML/JSON". Paste the YAML from the previous link.</blockquote>
+      <p><img src="{{ site.baseurl }}/www/3.4/default/screenshots/ose-lab-cicd-importyaml.png" width="500"/></p>
+      <blockquote>Click "Create"</blockquote>
+      <blockquote>You will be prompted to Process or Save the template. Leave "Process Template" checked and click "Continue".</blockquote>
+      <p><img src="{{ site.baseurl }}/www/3.4/default/screenshots/ose-lab-cicd-processtemplate.png" width="500"/></p>
+      <blockquote>You will be be directed to the "Create App" page. Accept all default values, scroll to the bottom of the page, and click "Create".</blockquote>
+      <p><img src="{{ site.baseurl }}/www/3.4/default/screenshots/ose-lab-cicd-runtemplate.png" width="500"/></p>
       </div>
     </div>
   </div>
 </div>
+
+
+### Verify
+If all went as planned, you should see a setup similar to the image below. There is an application deployed with a Node.js frontend and a MongoDB backend. The Node.js front end has not been built or deployed yet.
+<p><img src="{{ site.baseurl }}/www/3.4/default/screenshots/ose-lab-cicd-pipelineresult1.png" width="600"/></p>
+Click "Builds" -> "Pipelines"
+<p><img src="{{ site.baseurl }}/www/3.4/default/screenshots/ose-lab-cicd-pipelineresult2.png" width="300"/></p>
+You should see a new Pipeline object called "sample-pipeline"
+<p><img src="{{ site.baseurl }}/www/3.4/default/screenshots/ose-lab-cicd-pipelineresult3.png" width="600"/></p>
+Expand the details, and click the "Configuration" tab. From here, you can see the Groovy code that executes the Jenkins pipeline.
+<p><img src="{{ site.baseurl }}/www/3.4/default/screenshots/ose-lab-cicd-pipelineresult4.png" width="600"/></p>
+
+
+### Run the Pipeline
+<blockquote>
+Click "Builds" -> "Pipelines"
+</blockquote>
+<p><img src="{{ site.baseurl }}/www/3.4/default/screenshots/ose-lab-cicd-pipelineresult2.png" width="300"/></p>
+
+<blockquote>
+At the top of the page, we you should see a button that says "Start Pipeline". Click the button.
+</blockquote>
+<p><img src="{{ site.baseurl }}/www/3.4/default/screenshots/ose-lab-cicd-startpipeline1.png" width="200"/></p>
+
+<blockquote>
+You should see a pipeline visually display in the browser as shown below.
+</blockquote>
+<p><img src="{{ site.baseurl }}/www/3.4/default/screenshots/ose-lab-cicd-startpipeline2.png" width="600"/></p>
+
+<blockquote>
+We can verify view logs of the pipeline in Jenkins by clicking "View Log" on the pipeline.
+</blockquote>
+<p><img src="{{ site.baseurl }}/www/3.4/default/screenshots/ose-lab-cicd-startpipeline4.png" width="200"/></p>
+<blockquote>
+You are then re-directed to the Console in Jenkins which contains the output from the Pipeline execution.
+</blockquote>
+<p><img src="{{ site.baseurl }}/www/3.4/default/screenshots/ose-lab-cicd-startpipeline5.png" width="600"/></p>
+<blockquote>
+When the pipeline completes all the steps, the Node.js application will be built and deployed. All of this was orchestrated by Jenkins on the back end.
+</blockquote>
+<p><img src="{{ site.baseurl }}/www/3.4/default/screenshots/ose-lab-cicd-startpipeline3.png" width="600"/></p>
 
 
 You can read more about the plugin [here][3].
 
 
-### Our deployments
-In this example pipeline we will be building, tagging, staging and scaling a Node.js webapp.  We wrote all the code for you already, so don't worry you won't be coding in this lab.  You will just use the code and unit tests to see how CI/CD pipelines work.  And keep in mind that these principles are relevant whether your programming in Node.js, Ruby on Rails, Java, PHP or any one of today's popular programming languages.
+### Edit the Pipeline
 
-<blockquote>Fork the project into your own GitHub account</blockquote>
-<p><img src="{{ site.baseurl }}/www/3.1/default/screenshots/ose-lab-cicd-fork.png" width="700" /></p>
-
-<blockquote>Create a dev deployment based on the forked repo
+<blockquote>
+On the <strong>sample-pipeline</strong> details page, go to the <strong>Actions</strong> button and select <strong>Edit</strong>.
 </blockquote>
-<blockquote><i class="fa fa-terminal"></i> Goto the terminal and type the following:</blockquote>
-<p>
-{% highlight csh %}
-$ oc new-app https://github.com/YOUR_ACCOUNT/openshift-workshops.git \
-   --name=dev --context-dir=dc-metro-map
-$ oc expose svc/dev
-{% endhighlight %}</p>
-
-<blockquote>Create a test deployment based on a tag of the dev ImageStream
+<p><img src="{{ site.baseurl }}/www/3.4/default/screenshots/ose-lab-cicd-editpipeline1.png" width="200"/></p>
+<blockquote>
+Append the following script after the <strong>stage(deploy)</strong> element.
 </blockquote>
-<blockquote><i class="fa fa-terminal"></i> Goto the terminal and type the following:</blockquote>
-<p>
 {% highlight csh %}
-$ oc new-app dev:readyToTest --name=test --allow-missing-imagestream-tags
-$ oc expose dc/test --port 8080
-$ oc expose svc/test
-{% endhighlight %}</p>
+stage('scale'){
+    openshiftScale(deploymentConfig: 'nodejs-mongodb-example', replicaCount: 3)
+}
+{% endhighlight %}
 
-#### Setup Jekins jobs to use their openshift image stream (which is off your GitHub fork)
+<p><img src="{{ site.baseurl }}/www/3.4/default/screenshots/ose-lab-cicd-editpipeline2.png" width="600"/></p>
 
-<div class="panel-group" id="accordionC" role="tablist" aria-multiselectable="true">
-  <div class="panel panel-default">
-    <div class="panel-heading" role="tab" id="headingCOne">
-      <div class="panel-title">
-        <a role="button" data-toggle="collapse" data-parent="#accordionC" href="#collapseCOne" aria-expanded="true" aria-controls="collapseCOne">
-          Steps to Create Jenkins Job
-        </a>
-      </div>
-    </div>
-    <div id="collapseCOne" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingCOne">
-      <div class="panel-body">
-<blockquote>click "New Item"</blockquote>
-<p><img src="{{ site.baseurl }}/www/3.1/default/screenshots/ose-lab-cicd-new-item.png" width="500" /></p>
-<blockquote>call it yourname-ci-devel, select freestyle, click OK</blockquote>
-<p><img src="{{ site.baseurl }}/www/3.1/default/screenshots/ose-lab-cicd-name-job.png" width="500" /></p>
-<blockquote>Click add build step and choose "Tag OpenShift Image". Enter in all the info, tag as "readyToTest"</blockquote>
-<p><img src="{{ site.baseurl }}/www/3.3/default/screenshots/ose-lab-cicd-new-tag.png" width="700" /></p>
+<blockquote>
+Click "Save"
+</blockquote>
 
-<blockquote>In the "Post-build actions" subsection click "Add post-build action" and select "Build other projects". Type in "yourname-ci-deploytotest"</blockquote>
-<p><img src="{{ site.baseurl }}/www/3.1/default/screenshots/ose-lab-cicd-build-other-project.png" width="500" /></p>
-<blockquote>Click "Save", don't worry about the error here, we are about to build that Jenkins job.</blockquote>
+<blockquote>
+Click "Start Build"
+</blockquote>
 
-<p>
-<b>Notes:</b> You will not need the URL of the OpenShift api endpoint or the Authorization Token<br/>
-to get this to work
-</p>
-      </div>
-    </div>
-  </div>
-</div>
-</div>
+<blockquote>
+You should see a new Pipeline execution, which has a third step called <strong>scale</strong>
+</blockquote>
+<p><img src="{{ site.baseurl }}/www/3.4/default/screenshots/ose-lab-cicd-editpipeline3.png" width="600"/></p>
 
-#### Connecting the pipeline for dev->test
-<div class="panel-group" id="accordionD" role="tablist" aria-multiselectable="true">
-  <div class="panel panel-default">
-    <div class="panel-heading" role="tab" id="headingDOne">
-      <div class="panel-title">
-        <a role="button" data-toggle="collapse" data-parent="#accordionD" href="#collapseDOne" aria-expanded="true" aria-controls="collapseDOne">
-          Steps to Connect Pipeline
-        </a>
-      </div>
-    </div>
-    <div id="collapseDOne" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingDOne">
-      <div class="panel-body">
-<blockquote>Click "Back to dashboard"</blockquote>
-<blockquote>Click "New Item"</blockquote>
-<blockquote>Call it "yourname-ci-deploytotest", select "freestyle", click "OK"</blockquote>
-<p><img src="{{ site.baseurl }}/www/3.1/default/screenshots/ose-lab-cicd-deploy-to-test.png" width="500" /></p>
-<blockquote>Click add build step and choose "Execute shell"</blockquote>
-<p><img src="{{ site.baseurl }}/www/3.1/default/screenshots/ose-lab-cicd-add-exec.png" width="200" /></p>
-Additional steps could go here. For now let's just add some bash to the text area:
-{% highlight csh %}
-echo "inside my jenkins job"
-{% endhighlight%}
-<blockquote>Click add build step and choose "Trigger OpenShift Deployment".</blockquote>
-<p><img src="{{ site.baseurl }}/www/3.3/default/screenshots/ose-lab-cicd-trigger-deployment.png" width="700" /></p>
-<blockquote>Click add build step and choose "Scale OpenShift Deployment".</blockquote>
-<p><img src="{{ site.baseurl }}/www/3.3/default/screenshots/ose-lab-cicd-scale-deployment.png" width="700" /></p>
-<blockquote>Click "Save".</blockquote>
-<p><img src="{{ site.baseurl }}/www/3.3/default/screenshots/ose-lab-cicd-save.png" width="200" /></p>
-      </div>
-    </div>
-  </div>
-</div>
-
-### Watch me release!
-
-At this point you should see the following scenario play out:
-
-  * Inside of Jenkins, you will click the dev pipline that was created we created. On the left-hand side you will see an option to <img src="{{ site.baseurl }}/www/3.3/default/screenshots/ose-lab-cicd-build-now.png" width="100" />. When you click this, the first job will begin to run.
-
-  * This first job will use the OpenShift Pipeline plugin to create a new tag of the image called "readyToTest".
-
-  * When this job completes, a second job will execute. This second job cause the deployment to initiate of our test application and then scale the test application to 2 pods.
-
-  * You can see the history of this new tag by browsing to initiate two jobs in the pipeline with the final step being the new tag of "readyToTest". The new tag can then be used for automatic or manual builds of the new test application. You can view the status of the new tag in OpenShift by browsing to Builds -> Images -> your image stream
-
-  <p><img src="{{ site.baseurl }}/www/3.3/default/screenshots/ose-lab-cicd-image-stream-view.png" width="700" /></p>
-
+<blockquote>
+When the pipeline terminates, you can browse back to the "Overview". You will then see that the Node.js application has been scaled up by the OpenShift/Jenkins pipeline to 3 replicas.
+</blockquote>
+<p><img src="{{ site.baseurl }}/www/3.4/default/screenshots/ose-lab-cicd-editpipeline4.png" width="600"/></p>
 
 ## Summary
-Coming soon...  Read more about usage of [Jenkins on OpenShift here][4].  Read more about the concepts behind [pipelines in Jenkins here][1].
+In this lab, we have seen the integration between Jenkins and OpenShift to orchestrate complex CI/CD pipelines with Images running on OpenShift. Feel free to explore different CICD flows using the OpenShift Pipeline Plugin and be sure to ask one of the instructors if you run into any problems or have any questions.
+
+Read more about usage of [Jenkins on OpenShift here][4].  Read more about the concepts behind [pipelines in Jenkins here][1].
 
 
 [1]: https://jenkins.io/doc/pipeline/

@@ -12,9 +12,7 @@ When implementing continuous delivery for your software one very useful techniqu
 ### Before starting
 Before we get started with the Blue/Green deployment lab, let us clean up some of the projects from the previous lab.
 {% highlight csh %}
-$ oc delete all -l app=jenkins-ephemeral
-$ oc delete all -l app=dev
-$ oc delete all -l app=test
+$ oc delete all -all
 {% endhighlight %}
 
 ### Let's deploy an application
