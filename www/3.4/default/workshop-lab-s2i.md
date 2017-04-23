@@ -28,11 +28,11 @@ We can do this either via the command line (CLI) or the web console.  You decide
 <i class="fa fa-terminal"></i> Goto the terminal and type the following:
 </blockquote>
 {% highlight csh %}
-$ oc new-app --name=dc-metro-map https://github.com/dudash/openshift-workshops.git --context-dir=dc-metro-map
+$ oc new-app --name=dc-metro-map https://github.com/brandoncox/openshift-workshops.git --context-dir=dc-metro-map
 $ oc expose service dc-metro-map
 {% endhighlight %}
 
-<i class="fa fa-info-circle"></i> OpenShift auotmatically detected the source code type and selected the nodejs builder image
+<i class="fa fa-info-circle"></i> OpenShift automatically detected the source code type and selected the nodejs builder image
 
       </div>
     </div>
@@ -51,12 +51,20 @@ $ oc expose service dc-metro-map
 <blockquote>
 Click "Add to Project"
 </blockquote>
-<p><img src="{{ site.baseurl }}/www/3.4/default/screenshots/ose-lab-s2i-addbutton.png" width="100"/></p>
+<p><img src="{{ site.baseurl }}/www/3.4/default/screenshots/ose-lab-rollbacks-add-to-project.png" width="100"/></p>
 
 <blockquote>
-Click "Browse Catalog" and filter for nodejs, then click the nodejs:0.10 builder image
+Click "Browse Catalog" and view options for languages and services that come out-of-the-box with OpenShift.
 </blockquote>
 <p><img src="{{ site.baseurl }}/www/3.4/default/screenshots/ose-lab-s2i-filternode.png" width="600"/></p>
+<blockquote>
+Under "Languages", click the option for Javascript as we are planning to deploy a NodeJS application.
+</blockquote>
+<p><img src="{{ site.baseurl }}/www/3.4/default/screenshots/ose-lab-s2i-choosejavascript.png" width="200"/></p>
+<blockquote>
+There are a few types of Javascript templates to choose from. Choose the Node.js, version 4 template.
+</blockquote>
+<p><img src="{{ site.baseurl }}/www/3.4/default/screenshots/ose-lab-s2i-choosenode.png" width="200"/></p>
 
 <blockquote>
 Fill out the boxes to look as follows:
@@ -64,7 +72,7 @@ Fill out the boxes to look as follows:
 <p><img src="{{ site.baseurl }}/www/3.4/default/screenshots/ose-lab-s2i-addtoproject.png" width="600"/></p>
 <p>
 Notes: You will need to click to expand the "advanced options"<br/>
-The github repository URL is: https://github.com/dudash/openshift-workshops.git<br/>
+The github repository URL is: https://github.com/brandoncox/openshift-workshops.git<br/>
 The github context-dir is: dc-metro-map<br/>
 </p>
 
@@ -137,7 +145,7 @@ Click on the "dc-metro-map" link
 <blockquote>
 Click on the "View Log" tab to see the details of your latest build
 </blockquote>
-<p><img src="{{ site.baseurl }}/www/3.4/default/screenshots/ose-lab-s2i-metromapbuilds.png" width="500"/></p>
+<p><img src="{{ site.baseurl }}/www/3.4/default/screenshots/ose-lab-s2i-metromapbuilds.png" width="300"/></p>
 
 You should see a log output similar to the one below:
 <p><img src="{{ site.baseurl }}/www/3.4/default/screenshots/ose-lab-s2i-metromapbuildlog.png" width="500"/></p>
@@ -172,6 +180,8 @@ $ oc get routes
 <blockquote>
 Copy the HOST/PORT and paste into your favorite web browser
 </blockquote>
+<p><img src="{{ site.baseurl }}/www/3.4/default/screenshots/ose-lab-s2i-cli-getroutes.png" width="600"/></p>
+
 
       </div>
     </div>

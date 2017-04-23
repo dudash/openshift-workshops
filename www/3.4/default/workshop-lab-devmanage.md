@@ -17,13 +17,13 @@ From the previous lab you should have the DC Metro Maps web app running in OpenS
 > <i class="fa fa-terminal"></i> Goto the terminal and type these commands:
 
 {% highlight csh %}
-$ oc new-app --name=dc-metro-map https://github.com/dudash/openshift-workshops.git --context-dir=dc-metro-map
+$ oc new-app --name=dc-metro-map https://github.com/brandoncox/openshift-workshops.git --context-dir=dc-metro-map
 $ oc expose service dc-metro-map
 {% endhighlight %}
 
 
 ### See the app in action and inspect some details
-There is no more ambiguity or confusion about where the app came from.  OpenShift provides traceability for your running deployment back to the docker image and the registry it came from, as well as (for images built by openshift) back to the exact source code branch and commit.  Let's take a look at that.
+There is no more ambiguity or confusion about where the app came from.  OpenShift provides traceability for your running deployment back to the docker image and the registry it came from, as well as (for images built by OpenShift) back to the exact source code branch and commit.  Let's take a look at that.
 
 <div class="panel-group" id="accordionA" role="tablist" aria-multiselectable="true">
   <div class="panel panel-default">
@@ -44,11 +44,11 @@ There is no more ambiguity or confusion about where the app came from.  OpenShif
 $ oc status
 {% endhighlight %}
 
-This is going to show the status of your current project.  In this case it will show the dc-metro-map service (svc) with a nested deployment config (dc) along with some more info that you can ignore for now.  
+This is going to show the status of your current project.  In this case it will show the dc-metro-map <u>service</u> (svc) with a nested <u>deployment config</u> (dc) along with some more info that you can ignore for now.  
 
-<br/><br/><i class="fa fa-info-circle"></i>  A deployment in OpenShift is a replication controller based on a user defined template called a deployment configuration <br/><br/>
+<br/><br/><i class="fa fa-info-circle"></i>  A deployment in OpenShift is a replication controller based on a user defined template called a <u>Deployment Config</u> <br/><br/>
 
-The dc provides us details we care about to see where our application image comes from, so let's check it out in more detail.
+The Deployment Config provides us details we care about to see where our application image comes from, so let's check it out in more detail.
 
 <blockquote>
 <i class="fa fa-terminal"></i> Type the following to find out more about our dc:
@@ -59,9 +59,9 @@ $ oc describe dc/dc-metro-map
 
 Notice under the template section it lists the containers it wants to deploy along with the path to the container image.
 
-<br/><br/><i class="fa fa-info-circle"></i> There are a few other ways you could get to this information.  If you are feeling adventurous, you might want to describe the replication controller (oc describe rc -l app=dc-metro-map), the image stream (oc describe is -l app=dc-metro-map) or the running pod itself (oc describe pod -l app=dc-metro-map).<br/><br/>
+<br/><br/><i class="fa fa-info-circle"></i> There are a few other ways you could get to this information.  If you are feeling adventurous, you might want to describe the <u>replication controller</u> (<strong>oc describe rc -l app=dc-metro-map</strong>), the <u>image stream</u> (<strong>oc describe is -l app=dc-metro-map</strong>) or the running <u>pod</u> itself (<strong>oc describe pod -l app=dc-metro-map</strong>).<br/><br/>
 
-Because we built this app using S2I, we get to see the details about the build - including the container image that was used for building the source code.  So let's find out where the image came from.  Here are the steps to get more information about the build configuration (bc) and the builds themselves.
+Because we built this app using S2I, we get to see the details about the build - including the container image that was used for building the source code.  So let's find out where the image came from.  Here are the steps to get more information about the <u>build configuration</u> (bc) and the builds themselves.
 
 <blockquote>
 <i class="fa fa-terminal"></i> Type the following to find out more about our bc:
@@ -79,7 +79,7 @@ Notice the information about the configuration of how this app gets built.  In p
 $ oc describe build/dc-metro-map-1
 {% endhighlight %}
 
-This shows us even more about the deployed container's build and source code including exact commit GUID for this build.  We can also can see the commit's author, and the commit message.  You can inspect the code by opening a web browser and pointing it to: https://github.com/dudash/openshift-workshops/commit/[COMMIT_GUID]
+This shows us even more about the deployed container's build and source code including exact commit GUID for this build.  We can also can see the commit's author, and the commit message.  You can inspect the code by opening a web browser and pointing it to: https://github.com/brandoncox/openshift-workshops/commit/[COMMIT_GUID]
 
       </div>
     </div>
@@ -231,7 +231,7 @@ Let's have a little fun.  The app has some easter eggs that get triggered when c
 <i class="fa fa-terminal"></i> Goto the terminal and type the following:
 </blockquote>
 {% highlight csh %}
-$ oc env dc/dc-metro-map -e BEERME=true
+$ oc env dc/dc-metro-map -e WMATA_API_KEY=wcj9ukx2empv3f9h22kymwsn
 {% endhighlight %}
 
 {% highlight csh %}
@@ -244,7 +244,7 @@ Due to the deployment config strategy being set to "Rolling" and the "ConfigChan
 <i class="fa fa-terminal"></i> Type Ctrl+C to stop watching the pods
 </blockquote>
 
-<i class="fa fa-info-circle"></i> You can set env variables across all deployment configs with 'dc --all' instead of specifying a specifc config
+<i class="fa fa-info-circle"></i> You can set env variables across all deployment configs with 'dc --all' instead of specifying a specific config
 
       </div>
     </div>
@@ -277,7 +277,7 @@ Click the Environment tab next to the Details tab .
 This opens up a tab with the environment variables for this deployment config.
 
 <blockquote>
-Add an environment variable with the name BEERME and a value of 'true'
+Add an environment variable with the name <strong>WMATA_API_KEY</strong> and a value of <strong>wcj9ukx2empv3f9h22kymwsn</strong>
 </blockquote>
 <p><img src="{{ site.baseurl }}/www/3.4/default/screenshots/ose-lab-devman-deployconfigdetails-populated.png" width="500"/></p>
 
@@ -290,7 +290,7 @@ If you are quick enough you will see a new pod spin up and an the old pod spin d
   </div>
 </div>
 
-With the new environment variables set the app should look like this in your web browser (with beers instead of busses):
+With the new environment variables set the app should look like this in your web browser (with live bus locations showing):
 
 <p><img src="{{ site.baseurl }}/www/3.4/default/screenshots/ose-lab-devman-beerme.png" width="500"/></p>
 
@@ -330,10 +330,10 @@ $ oc exec -it [POD NAME] /bin/bash
 You are now interactively attached to the container in your pod.  Let's look for the environment variables we set:
 
 {% highlight csh %}
-$ env | grep BEER
+$ env | grep WMATA_API_KEY
 {% endhighlight %}
 
-That should return the **BEERME=true** matching the value that we set in the deployment config.
+That should return the <strong>WMATA_API_KEY=wcj9ukx2empv3f9h22kymwsn</strong> matching the value that we set in the deployment config.
 
 {% highlight csh %}
 $ exit
@@ -362,16 +362,19 @@ Click the pod that starts with "dc-metro-map-" and has a status of Running
 </blockquote>
 
 <blockquote>
-Click the "Terminal" button
+Click the "Terminal" tab
 </blockquote>
 
 <p><img src="{{ site.baseurl }}/www/3.4/default/screenshots/ose-lab-devman-podterminal.png" width="500"/></p>
-Let's look for the environment variables we set:
 
 <blockquote>
-Inside the web page's terminal type: 'env | grep BEER'
+Let's look for the environment variables we set. Inside the web page's terminal type:
 </blockquote>
-That should return the **BEERME=true** matching the value that we set in the deployment config.
+{% highlight csh %}
+'env | grep WMATA_API_KEY'
+{% endhighlight %}
+
+That should return the <strong>WMATA_API_KEY=wcj9ukx2empv3f9h22kymwsn</strong> matching the value that we set in the deployment config.
 
       </div>
     </div>

@@ -36,15 +36,15 @@ OpenShift provides a web console that allow you to perform various tasks via a w
 Once logged in you should see your available projects - or a button to create a project if none exist already.
 
 ### So this is what an empty project looks like
-First let's create a new project to do our workshop work in.  We will use the student number you were given to ensure you don't clash with classmates, so in the steps below replace 'YOUR#' with your student number.
+First let's create a new project to do our workshop work in.  We will use the student number you were given to ensure you don't clash with classmates, so in the steps below replace '$USER_ID' with the userID provided to you.
 
-> Click on the "New Project" button and give it a name of demo-YOUR#
+> Click on the "New Project" button and give it a name of demo-$USER_ID
 
-> Populate "Display Name" with "demo-YOUR#" and populate "Description" boxes with whatever you like.  And click "Create"
+> Populate "Display Name" with "demo-$USER_ID" and populate "Description" boxes with whatever you like.  And click "Create"
 
 This is going to take you to the next logical step of adding something to the project, but we don't want to do that just yet.
 
-> Click the "demo-YOUR#" link on the top left to goto your project
+> Click the "demo-$USER_ID" link on the top left to goto your project
 
 Don't worry, it's supposed to look empty right now because you currently don't have anything in your project (we'll fix that in the next lab).
 
@@ -52,7 +52,7 @@ Don't worry, it's supposed to look empty right now because you currently don't h
 > <i class="fa fa-terminal"></i> Open a terminal and login using the same URI/user/password with following command:
 
 {% highlight csh %}
-$ oc login [URI]
+$ oc login https://master.ose.lab-emergent360.com:8443
 {% endhighlight %}
 
 > <i class="fa fa-terminal"></i> Check to see what projects you have access to:
@@ -67,7 +67,7 @@ You just created a project using the web console, let's tell the terminal comman
 > <i class="fa fa-terminal"></i> Type the following command to use the demo project
 
 {% highlight csh %}
-$ oc project demo-YOUR#
+$ oc project demo-$USER_ID
 {% endhighlight %}
 
 > <i class="fa fa-terminal"></i> Type the following command to show services, deployment configs, build configurations, and active deployments (this will come in handy later):

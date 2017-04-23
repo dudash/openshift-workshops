@@ -31,6 +31,8 @@ $ oc expose service blue
 
 Note that we exposed this application using a route named "blue". Wait for the application to become available, then navigate to your application and validate it deployed correctly.
 
+<p><img src="{{ site.baseurl }}/www/3.4/default/screenshots/ose-lab-bluegreen-blue.png" width="500"/></p>
+
 ### Release a new version of our app and test it in the same environment
 What we'll do next is create a new version of the application called "green". The quickest way to make a change to the code is directly in the GitHub web interface. In GitHub, edit the bluegreen/image.php file in your repo.
 
@@ -57,7 +59,7 @@ $ oc new-app --name=green [your-project-repo-url]
 Wait for the "green" application to become available before proceeding.
 
 
-### Switch from Green to Blue
+### Switch from Blue to Green
 Now that we are satisfied with our change we can do the Green/Blue switch.  With OpenShift services and routes, this is simple.  Follow the steps below to make the switch:
 
 <div class="panel-group" id="accordionA" role="tablist" aria-multiselectable="true">
@@ -112,6 +114,10 @@ Edit the Route: select the name dropdown and change the value from "blue" to "gr
   </div>
 </div>
 
+### Verify
+If all worked properly, we should see the same route now point to the new version of the application (as shown below).
+
+<p><img src="{{ site.baseurl }}/www/3.4/default/screenshots/ose-lab-bluegreen-green.png" width="500"/></p>
 <!--### Good work, let's clean this up
 > <i class="fa fa-terminal"></i> Let's clean up all this to get ready for the next lab:
 
