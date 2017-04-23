@@ -9,7 +9,7 @@ Welcome to the workshop!  Please go through the list of labs below at your own p
 
 <i class="fa fa-info-circle"></i> Note: in most of the labs you will have the choice of using the Command Line Interface (CLI) or the Web Console.  While in the lab page, just expand the box for your preference.
 
-### [Install Prerequisites](workshop-prerequisites.html)
+### [Install Prerequisites](workshop-prerequisites-guac.html)
 
 ### [Lab: Login and a Tour of OpenShift Enterprise](workshop-lab-welcome.html)
 
