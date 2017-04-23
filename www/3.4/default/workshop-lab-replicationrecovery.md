@@ -28,7 +28,7 @@ Let's walk through a simple example of how the replication controller can keep y
 <i class="fa fa-terminal"></i> Goto the terminal and try the following:
 </blockquote>
 {% highlight csh %}
-$ oc scale --replicas=4 dc/dc-metro-map
+$ oc scale --replicas=3 dc/dc-metro-map
 {% endhighlight %}
 
 <blockquote>
@@ -38,7 +38,7 @@ $ oc scale --replicas=4 dc/dc-metro-map
 $ oc get pods
 {% endhighlight %}
 
-Notice that you now have 4 unique pods availble to inspect.  If you want go ahead and inspect them you can see that each have their own IP address and logs (oc describe).
+Notice that you now have 3 unique pods available to inspect.  If you want go ahead and inspect them you can see that each have their own IP address and logs (oc describe).
 
       </div>
     </div>
