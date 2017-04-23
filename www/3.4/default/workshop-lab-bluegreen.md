@@ -25,32 +25,40 @@ You should be comfortable deploying an app at this point, but here are the steps
 > <i class="fa fa-terminal"></i> Goto the terminal and type these commands:
 
 {% highlight csh %}
-$ oc new-app --name=green [your-project-repo-url] --context-dir=dc-metro-map
-$ oc expose service green
+$ oc new-app --name=blue [your-project-repo-url]
+$ oc expose service blue
 {% endhighlight %}
 
-Note that we exposed this application using a route named "green". Wait for the application to become available, then navigate to your application and validate it deployed correctly.
+Note that we exposed this application using a route named "blue". Wait for the application to become available, then navigate to your application and validate it deployed correctly.
 
 ### Release a new version of our app and test it in the same environment
-What we'll do next is create a new version of the application called "blue". The quickest way to make a change to the code is directly in the GitHub web interface. In GitHub, edit the dc-metro-map/views/dcmetro.jade file in your repo.
+What we'll do next is create a new version of the application called "green". The quickest way to make a change to the code is directly in the GitHub web interface. In GitHub, edit the bluegreen/image.php file in your repo.
 
-<p><img src="{{ site.baseurl }}/www/3.4/default/screenshots/ose-lab-bluegreen-editgithub.png" width="500"/></p>
+<p><img src="{{ site.baseurl }}/www/3.4/default/screenshots/ose-lab-bluegreen-editgithub.png" width="400"/></p>
 
-We can change the text labels indicated by name of a color. If you want to change the label for the "Red Line", change line 22 from "Red Line" to  "Silver Line". These changes will be easily viewable on the main screen of the application.
+We will change the color of the box displayed on the main page in the version of the new application. To do so, comment out the line that displays the blue box:
+{% highlight csh %}
+//imagefilledrectangle($im, 0, 0, 199, 199, $blue);
+{% endhighlight %}
 
-Use the same commands to deploy this new version of the app, but this time name the service "blue". No need to expose a new route -- we'll instead switch the "green" route to point to the "blue" service once we've verified it.
+and uncomment the line that displays the green box:
+{% highlight csh %}
+imagefilledrectangle($im, 0, 0, 199, 199, $green);
+{% endhighlight %}
+
+Use the same commands to deploy this new version of the app, but this time name the service "green". No need to expose a new route -- we'll instead switch the "blue" route to point to the "green" service once we've verified it.
 
 > <i class="fa fa-terminal"></i> Goto the terminal and type these commands:
 
 {% highlight csh %}
-$ oc new-app --name=blue [your-project-repo-url] --context-dir=dc-metro-map
+$ oc new-app --name=green [your-project-repo-url]
 {% endhighlight %}
 
-Wait for the "blue" application to become avialable before proceeding.
+Wait for the "green" application to become available before proceeding.
 
 
 ### Switch from Green to Blue
-Now that we are satisfied with our change we can do the Green/Blue switch.  With OpenShift services and routes, this is super simple.  Follow the steps below to make the switch:
+Now that we are satisfied with our change we can do the Green/Blue switch.  With OpenShift services and routes, this is simple.  Follow the steps below to make the switch:
 
 <div class="panel-group" id="accordionA" role="tablist" aria-multiselectable="true">
   <div class="panel panel-default">
@@ -68,10 +76,10 @@ Now that we are satisfied with our change we can do the Green/Blue switch.  With
 <i class="fa fa-terminal"></i> Goto the terminal and type the following:
 </blockquote>
 {% highlight csh %}
-$ oc edit route green
+$ oc edit route blue
 {% endhighlight %}
 
-This will bring up the Route configuration yaml. Edit the element spec: to: name and change it's value from "green" to "blue".
+This will bring up the Route configuration yaml. Edit the element spec: to: name and change it's value from "blue" to "green".
 
       </div>
     </div>
@@ -90,13 +98,13 @@ This will bring up the Route configuration yaml. Edit the element spec: to: name
 Navigate to the Routes view from the left-hand menu:
 <p><img src="{{ site.baseurl }}/www/3.4/default/screenshots/ose-lab-bluegreen-navtoroutes.png" width="500"/></p>
 
-In your Routes overview, click on the "green" route:
+In your Routes overview, click on the "blue" route:
 <p><img src="{{ site.baseurl }}/www/3.4/default/screenshots/ose-lab-bluegreen-routesoverview.png" width="500"/></p>
 
 In the Route detail page, click on Actions > Edit:
 <p><img src="{{ site.baseurl }}/www/3.4/default/screenshots/ose-lab-bluegreen-routedetail.png" width="300"/></p>
 
-Edit the Route: select the name dropdown and change the value from "green" to "blue":
+Edit the Route: select the name dropdown and change the value from "blue" to "green":
 <p><img src="{{ site.baseurl }}/www/3.4/default/screenshots/ose-lab-bluegreen-edit.png" width="500"/></p>
 
       </div>
@@ -117,5 +125,5 @@ Pretty easy, right?
 
 If you want to read more about Blue/Green check out [this post][2] with a longer description as well as links to additional resources.
 
-[1]: https://github.com/dudash/openshift-workshops
+[1]: https://github.com/VeerMuchandi/bluegreen
 [2]: http://martinfowler.com/bliki/BlueGreenDeployment.html
