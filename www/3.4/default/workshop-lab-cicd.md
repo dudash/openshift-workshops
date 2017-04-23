@@ -106,15 +106,22 @@ First we will start by installing Jenkins to run in a pod within your workshop p
 </div>
 
 ### Accessing Jenkins
+<blockquote>
 Jenkins and OpenShift are integrated together in this version of the product. Upon attempting to access the route for Jenkins, you will be brought to a prompt:
+</blockquote>
 <p><img src="{{ site.baseurl }}/www/3.4/default/screenshots/ose-lab-cicd-sso1.png" width="400"/></p>
 
+<blockquote>
 Click the button to "Login to OpenShift" and re-enter your OpenShift user credentials.
+</blockquote>
 <p><img src="{{ site.baseurl }}/www/3.4/default/screenshots/ose-lab-cicd-sso2.png" width="500"/></p>
-
+<blockquote>
 You will then be prompted to grant permissions to the service. Click the button to "Allow Selected Permissions".
+</blockquote>
 <p><img src="{{ site.baseurl }}/www/3.4/default/screenshots/ose-lab-cicd-sso3.png" width="600"/></p>
+<blockquote>
 If all worked, you should be re-directed to the Jenkins dashboard (which is now running on the OpenShift Container Platform).
+</blockquote>
 <p><img src="{{ site.baseurl }}/www/3.4/default/screenshots/ose-lab-cicd-sso4.png" width="600"/></p>
 
 ### The OpenShift Build pipeline
@@ -134,7 +141,7 @@ If all worked, you should be re-directed to the Jenkins dashboard (which is now 
       <i class="fa fa-terminal"></i> Goto the terminal and get the pipeline yaml:
       </blockquote>
       {% highlight csh %}
-      $ wget https://raw.githubusercontent.com/openshift/origin/master/examples/jenkins/pipeline/samplepipeline.yaml
+$ wget https://raw.githubusercontent.com/openshift/origin/master/examples/jenkins/pipeline/samplepipeline.yaml
       {% endhighlight %}
 
       <blockquote>
@@ -178,13 +185,21 @@ If all worked, you should be re-directed to the Jenkins dashboard (which is now 
 
 
 ### Verify
+<blockquote>
 If all went as planned, you should see a setup similar to the image below. There is an application deployed with a Node.js frontend and a MongoDB backend. The Node.js front end has not been built or deployed yet.
+</blockquote>
 <p><img src="{{ site.baseurl }}/www/3.4/default/screenshots/ose-lab-cicd-pipelineresult1.png" width="600"/></p>
+<blockquote>
 Click "Builds" -> "Pipelines"
+</blockquote>
 <p><img src="{{ site.baseurl }}/www/3.4/default/screenshots/ose-lab-cicd-pipelineresult2.png" width="300"/></p>
+<blockquote>
 You should see a new Pipeline object called "sample-pipeline"
+</blockquote>
 <p><img src="{{ site.baseurl }}/www/3.4/default/screenshots/ose-lab-cicd-pipelineresult3.png" width="600"/></p>
+<blockquote>
 Expand the details, and click the "Configuration" tab. From here, you can see the Groovy code that executes the Jenkins pipeline.
+</blockquote>
 <p><img src="{{ site.baseurl }}/www/3.4/default/screenshots/ose-lab-cicd-pipelineresult4.png" width="600"/></p>
 
 
