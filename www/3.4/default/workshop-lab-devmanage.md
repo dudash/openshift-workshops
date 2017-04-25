@@ -231,7 +231,7 @@ Let's have a little fun.  The app has some easter eggs that get triggered when c
 <i class="fa fa-terminal"></i> Goto the terminal and type the following:
 </blockquote>
 {% highlight csh %}
-$ oc env dc/dc-metro-map -e WMATA_API_KEY=wcj9ukx2empv3f9h22kymwsn
+$ oc env dc/dc-metro-map -e WMATA_API_KEY=$KEY_PROVIDED_BY_INSTRUCTOR
 {% endhighlight %}
 
 {% highlight csh %}
@@ -277,7 +277,7 @@ Click the Environment tab next to the Details tab .
 This opens up a tab with the environment variables for this deployment config.
 
 <blockquote>
-Add an environment variable with the name <strong>WMATA_API_KEY</strong> and a value of <strong>wcj9ukx2empv3f9h22kymwsn</strong>
+Add an environment variable with the name <strong>WMATA_API_KEY</strong> and a value matching the key provided by the instructor.
 </blockquote>
 <p><img src="{{ site.baseurl }}/www/3.4/default/screenshots/ose-lab-devman-deployconfigdetails-populated.png" width="500"/></p>
 
@@ -333,7 +333,7 @@ You are now interactively attached to the container in your pod.  Let's look for
 $ env | grep WMATA_API_KEY
 {% endhighlight %}
 
-That should return the <strong>WMATA_API_KEY=wcj9ukx2empv3f9h22kymwsn</strong> matching the value that we set in the deployment config.
+That should return the <strong>WMATA_API_KEY=$KEY_PROVIDED_BY_INSTRUCTOR</strong> matching the value that we set in the deployment config.
 
 {% highlight csh %}
 $ exit
@@ -374,7 +374,7 @@ Let's look for the environment variables we set. Inside the web page's terminal 
 'env | grep WMATA_API_KEY'
 {% endhighlight %}
 
-That should return the <strong>WMATA_API_KEY=wcj9ukx2empv3f9h22kymwsn</strong> matching the value that we set in the deployment config.
+That should return the <strong>WMATA_API_KEY=$KEY_PROVIDED_BY_INSTRUCTOR</strong> matching the value that we set in the deployment config.
 
       </div>
     </div>
