@@ -13,7 +13,7 @@ Once you have an app deployed in OpenShift you can take advantage of some contin
 ### A bit of configuration
 We are going to do some integration and coding with an external git repository.  For this lab we are going to use github, if you don't already have an account, [you can create one here][3].
 
-OK, let's fork the dc-metro-map app from **my** account into **your** github account.  Goto [https://github.com/brandoncox/openshift-workshops/][4] and look to the top right for the "Fork" button.
+OK, let's fork the dc-metro-map app from **my** account into **your** github account.  Goto [https://github.com/dudash/openshift-workshops/][4] and look to the top right for the "Fork" button.
 
 <p><img src="{{ site.baseurl }}/www/3.1/default/screenshots/ose-lab-rollbacks-fork.png" width="400"/></p>
 

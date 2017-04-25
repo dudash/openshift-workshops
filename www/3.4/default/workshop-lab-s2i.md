@@ -28,7 +28,7 @@ We can do this either via the command line (CLI) or the web console.  You decide
 <i class="fa fa-terminal"></i> Goto the terminal and type the following:
 </blockquote>
 {% highlight csh %}
-$ oc new-app --name=dc-metro-map https://github.com/brandoncox/openshift-workshops.git --context-dir=dc-metro-map
+$ oc new-app --name=dc-metro-map https://github.com/dudash/openshift-workshops.git --context-dir=dc-metro-map
 $ oc expose service dc-metro-map
 {% endhighlight %}
 
@@ -72,7 +72,7 @@ Fill out the boxes to look as follows:
 <p><img src="{{ site.baseurl }}/www/3.4/default/screenshots/ose-lab-s2i-addtoproject.png" width="600"/></p>
 <p>
 Notes: You will need to click to expand the "advanced options"<br/>
-The github repository URL is: https://github.com/brandoncox/openshift-workshops.git<br/>
+The github repository URL is: https://github.com/dudash/openshift-workshops.git<br/>
 The github context-dir is: dc-metro-map<br/>
 </p>
 
