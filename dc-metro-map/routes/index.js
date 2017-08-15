@@ -37,22 +37,24 @@ function wmataJsonToGeoJson(jsonData) {
   var markerColor = "#000000";
   if (BEERME == 'true') { markerSym = "beer"; }
 
-  jsonData.BusPositions.forEach(function(item, index) {
-    if (RAINBOW == 'true') { markerColor = '#'+(Math.random()*0xFFFFFF<<0).toString(16); }
-    dataOut.features.push({type:"Feature",
-        geometry: {
-            type: "Point",
-            coordinates: [item['Lon'], item['Lat']]
-        },
-        properties: {
-            title: "Bus #" + item['VehicleID'],
-            description: item['TripHeadsign'],
-            'marker-size': "small",
-            "marker-color": markerColor,
-            "marker-symbol": markerSym,
-        }
+  if (jsonData.BusPositions) {
+    jsonData.BusPositions.forEach(function(item, index) {
+      if (RAINBOW == 'true') { markerColor = '#'+(Math.random()*0xFFFFFF<<0).toString(16); }
+      dataOut.features.push({type:"Feature",
+          geometry: {
+              type: "Point",
+              coordinates: [item['Lon'], item['Lat']]
+          },
+          properties: {
+              title: "Bus #" + item['VehicleID'],
+              description: item['TripHeadsign'],
+              'marker-size': "small",
+              "marker-color": markerColor,
+              "marker-symbol": markerSym,
+          }
+      });
     });
-  });
+  }
   return dataOut;
 }
 
