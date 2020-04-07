@@ -61,7 +61,7 @@ function wmataJsonToGeoJson(jsonData) {
 //-----------------------------------------------------------------------------
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  res.render('dcmetro', { title: 'DC Metro Stations', BEERME: BEERME });
+  res.render('dcmetro', { title: 'D.C. Metro Stations', BEERME: BEERME });
 });
 
 //-----------------------------------------------------------------------------
@@ -70,6 +70,8 @@ router.get('/busses.json', function(req, res, next) {
   // center on DC and 20 miles = ~32K meters
   //var WMATA_URL='https://api.wmata.com/Bus.svc/json/jBusPositions?Lat=38.889931&Lon=-77.009003&Radius=32186.9';
   var WMATA_URL='https://api.wmata.com/Bus.svc/json/jBusPositions';
+  //var WMATA_URL='https://api.wmata.com/NextBusService.svc/json/jBusPositions';
+  
   // rest call to get
   rest.get(WMATA_URL, {
     query : { Lat: 38.889931, Lon: -77.009003, Radius: 32186.9 },
