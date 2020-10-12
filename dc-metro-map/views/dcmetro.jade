@@ -41,7 +41,8 @@ block content
         L.mapbox.accessToken = 'pk.eyJ1IjoiamFzb25yZWRoYXQiLCJhIjoiY2lseHVmZmkwMDVzMTgza3NiazZzZXg4ciJ9.5iDS06m7GN2wuv2hwQePpQ';
         var map = L.mapbox.map('map')
             .setView([38.9, -77], 13)
-            .addLayer(L.mapbox.tileLayer('mapbox.streets'));
+            .addLayer(L.mapbox.styleLayer('mapbox://styles/mapbox/streets-v11'));
+            
         var overlays = L.layerGroup().addTo(map);
         var layers;
         L.mapbox.featureLayer()
