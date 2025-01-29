@@ -3,7 +3,7 @@ Notes for developers extending or fixing bugs in this sample code.
 
 ## API keys and MapBox Access Tokens
 ### Mapbox
-My developer access token is included in this application - feel free to use it, please don't abuse it.  You can replace with your own by editing the views/dcmetro.jade file and replacing the line with "L.mapbox.accessToken = ...".  FYI it's a good rule of thumb to [rotate public access tokens][2].
+My developer access token is included in this application - feel free to use it, please don't abuse it.  You can replace with your own by editing the views/dcmetro.pug file and replacing the line with "L.mapbox.accessToken = ...".  FYI it's a good rule of thumb to [rotate public access tokens][2].
 
 ### WMATA
 The real-time bus locations feature requires an API key.  You should signup to get an API key for [WMATA developers here][1].  Using this key, update the routes/index.js file or use the WMATA_API_KEY environment variable.
